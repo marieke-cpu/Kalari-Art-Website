@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background:#F3EBDD; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  img { display: block; }
+  @keyframes kaMarq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes kaIn { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: none; } }
+  [data-r] { opacity: 1; animation: kaIn both linear; animation-timeline: view(); animation-range: entry 2% cover 22%; }
+  @supports not (animation-timeline: view()) { [data-r] { opacity: 1 !important; animation: none !important; } }
+  @media (prefers-reduced-motion: reduce) { [data-r] { opacity: 1 !important; animation: none !important; } }
+  .giving-hero { max-width:1440px; margin:0 auto; padding:84px 48px 76px; display:grid; grid-template-columns:1.02fr .98fr; gap:58px; align-items:center; }
+  .giving-eyebrow { display:flex; align-items:center; gap:16px; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#B0512C; font-weight:600; margin-bottom:24px; }
+  .giving-eyebrow span { width:46px; height:1px; background:#B0512C; }
+  .giving-title { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:84px; line-height:.96; letter-spacing:-.02em; margin:0 0 24px; }
+  .giving-lede { font-size:18px; line-height:1.72; color:#5e5142; max-width:560px; margin:0; }
+  .giving-actions { display:flex; gap:14px; flex-wrap:wrap; margin-top:34px; }
+  .giving-button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:14px 28px; border-radius:30px; text-decoration:none; font-size:14px; font-weight:600; transition:transform .25s, background .25s, color .25s; }
+  .giving-button:hover { transform:translateY(-3px); }
+  .giving-button.primary { background:#221C15; color:#F3EBDD; }
+  .giving-button.secondary { border:1px solid #B0512C; color:#B0512C; }
+  .giving-feature { background:#ECE1CE; padding:18px; border-radius:4px; box-shadow:0 32px 70px -46px rgba(34,28,21,.58); }
+  .giving-feature-img { overflow:hidden; aspect-ratio:5/4; background:#dccdb0; }
+  .giving-feature-img img, .giving-card-img img { width:100%; height:100%; object-fit:cover; transition:transform 1s cubic-bezier(.2,.7,.2,1); }
+  .giving-feature:hover img, .giving-card:hover img { transform:scale(1.04); }
+  .giving-feature-copy { display:grid; grid-template-columns:1fr auto; gap:22px; align-items:end; padding:22px 6px 4px; }
+  .giving-kicker { font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#B0512C; font-weight:700; margin-bottom:9px; }
+  .giving-feature-copy h2, .giving-card h3 { font-family:'Cormorant Garamond',serif; font-weight:500; margin:0; }
+  .giving-feature-copy h2 { font-size:34px; }
+  .giving-feature-copy p, .giving-card p, .giving-text { font-size:15px; line-height:1.65; color:#6b5944; margin:0; }
+  .giving-meta { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#9a8c79; white-space:nowrap; }
+  .giving-band { max-width:1440px; margin:0 auto; padding:0 48px 102px; }
+  .giving-intro { display:grid; grid-template-columns:.82fr 1.18fr; gap:56px; align-items:start; padding:42px 0 70px; border-top:1px solid #D7C8AE; }
+  .giving-section-label { font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:#B0512C; font-weight:700; margin-bottom:16px; }
+  .giving-intro h2, .giving-stories h2, .giving-partner h2 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:50px; line-height:1.04; letter-spacing:-.01em; margin:0; }
+  .giving-pill-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:18px; }
+  .giving-pill { background:#ECE1CE; padding:26px; border-radius:4px; min-height:156px; }
+  .giving-pill strong { display:block; font-family:'Cormorant Garamond',serif; font-weight:500; font-size:31px; line-height:1.05; margin-bottom:12px; color:#221C15; }
+  .giving-stories { background:#ECE1CE; border-top:1px solid #E0D3BC; border-bottom:1px solid #E0D3BC; padding:92px 48px 98px; }
+  .giving-stories-inner { max-width:1440px; margin:0 auto; }
+  .giving-story-head { display:flex; align-items:flex-end; justify-content:space-between; gap:36px; flex-wrap:wrap; margin-bottom:42px; }
+  .giving-story-head p { max-width:440px; }
+  .giving-card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:26px; }
+  .giving-card { background:#F3EBDD; border-radius:4px; overflow:hidden; display:flex; flex-direction:column; }
+  .giving-card-img { overflow:hidden; aspect-ratio:1/1; background:#dccdb0; }
+  .giving-card-copy { padding:28px; display:flex; flex-direction:column; gap:12px; flex:1; }
+  .giving-card h3 { font-size:30px; }
+  .giving-impact { background:#1E1810; color:#F1E7D6; padding:112px 48px; }
+  .giving-impact-inner { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.18fr .82fr; gap:64px; align-items:start; }
+  .giving-impact-quote { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:48px; line-height:1.22; margin:0; }
+  .giving-impact-list { display:grid; gap:24px; }
+  .giving-impact-item { border-top:1px solid #473726; padding-top:24px; }
+  .giving-impact-item h3 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:30px; margin:0 0 10px; color:#F1E7D6; }
+  .giving-impact-item p { font-size:15px; line-height:1.65; color:#cdbfa9; margin:0; }
+  .giving-partner { max-width:1440px; margin:0 auto; padding:96px 48px; display:grid; grid-template-columns:.9fr 1.1fr; gap:56px; align-items:start; }
+  .giving-process { display:grid; gap:16px; }
+  .giving-process-row { display:grid; grid-template-columns:58px 1fr; gap:20px; align-items:start; padding:24px 0; border-top:1px solid #D7C8AE; }
+  .giving-process-row:last-child { border-bottom:1px solid #D7C8AE; }
+  .giving-number { font-family:'Cormorant Garamond',serif; font-size:28px; color:#B0512C; }
+  .giving-process-row h3 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:31px; margin:0 0 8px; }
+  .giving-cta { background:#221C15; color:#F7EFE2; padding:96px 48px; position:relative; overflow:hidden; border-top:1px solid #3d3022; }
+  .giving-cta::before { content:""; position:absolute; inset:0; background:linear-gradient(135deg, rgba(176,81,44,.28), transparent 42%), linear-gradient(180deg, rgba(47,111,100,.16), transparent 55%); pointer-events:none; }
+  .giving-cta-inner { position:relative; max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1fr .9fr; gap:42px; align-items:center; }
+  .giving-cta h2 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:52px; line-height:1.04; margin:0 0 22px; }
+  .giving-cta p { font-size:17px; line-height:1.6; color:#cdbfa9; max-width:560px; margin:0 0 34px; }
+  .giving-cta-points { display:grid; gap:14px; }
+  .giving-cta-point { background:#2a2118; border:1px solid rgba(200,137,59,.28); border-radius:8px; padding:22px 24px; }
+  .giving-cta-point h3 { font-family:'Cormorant Garamond',serif; font-size:29px; font-weight:500; margin:0 0 8px; }
+  .giving-cta-point p { font-size:14.5px; line-height:1.55; margin:0; }
+  @media (max-width: 980px) {
+    .giving-hero, .giving-intro, .giving-impact-inner, .giving-partner, .giving-cta-inner { grid-template-columns:1fr; }
+    .giving-card-grid, .giving-pill-grid { grid-template-columns:1fr; }
+    .giving-title { font-size:64px; }
+    .giving-intro h2, .giving-stories h2, .giving-partner h2, .giving-impact-quote, .giving-cta h2 { font-size:40px; }
+    .giving-feature-copy { grid-template-columns:1fr; }
+    .giving-meta { white-space:normal; }
+  }
+  @media (max-width: 680px) {
+    nav { padding-left:24px !important; padding-right:24px !important; }
+    .giving-hero, .giving-band, .giving-stories, .giving-impact, .giving-partner, .giving-cta { padding-left:24px; padding-right:24px; }
+    .giving-title { font-size:54px; }
+    .giving-actions { flex-direction:column; }
+    .giving-button { width:100%; }
+  }
+</style>
+</helmet>
+
+<div style="font-family:'Hanken Grotesk',sans-serif; color:#221C15; background:#F3EBDD; overflow-x:hidden;">
+  <div style="background:#221C15; color:#E9DECB; overflow:hidden; white-space:nowrap; padding:9px 0; font-size:12px; letter-spacing:.22em; text-transform:uppercase;">
+    <div style="display:inline-flex; width:max-content; animation:kaMarq 34s linear infinite;">
+      <span style="padding-right:46px;">Giving back</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Donated canvases · Fundraising</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Art for a good cause</span><span style="padding-right:46px; color:#C8893B;">✦</span>
+      <span style="padding-right:46px;">Giving back</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Donated canvases · Fundraising</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Art for a good cause</span><span style="padding-right:46px; color:#C8893B;">✦</span>
+    </div>
+  </div>
+  <nav style="position:sticky; top:14px; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:18px; max-width:1440px; margin:14px auto 0; padding:12px 18px 12px 22px; background:rgba(243,235,221,.86); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border:1px solid rgba(34,28,21,.12); border-radius:999px; box-shadow:0 18px 46px -34px rgba(34,28,21,.75); flex-wrap:wrap;">
+    <a href="Kalari%20Art%20-%20Home.dc.html" style="display:flex; align-items:center; color:#221C15; text-decoration:none;"><img src="uploads/Kalari%20Art%20Logo%20nav%20black.png" alt="Kalari Art" style="width:148px; height:auto; display:block; filter:drop-shadow(0 1px 8px rgba(246,238,223,.65));"></a>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; align-items:center; font-size:15px; letter-spacing:.045em; color:#221C15; text-shadow:0 1px 10px rgba(246,238,223,.78); margin-left:auto;">
+      <a href="Works.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Projects</a>
+      <a href="About.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">About</a>
+      <a href="Services.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Services</a>
+      <a href="Made%20to%20Order.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Made to Order</a>
+      <a href="#" style="color:#B0512C; text-decoration:none; padding:11px 18px; border-radius:999px; background:rgba(176,81,44,.12);">Giving</a>
+      <a href="Workshops.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Workshops</a>
+    </div>
+    <a href="Enquiry.dc.html" style="font-size:13px; text-decoration:none; color:#F3EBDD; background:#221C15; border:1px solid #221C15; padding:12px 22px; border-radius:30px; transition:all .25s; white-space:nowrap; box-shadow:0 12px 28px -18px rgba(34,28,21,.8);" style-hover="background:#B0512C; border-color:#B0512C; color:#F3EBDD; transform:translateY(-1px);">Start a Project</a>
+  </nav>
+
+  <header class="giving-hero">
+    <div data-r>
+      <div class="giving-eyebrow"><span></span>Giving back</div>
+      <h1 class="giving-title">For a good <em style="font-style:italic; color:#B0512C;">cause</em></h1>
+      <p class="giving-lede">Alongside her commissions, LaToya donates original canvases to raise funds and awareness for causes close to community, turning artwork into real support.</p>
+      <div class="giving-actions">
+        <a class="giving-button primary" href="#giving-stories">View donated artworks</a>
+        <a class="giving-button secondary" href="Enquiry.dc.html">Discuss a fundraiser</a>
+      </div>
+    </div>
+    <div data-r class="giving-feature">
+      <div class="giving-feature-img"><img src="uploads/Aspen%20Medical.webp" alt="Donated canvas Meeting in the Dreamtime"></div>
+      <div class="giving-feature-copy">
+        <div>
+          <div class="giving-kicker">Donated artwork</div>
+          <h2>Meeting in the Dreamtime</h2>
+        </div>
+        <div class="giving-meta">Acrylic on canvas</div>
+      </div>
+    </div>
+  </header>
+
+  <section class="giving-band">
+    <div data-r class="giving-intro">
+      <div>
+        <div class="giving-section-label">Community support</div>
+        <h2>Artwork created to carry care further</h2>
+      </div>
+      <div class="giving-pill-grid">
+        <div class="giving-pill">
+          <strong>Donated canvases</strong>
+          <p class="giving-text">Original pieces contributed to fundraising auctions, awareness campaigns and community causes.</p>
+        </div>
+        <div class="giving-pill">
+          <strong>Purpose-led story</strong>
+          <p class="giving-text">Each artwork carries meaning, connection and a story that helps people understand the cause.</p>
+        </div>
+        <div class="giving-pill">
+          <strong>Community impact</strong>
+          <p class="giving-text">The work helps organisations raise funds, start conversations and continue supporting community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="giving-stories" class="giving-stories">
+    <div class="giving-stories-inner">
+      <div data-r class="giving-story-head">
+        <div>
+          <div class="giving-section-label">Donated pieces</div>
+          <h2>Giving stories</h2>
+        </div>
+        <p class="giving-text">A selection of artworks donated to support fundraising, awareness and organisations doing meaningful work.</p>
+      </div>
+      <div data-r class="giving-card-grid">
+        <article class="giving-card">
+          <div class="giving-card-img"><img src="uploads/Aspen%20Medical.webp" alt="Meeting in the Dreamtime donated canvas"></div>
+          <div class="giving-card-copy">
+            <div class="giving-kicker">Donated to Aspen Medical</div>
+            <h3>Meeting in the Dreamtime</h3>
+            <p>Raised funds towards The Farm in Galong, a place that restores self-worth and confidence to women and reunites them with their children.</p>
+            <div class="giving-meta">Acrylic on canvas · 92 × 122cm</div>
+          </div>
+        </article>
+        <article class="giving-card">
+          <div class="giving-card-img"><img src="uploads/Aspen%20Medical1.webp" alt="Belonging donated canvas"></div>
+          <div class="giving-card-copy">
+            <div class="giving-kicker">Donated to Aspen Medical</div>
+            <h3>Belonging</h3>
+            <p>A story of developing relationships and wellbeing, defining who you are and where you come from, and the feeling of belonging it brings.</p>
+            <div class="giving-meta">Acrylic on canvas · 61 × 122cm</div>
+          </div>
+        </article>
+        <article class="giving-card">
+          <div class="giving-card-img"><img src="uploads/Epilepsy%20Australia.webp" alt="Scrambled Journey purple donated canvas"></div>
+          <div class="giving-card-copy">
+            <div class="giving-kicker">Donated to Epilepsy Australia</div>
+            <h3>Scrambled Journey</h3>
+            <p>Painted in purple, the international colour for epilepsy. A deeply personal piece supporting awareness and vital services for people living with epilepsy.</p>
+            <div class="giving-meta">Acrylic on canvas · 100 × 75cm</div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="giving-impact">
+    <div data-r class="giving-impact-inner">
+      <div>
+        <div class="giving-section-label" style="color:#C8893B;">Why it matters</div>
+        <p class="giving-impact-quote">Art can carry more than story. It can carry support, awareness and hope into the places that need it.</p>
+      </div>
+      <div class="giving-impact-list">
+        <div class="giving-impact-item">
+          <h3>Fundraising</h3>
+          <p>Original artworks can help create a meaningful centrepiece for auctions, gala nights and community events.</p>
+        </div>
+        <div class="giving-impact-item">
+          <h3>Awareness</h3>
+          <p>Story-led artwork gives people a way to connect emotionally with a campaign, service or lived experience.</p>
+        </div>
+        <div class="giving-impact-item">
+          <h3>Connection</h3>
+          <p>Each donated piece brings people together around story, Country, healing and care for community.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="giving-partner">
+    <div data-r>
+      <div class="giving-section-label">Partner with Kalari</div>
+      <h2>Fundraising with a piece of art</h2>
+      <p class="giving-text" style="font-size:17px; margin-top:22px; max-width:520px;">If you are running an auction, gala, awareness campaign or community fundraiser, get in touch to discuss whether a donated or commissioned artwork is the right fit.</p>
+    </div>
+    <div data-r class="giving-process">
+      <div class="giving-process-row">
+        <div class="giving-number">01</div>
+        <div><h3>Share the cause</h3><p class="giving-text">Tell LaToya about the organisation, event, audience, timeline and how the artwork will support the fundraiser.</p></div>
+      </div>
+      <div class="giving-process-row">
+        <div class="giving-number">02</div>
+        <div><h3>Shape the artwork</h3><p class="giving-text">Discuss size, format and story so the piece feels connected to the purpose of the event.</p></div>
+      </div>
+      <div class="giving-process-row">
+        <div class="giving-number">03</div>
+        <div><h3>Raise support</h3><p class="giving-text">Use the artwork as a meaningful fundraising piece that helps people connect with the cause.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="giving-cta">
+    <div data-r class="giving-cta-inner">
+      <div>
+        <div style="font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:#C8893B; font-weight:600; margin-bottom:20px;">Start a conversation</div>
+        <h2>Have a cause in mind?</h2>
+        <p>Share your fundraiser, campaign or community event and LaToya can talk through what might be possible.</p>
+        <a href="Enquiry.dc.html" class="giving-button" style="background:#F7EFE2; color:#221C15;">Get in touch</a>
+      </div>
+      <div class="giving-cta-points">
+        <div class="giving-cta-point"><h3>Fundraising events</h3><p>Discuss auctions, gala nights and community events where artwork can help raise support.</p></div>
+        <div class="giving-cta-point"><h3>Awareness campaigns</h3><p>Create an emotional connection around a cause, service or lived experience.</p></div>
+        <div class="giving-cta-point"><h3>Community impact</h3><p>Use story-led artwork to bring people together around care, healing and purpose.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#1E1810; color:#cdbfa9; padding:74px 48px 48px;">
+    <div style="max-width:1440px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:40px; padding-bottom:50px; border-bottom:1px solid #352a1d;">
+        <div>
+          <img src="uploads/Kalari%20Art%20Logo%20nav.png" alt="Kalari Art" style="width:190px; height:auto; display:block; margin-bottom:18px;">
+          <p style="font-size:14px; line-height:1.65; color:#9c8d76; max-width:300px; margin:0;">Contemporary Aboriginal art by LaToya Kennedy. Ngunnawal &amp; Wiradjuri. Wollongong, NSW.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:18px; font-size:13px;">
+            <a href="https://www.facebook.com/KalariArt/" target="_blank" rel="noopener" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">Facebook</a>
+            <a href="https://www.instagram.com/kalari.art" target="_blank" rel="noopener" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">Instagram</a>
+            <a href="https://www.linkedin.com/in/latoya-kennedy-9a42bb253" target="_blank" rel="noopener" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">LinkedIn</a>
+          </div>
+        </div>
+        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Explore</div>Projects<br>About<br>Services<br>Workshops</div>
+        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">More</div>Giving back<br>Commissions<br>Sneakers<br>Heels<br>Boots<br>Nursery<br>Personalised gifts<br>Contact</div>
+        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Registrations</div>Supply Nation Certified<br>Indigenous Art Code<br>Buy NSW<br>AusTender<br>VendorPanel</div>
+      </div>
+      <div style="display:flex; justify-content:space-between; padding-top:26px; font-size:12px; color:#7e7158; flex-wrap:wrap; gap:10px;"><span>© 2026 Kalari Art · All rights reserved</span><span>Website Built by <a href="https://www.rastrick.com.au" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px;">RASTRICK. MADE</a></span><span>Always was, always will be Aboriginal land.</span></div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

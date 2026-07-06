@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background:#F3EBDD; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  img { display: block; }
+  @keyframes kaMarq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes kaIn { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: none; } }
+  [data-r] { opacity: 1; animation: kaIn both linear; animation-timeline: view(); animation-range: entry 2% cover 22%; }
+  @supports not (animation-timeline: view()) { [data-r] { opacity: 1 !important; animation: none !important; } }
+  @media (prefers-reduced-motion: reduce) { [data-r] { opacity: 1 !important; animation: none !important; } }
+  .svc-wrap { max-width:1440px; margin:0 auto; padding-left:48px; padding-right:48px; }
+  .svc-eyebrow { display:flex; align-items:center; gap:16px; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#B0512C; font-weight:700; margin-bottom:24px; }
+  .svc-eyebrow span { width:46px; height:1px; background:#B0512C; display:block; }
+  .svc-button { display:inline-flex; align-items:center; justify-content:center; min-height:52px; padding:15px 28px; border-radius:999px; font-size:14px; font-weight:700; text-decoration:none; transition:transform .25s, background .25s, color .25s, border-color .25s; }
+  .svc-button.primary { background:#B0512C; color:#F7EFE2; }
+  .svc-button.dark { background:#221C15; color:#F7EFE2; }
+  .svc-button.light { background:#F7EFE2; color:#B0512C; }
+  .svc-button.outline { color:#221C15; border:1px solid #221C15; }
+  .svc-button:hover { transform:translateY(-3px); }
+  .svc-hero { padding-top:78px; padding-bottom:86px; display:grid; grid-template-columns:1.08fr .92fr; gap:56px; align-items:center; }
+  .svc-hero h1 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:84px; line-height:.96; letter-spacing:-.02em; margin:0 0 26px; max-width:790px; }
+  .svc-hero-copy { font-size:19px; line-height:1.65; color:#5e5142; max-width:650px; margin:0 0 32px; }
+  .svc-actions { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+  .svc-hero-panel { background:#221C15; color:#F7EFE2; padding:28px; border-radius:8px; min-height:620px; display:grid; align-content:space-between; overflow:hidden; position:relative; }
+  .svc-hero-panel:before { content:""; position:absolute; inset:0; background:linear-gradient(180deg, rgba(34,28,21,.08), rgba(34,28,21,.82)); z-index:1; }
+  .svc-hero-panel img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+  .svc-hero-panel > div { position:relative; z-index:2; }
+  .svc-panel-top { display:flex; justify-content:space-between; gap:20px; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#F3EBDD; }
+  .svc-panel-bottom { align-self:end; max-width:420px; }
+  .svc-panel-bottom h2 { font-family:'Cormorant Garamond',serif; font-size:42px; line-height:1.02; font-weight:500; margin:0 0 14px; }
+  .svc-panel-bottom p { color:#ead7c4; line-height:1.6; margin:0; }
+  .svc-strip { background:#ECE1CE; border-top:1px solid #D7C8AE; border-bottom:1px solid #D7C8AE; }
+  .svc-strip-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; }
+  .svc-stat { padding:30px 28px; border-left:1px solid #D7C8AE; }
+  .svc-stat:first-child { border-left:0; }
+  .svc-stat strong { display:block; font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:500; margin-bottom:8px; }
+  .svc-stat span { font-size:13px; line-height:1.5; color:#6b5944; }
+  .svc-section { padding-top:104px; padding-bottom:104px; }
+  .svc-section-head { display:flex; justify-content:space-between; gap:44px; align-items:flex-end; margin-bottom:42px; }
+  .svc-section h2, .svc-card h3, .svc-mini-card h3, .svc-process h2, .svc-cta h2 { font-family:'Cormorant Garamond',serif; font-weight:500; margin:0; }
+  .svc-section h2 { font-size:56px; line-height:1.04; max-width:740px; }
+  .svc-section-head p { font-size:17px; line-height:1.65; color:#5e5142; max-width:460px; margin:0; }
+  .svc-card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .svc-card { background:#F8F1E6; border:1px solid #D7C8AE; border-radius:8px; overflow:hidden; display:grid; grid-template-rows:260px 1fr; }
+  .svc-card img { width:100%; height:100%; object-fit:cover; }
+  .svc-card-body { padding:30px; display:grid; gap:18px; align-content:start; }
+  .svc-tag { width:max-content; font-size:11px; letter-spacing:.2em; text-transform:uppercase; color:#B0512C; font-weight:700; }
+  .svc-card h3 { font-size:34px; line-height:1.04; }
+  .svc-card p, .svc-text { font-size:15.5px; line-height:1.65; color:#6b5944; margin:0; }
+  .svc-list { display:grid; gap:10px; margin:0; padding:0; list-style:none; }
+  .svc-list li { display:flex; gap:10px; color:#5e5142; font-size:14.5px; line-height:1.45; }
+  .svc-list li:before { content:""; width:7px; height:7px; border-radius:50%; background:#B0512C; flex:0 0 auto; margin-top:7px; }
+  .svc-dark { background:#221C15; color:#F7EFE2; padding:98px 48px; }
+  .svc-dark-grid { max-width:1440px; margin:0 auto; display:grid; grid-template-columns:.88fr 1.12fr; gap:58px; align-items:start; }
+  .svc-dark h2 { font-family:'Cormorant Garamond',serif; font-size:56px; line-height:1.04; font-weight:500; margin:0 0 22px; }
+  .svc-dark p { color:#cdbfa9; font-size:16px; line-height:1.7; margin:0; }
+  .svc-mini-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
+  .svc-mini-card { border:1px solid #4b3c2c; background:#2a2218; border-radius:8px; padding:28px; }
+  .svc-mini-card h3 { font-size:30px; margin-bottom:12px; }
+  .svc-mini-card p { font-size:14.5px; }
+  .svc-process { background:#ECE1CE; padding:98px 48px; }
+  .svc-process-inner { max-width:1440px; margin:0 auto; display:grid; grid-template-columns:.8fr 1.2fr; gap:58px; align-items:start; }
+  .svc-process h2 { font-size:54px; line-height:1.04; margin-bottom:20px; }
+  .svc-steps { display:grid; gap:14px; }
+  .svc-step { display:grid; grid-template-columns:68px 1fr; gap:20px; padding:24px; background:#F3EBDD; border:1px solid #D7C8AE; border-radius:8px; }
+  .svc-step-num { width:46px; height:46px; border-radius:50%; background:#B0512C; color:#F7EFE2; display:flex; align-items:center; justify-content:center; font-weight:700; }
+  .svc-step h3 { font-family:'Cormorant Garamond',serif; font-size:29px; font-weight:500; margin:0 0 8px; }
+  .svc-fit-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .svc-fit { background:#F8F1E6; border:1px solid #D7C8AE; border-radius:8px; padding:28px; }
+  .svc-fit h3 { font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:500; margin:0 0 10px; }
+  .svc-cta { background:#221C15; color:#F7EFE2; padding:98px 48px; position:relative; overflow:hidden; border-top:1px solid #3d3022; }
+  .svc-cta::before { content:""; position:absolute; inset:0; background:linear-gradient(135deg, rgba(176,81,44,.28), transparent 42%), linear-gradient(180deg, rgba(47,111,100,.16), transparent 55%); pointer-events:none; }
+  .svc-cta-inner { position:relative; max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1fr .95fr; gap:42px; align-items:center; }
+  .svc-cta h2 { font-size:58px; line-height:1.02; margin-bottom:22px; }
+  .svc-cta p { color:#cdbfa9; font-size:17px; line-height:1.65; max-width:640px; margin:0 0 32px; }
+  .svc-cta-panel { display:grid; gap:14px; }
+  .svc-cta-row { background:#2a2118; border:1px solid rgba(200,137,59,.28); border-radius:8px; padding:22px 24px; display:grid; grid-template-columns:34px 1fr; gap:16px; align-items:start; }
+  .svc-cta-row span { font-family:'Cormorant Garamond',serif; font-size:28px; color:#C8893B; line-height:1; }
+  .svc-cta-row h3 { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:500; margin:0 0 6px; }
+  .svc-cta-row p { font-size:14.5px; line-height:1.55; margin:0; }
+  @media (max-width: 1080px) {
+    .svc-hero, .svc-dark-grid, .svc-process-inner, .svc-cta-inner { grid-template-columns:1fr; }
+    .svc-card-grid { grid-template-columns:1fr 1fr; }
+    .svc-strip-grid, .svc-fit-grid { grid-template-columns:repeat(2,1fr); }
+    .svc-hero-panel { min-height:520px; }
+  }
+  @media (max-width: 700px) {
+    .svc-wrap, .svc-dark, .svc-process, .svc-cta { padding-left:24px; padding-right:24px; }
+    .svc-hero { padding-top:50px; padding-bottom:64px; }
+    .svc-hero h1 { font-size:54px; }
+    .svc-section { padding-top:72px; padding-bottom:72px; }
+    .svc-section-head { display:grid; gap:20px; }
+    .svc-section h2, .svc-dark h2, .svc-process h2, .svc-cta h2 { font-size:40px; }
+    .svc-card-grid, .svc-mini-grid, .svc-strip-grid, .svc-fit-grid { grid-template-columns:1fr; }
+    .svc-card { grid-template-rows:220px 1fr; }
+    .svc-step { grid-template-columns:1fr; }
+  }
+</style>
+</helmet>
+
+<div style="font-family:'Hanken Grotesk',sans-serif; color:#221C15; background:#F3EBDD; overflow-x:hidden;">
+  <div style="background:#221C15; color:#E9DECB; overflow:hidden; white-space:nowrap; padding:9px 0; font-size:12px; letter-spacing:.22em; text-transform:uppercase;">
+    <div style="display:inline-flex; width:max-content; animation:kaMarq 34s linear infinite;">
+      <span style="padding-right:46px;">Commissions</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">RAP &amp; Corporate Artwork</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Murals · Workshops · Digital</span><span style="padding-right:46px; color:#C8893B;">✦</span>
+      <span style="padding-right:46px;">Commissions</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">RAP &amp; Corporate Artwork</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Murals · Workshops · Digital</span><span style="padding-right:46px; color:#C8893B;">✦</span>
+    </div>
+  </div>
+  <nav style="position:sticky; top:14px; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:18px; max-width:1440px; margin:14px auto 0; padding:12px 18px 12px 22px; background:rgba(243,235,221,.86); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border:1px solid rgba(34,28,21,.12); border-radius:999px; box-shadow:0 18px 46px -34px rgba(34,28,21,.75); flex-wrap:wrap;">
+    <a href="Kalari%20Art%20-%20Home.dc.html" style="display:flex; align-items:center; color:#221C15; text-decoration:none;"><img src="uploads/Kalari%20Art%20Logo%20nav%20black.png" alt="Kalari Art" style="width:148px; height:auto; display:block; filter:drop-shadow(0 1px 8px rgba(246,238,223,.65));"></a>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; align-items:center; font-size:15px; letter-spacing:.045em; color:#221C15; text-shadow:0 1px 10px rgba(246,238,223,.78); margin-left:auto;">
+      <a href="Works.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Projects</a>
+      <a href="About.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">About</a>
+      <a href="#" style="color:#B0512C; text-decoration:none; padding:11px 18px; border-radius:999px; background:rgba(176,81,44,.12);">Services</a>
+      <a href="Made%20to%20Order.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Made to Order</a>
+      <a href="Giving.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Giving</a>
+      <a href="Workshops.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Workshops</a>
+    </div>
+    <a href="Enquiry.dc.html" style="font-size:13px; text-decoration:none; color:#F3EBDD; background:#221C15; border:1px solid #221C15; padding:12px 22px; border-radius:30px; transition:all .25s; white-space:nowrap; box-shadow:0 12px 28px -18px rgba(34,28,21,.8);" style-hover="background:#B0512C; border-color:#B0512C; color:#F3EBDD; transform:translateY(-1px);">Start a Project</a>
+  </nav>
+
+  <header class="svc-wrap svc-hero">
+    <div data-r>
+      <div class="svc-eyebrow"><span></span>Premium art services</div>
+      <h1>Artwork that helps your project feel connected, considered and unforgettable</h1>
+      <p class="svc-hero-copy">Kalari Art is a 100% Aboriginal owned and operated small business creating contemporary Aboriginal artwork for organisations, public spaces, community programs and personal commissions - bringing story, culture and visual impact into work that people remember.</p>
+      <div class="svc-actions">
+        <a class="svc-button primary" href="Enquiry.dc.html">Start an enquiry</a>
+        <a class="svc-button outline" href="Works.dc.html">View project work</a>
+      </div>
+    </div>
+    <aside data-r class="svc-hero-panel">
+      <img src="uploads/KA10.webp" alt="Commission artwork used as a public health mural">
+      <div class="svc-panel-top"><span>Kalari Art</span><span>Services</span></div>
+      <div class="svc-panel-bottom">
+        <h2>Commissioned with purpose</h2>
+        <p>From RAP artwork and corporate design to murals, workshops and custom pieces, every service is shaped around story, place and the people it needs to speak to.</p>
+      </div>
+    </aside>
+  </header>
+
+  <section class="svc-strip">
+    <div class="svc-wrap svc-strip-grid">
+      <div class="svc-stat"><strong>RAP artwork</strong><span>Designed for organisations wanting meaningful reconciliation visuals.</span></div>
+      <div class="svc-stat"><strong>Public spaces</strong><span>Artwork for offices, hospitals, community spaces and built environments.</span></div>
+      <div class="svc-stat"><strong>Workshops</strong><span>Hands-on cultural art experiences for teams and community groups.</span></div>
+      <div class="svc-stat"><strong>Custom pieces</strong><span>Personalised art, gifts and made-to-order painted items.</span></div>
+    </div>
+  </section>
+
+  <section class="svc-wrap svc-section">
+    <div data-r class="svc-section-head">
+      <div>
+        <div class="svc-eyebrow"><span></span>What you can book</div>
+        <h2>Choose the service that fits the story you want to tell</h2>
+      </div>
+      <p>Each service can be tailored to your organisation, audience, event, campaign, space or personal brief.</p>
+    </div>
+    <div data-r class="svc-card-grid">
+      <article class="svc-card">
+        <img src="uploads/KA1.webp" alt="Contemporary Aboriginal commission artwork">
+        <div class="svc-card-body">
+          <div class="svc-tag">Original artwork</div>
+          <h3>Commissioned paintings</h3>
+          <p>Original canvas artworks created for homes, offices, public spaces, community settings and meaningful gifts.</p>
+          <ul class="svc-list">
+            <li>Story-led custom artwork for your space or purpose</li>
+            <li>Suitable for personal, corporate and public projects</li>
+            <li>Created with clear meaning and visual presence</li>
+          </ul>
+          <a class="svc-button dark" href="Enquiry.dc.html">Enquire about a commission</a>
+        </div>
+      </article>
+      <article class="svc-card">
+        <img src="uploads/KA7.webp" alt="Digital Aboriginal artwork design">
+        <div class="svc-card-body">
+          <div class="svc-tag">Corporate use</div>
+          <h3>RAP, branding and digital design</h3>
+          <p>Artwork created for Reconciliation Action Plans, campaigns, uniforms, merchandise, signage and corporate storytelling.</p>
+          <ul class="svc-list">
+            <li>RAP artwork for reports, launches and communications</li>
+            <li>Designs for NAIDOC and significant Indigenous dates</li>
+            <li>Digital files prepared for practical brand use</li>
+          </ul>
+          <a class="svc-button dark" href="Enquiry.dc.html">Discuss a design project</a>
+        </div>
+      </article>
+      <article class="svc-card">
+        <img src="uploads/KA5.webp" alt="Artwork adapted for a built environment">
+        <div class="svc-card-body">
+          <div class="svc-tag">Spaces</div>
+          <h3>Murals and public art</h3>
+          <p>Statement artwork for workplaces, health spaces, schools, community buildings and public-facing environments.</p>
+          <ul class="svc-list">
+            <li>Canvas artwork adapted into murals or vinyl wraps</li>
+            <li>Large-scale artwork for meaningful shared spaces</li>
+            <li>Designed to create welcome, identity and connection</li>
+          </ul>
+          <a class="svc-button dark" href="Enquiry.dc.html">Plan a public artwork</a>
+        </div>
+      </article>
+      <article class="svc-card">
+        <img src="uploads/KA6.webp" alt="Artwork used for inclusive project designs">
+        <div class="svc-card-body">
+          <div class="svc-tag">Learning experience</div>
+          <h3>Cultural art workshops</h3>
+          <p>Interactive workshops where teams, schools and communities learn through Aboriginal symbols, story and hands-on art making.</p>
+          <ul class="svc-list">
+            <li>Designed for staff days, community events and schools</li>
+            <li>Participants learn culture through shared creativity</li>
+            <li>Can include collaborative canvas outcomes</li>
+          </ul>
+          <a class="svc-button dark" href="Workshops.dc.html">Explore workshops</a>
+        </div>
+      </article>
+      <article class="svc-card">
+        <img src="uploads/Custom.png" alt="Hand painted custom boots">
+        <div class="svc-card-body">
+          <div class="svc-tag">Made to order</div>
+          <h3>Sneakers, boots, nursery and gifts</h3>
+          <p>Personalised painted items for special occasions, keepsakes, children, families and one-of-a-kind gifting.</p>
+          <ul class="svc-list">
+            <li>Sneakers, heels, boots and wearable pieces</li>
+            <li>Nursery name signs and personalised keepsakes</li>
+            <li>Created as meaningful custom gifts</li>
+          </ul>
+          <a class="svc-button dark" href="Made%20to%20Order.dc.html">View made to order</a>
+        </div>
+      </article>
+      <article class="svc-card">
+        <img src="uploads/KA4.webp" alt="Digital design created for team uniform">
+        <div class="svc-card-body">
+          <div class="svc-tag">Partnerships</div>
+          <h3>Creative collaborations</h3>
+          <p>Artwork collaborations for teams, events, merchandise, uniforms, corporate gifts and special projects.</p>
+          <ul class="svc-list">
+            <li>Perfect for organisations wanting something distinctive</li>
+            <li>Can be shaped around a campaign, launch or event</li>
+            <li>Built with story, audience and use in mind</li>
+          </ul>
+          <a class="svc-button dark" href="Enquiry.dc.html">Pitch a collaboration</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="svc-dark">
+    <div data-r class="svc-dark-grid">
+      <div>
+        <div class="svc-eyebrow" style="color:#C8893B;"><span style="background:#C8893B;"></span>Why clients choose Kalari Art</div>
+        <h2>More than beautiful artwork - a project with meaning</h2>
+        <p>Clients come to LaToya when they want artwork that feels culturally grounded, professionally delivered and emotionally memorable. The result is work that can hold space in a workplace, support a reconciliation journey, bring people together or become a deeply personal keepsake.</p>
+      </div>
+      <div class="svc-mini-grid">
+        <div class="svc-mini-card"><h3>Cultural storytelling</h3><p>Artwork grounded in identity, Country, connection and symbolic meaning.</p></div>
+        <div class="svc-mini-card"><h3>Professional outcomes</h3><p>Designs made for real use across spaces, reports, campaigns, uniforms and gifting.</p></div>
+        <div class="svc-mini-card"><h3>Tailored process</h3><p>Each project is shaped around the client, audience, purpose and story.</p></div>
+        <div class="svc-mini-card"><h3>Lasting impact</h3><p>Work that helps people feel welcome, represented and connected.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-process">
+    <div data-r class="svc-process-inner">
+      <div>
+        <div class="svc-eyebrow"><span></span>The process</div>
+        <h2>Clear, thoughtful and easy to start</h2>
+        <p class="svc-text" style="font-size:17px;">The enquiry does not need to be perfect. Share the idea, space, date or outcome you have in mind, and LaToya can help shape the right service around it.</p>
+        <div class="svc-actions" style="margin-top:28px;">
+          <a class="svc-button primary" href="Enquiry.dc.html">Start with your idea</a>
+        </div>
+      </div>
+      <div class="svc-steps">
+        <div class="svc-step"><div class="svc-step-num">01</div><div><h3>Tell me the purpose</h3><p class="svc-text">What is the artwork for, who will see it, and what feeling should it create?</p></div></div>
+        <div class="svc-step"><div class="svc-step-num">02</div><div><h3>Shape the direction</h3><p class="svc-text">We clarify the format, story, timeline, usage and best service for the project.</p></div></div>
+        <div class="svc-step"><div class="svc-step-num">03</div><div><h3>Create the artwork</h3><p class="svc-text">LaToya develops the painting, design, workshop or custom piece with care and detail.</p></div></div>
+        <div class="svc-step"><div class="svc-step-num">04</div><div><h3>Bring it to life</h3><p class="svc-text">The finished artwork is ready for your space, launch, campaign, event or gift.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="svc-wrap svc-section">
+    <div data-r class="svc-section-head">
+      <div>
+        <div class="svc-eyebrow"><span></span>Who it is for</div>
+        <h2>Built for clients who want artwork with purpose</h2>
+      </div>
+      <p>Kalari Art works with clients who value cultural story, strong visual identity and artwork that can do more than decorate.</p>
+    </div>
+    <div data-r class="svc-fit-grid">
+      <div class="svc-fit"><h3>Government</h3><p class="svc-text">RAP artwork, department commissions, public programs and significant date campaigns.</p></div>
+      <div class="svc-fit"><h3>Corporate</h3><p class="svc-text">Branding artwork, staff engagement, office pieces, uniforms, events and gifts.</p></div>
+      <div class="svc-fit"><h3>Community</h3><p class="svc-text">Health services, schools, workshops, events, shared spaces and community-led projects.</p></div>
+      <div class="svc-fit"><h3>Personal</h3><p class="svc-text">Custom canvas paintings, personalised gifts, nursery pieces and wearable art.</p></div>
+    </div>
+  </section>
+
+  <section class="svc-cta">
+    <div data-r class="svc-cta-inner">
+      <div>
+        <div style="font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:#C8893B; font-weight:700; margin-bottom:20px;">Ready to commission something meaningful?</div>
+        <h2>Tell LaToya what you want the artwork to do</h2>
+        <p>Whether you need a premium commission, RAP artwork, a workshop, a public space design or a personal piece, the best place to begin is a simple enquiry.</p>
+        <div class="svc-actions">
+          <a href="Enquiry.dc.html" class="svc-button light">Start an enquiry</a>
+          <a href="Works.dc.html" class="svc-button" style="border:1px solid #F7EFE2; color:#F7EFE2;">See past projects</a>
+        </div>
+      </div>
+      <div class="svc-cta-panel">
+        <div class="svc-cta-row"><span>01</span><div><h3>Share the purpose</h3><p>What the artwork needs to represent, where it will be used and who it needs to connect with.</p></div></div>
+        <div class="svc-cta-row"><span>02</span><div><h3>Shape the right format</h3><p>Canvas, digital design, workshop, public space outcome or a complete campaign artwork suite.</p></div></div>
+        <div class="svc-cta-row"><span>03</span><div><h3>Create with meaning</h3><p>A premium cultural artwork outcome created with care, story and practical use in mind.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#1E1810; color:#cdbfa9; padding:74px 48px 48px;">
+    <div style="max-width:1440px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:40px; padding-bottom:50px; border-bottom:1px solid #352a1d;">
+        <div>
+          <img src="uploads/Kalari%20Art%20Logo%20nav.png" alt="Kalari Art" style="width:190px; height:auto; display:block; margin-bottom:18px;">
+          <p style="font-size:14px; line-height:1.65; color:#9c8d76; max-width:300px; margin:0;">Contemporary Aboriginal art by LaToya Kennedy. Ngunnawal &amp; Wiradjuri. Wollongong, NSW.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:18px; font-size:13px;">
+            <a href="https://www.facebook.com/KalariArt/" target="_blank" rel="noopener" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">Facebook</a>
+            <a href="https://www.instagram.com/kalari.art" target="_blank" rel="noopener" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">Instagram</a>
+            <a href="https://www.linkedin.com/in/latoya-kennedy-9a42bb253" target="_blank" rel="noopener" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">LinkedIn</a>
+          </div>
+        </div>
+        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Explore</div>Projects<br>About<br>Services<br>Workshops</div>
+        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">More</div>Giving back<br>Commissions<br>Sneakers<br>Heels<br>Boots<br>Nursery<br>Personalised gifts<br>Contact</div>
+        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Registrations</div>Supply Nation Certified<br>Indigenous Art Code<br>Buy NSW<br>AusTender<br>VendorPanel</div>
+      </div>
+      <div style="display:flex; justify-content:space-between; padding-top:26px; font-size:12px; color:#7e7158; flex-wrap:wrap; gap:10px;"><span>© 2026 Kalari Art · All rights reserved</span><span>Website Built by <a href="https://www.rastrick.com.au" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px;">RASTRICK. MADE</a></span><span>Always was, always will be Aboriginal land.</span></div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

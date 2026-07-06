@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background:#F3EBDD; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  img { display: block; }
+  @keyframes kaMarq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes kaIn { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: none; } }
+  [data-r] { opacity: 1; animation: kaIn both linear; animation-timeline: view(); animation-range: entry 2% cover 22%; }
+  @supports not (animation-timeline: view()) { [data-r] { opacity: 1 !important; animation: none !important; } }
+  @media (prefers-reduced-motion: reduce) { [data-r] { opacity: 1 !important; animation: none !important; } }
+  .about-wrap { max-width:1440px; margin:0 auto; padding-left:48px; padding-right:48px; }
+  .about-eyebrow { display:flex; align-items:center; gap:16px; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#B0512C; font-weight:700; margin-bottom:22px; }
+  .about-eyebrow span { width:46px; height:1px; background:#B0512C; }
+  .about-hero { padding-top:78px; padding-bottom:88px; display:grid; grid-template-columns:1.05fr .95fr; gap:62px; align-items:center; }
+  .about-hero h1 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:84px; line-height:.96; letter-spacing:-.02em; margin:0 0 24px; }
+  .about-lede { font-size:18px; line-height:1.72; color:#5e5142; max-width:570px; margin:0; }
+  .about-actions { display:flex; gap:14px; flex-wrap:wrap; margin-top:34px; }
+  .about-button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:14px 28px; border-radius:30px; text-decoration:none; font-size:14px; font-weight:700; transition:transform .25s, background .25s, color .25s; }
+  .about-button:hover { transform:translateY(-3px); }
+  .about-button.primary { background:#221C15; color:#F3EBDD; }
+  .about-button.secondary { border:1px solid #B0512C; color:#B0512C; }
+  .about-portrait { background:#ECE1CE; padding:18px; border-radius:4px; box-shadow:0 36px 74px -48px rgba(34,28,21,.55); }
+  .about-portrait-frame { overflow:hidden; aspect-ratio:4/5; background:#dccdb0; }
+  .about-portrait-frame img, .about-image img { width:100%; height:100%; object-fit:cover; transition:transform 1.1s cubic-bezier(.2,.7,.2,1); }
+  .about-portrait:hover img, .about-image:hover img { transform:scale(1.04); }
+  .about-caption { display:flex; justify-content:space-between; gap:18px; align-items:end; padding:20px 6px 4px; }
+  .about-kicker { font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#B0512C; font-weight:700; margin-bottom:8px; }
+  .about-caption h2, .about-section h2, .about-card h3, .about-proof h3, .about-step h3, .about-cta h2 { font-family:'Cormorant Garamond',serif; font-weight:500; margin:0; }
+  .about-caption h2 { font-size:34px; }
+  .about-meta { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#9a8c79; white-space:nowrap; }
+  .about-text { font-size:16px; line-height:1.68; color:#6b5944; margin:0; }
+  .about-story { padding-top:24px; padding-bottom:102px; }
+  .about-story-grid { display:grid; grid-template-columns:.78fr 1.22fr; gap:58px; align-items:start; border-top:1px solid #D7C8AE; padding-top:54px; }
+  .about-story h2, .about-section h2 { font-size:52px; line-height:1.04; letter-spacing:-.01em; }
+  .about-country-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:18px; }
+  .about-card { background:#ECE1CE; padding:26px; border-radius:4px; }
+  .about-card h3 { font-size:32px; color:#B0512C; margin-bottom:8px; }
+  .about-dark { background:#1E1810; color:#F1E7D6; padding:110px 48px; }
+  .about-dark-inner { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.1fr .9fr; gap:64px; align-items:start; }
+  .about-dark-quote { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:50px; line-height:1.2; margin:0; }
+  .about-dark p { color:#cdbfa9; }
+  .about-section { padding-top:100px; padding-bottom:104px; }
+  .about-section-head { display:flex; justify-content:space-between; align-items:end; gap:36px; flex-wrap:wrap; margin-bottom:48px; }
+  .about-section-head p { max-width:480px; }
+  .about-services { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+  .about-proof-grid { display:grid; grid-template-columns:1fr 1fr; gap:34px; align-items:center; margin-top:64px; }
+  .about-image { overflow:hidden; aspect-ratio:4/3; background:#dccdb0; }
+  .about-proof-list { display:grid; gap:18px; }
+  .about-proof { border-top:1px solid #D7C8AE; padding-top:20px; }
+  .about-proof h3 { font-size:31px; margin-bottom:8px; }
+  .about-process { background:#ECE1CE; border-top:1px solid #E0D3BC; border-bottom:1px solid #E0D3BC; padding:96px 48px; }
+  .about-process-inner { max-width:1440px; margin:0 auto; display:grid; grid-template-columns:.86fr 1.14fr; gap:58px; align-items:start; }
+  .about-step-list { display:grid; gap:0; border-top:1px solid #D7C8AE; }
+  .about-step { display:grid; grid-template-columns:58px 1fr; gap:20px; padding:24px 0; border-bottom:1px solid #D7C8AE; }
+  .about-step-num { font-family:'Cormorant Garamond',serif; font-size:28px; color:#B0512C; }
+  .about-step h3 { font-size:31px; margin-bottom:8px; }
+  .about-values { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
+  .about-cta { background:#221C15; color:#F7EFE2; padding:98px 48px; position:relative; overflow:hidden; border-top:1px solid #3d3022; }
+  .about-cta::before { content:""; position:absolute; inset:0; background:linear-gradient(135deg, rgba(176,81,44,.28), transparent 42%), linear-gradient(180deg, rgba(47,111,100,.16), transparent 55%); pointer-events:none; }
+  .about-cta-inner { position:relative; max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.05fr .95fr; gap:42px; align-items:center; }
+  .about-cta h2 { font-size:56px; line-height:1.04; margin-bottom:22px; }
+  .about-cta p { font-size:17px; line-height:1.65; color:#cdbfa9; max-width:600px; margin:0 0 32px; }
+  .about-cta-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
+  .about-cta-card { background:#2a2118; border:1px solid rgba(200,137,59,.28); border-radius:8px; padding:24px; }
+  .about-cta-card h3 { font-family:'Cormorant Garamond',serif; font-size:29px; font-weight:500; margin:0 0 10px; }
+  .about-cta-card p { font-size:14.5px; line-height:1.55; margin:0; }
+  @media (max-width: 1080px) {
+    .about-hero, .about-story-grid, .about-dark-inner, .about-proof-grid, .about-process-inner, .about-cta-inner { grid-template-columns:1fr; }
+    .about-services, .about-values { grid-template-columns:repeat(2,1fr); }
+    .about-country-grid { grid-template-columns:1fr; }
+  }
+  @media (max-width: 700px) {
+    nav { padding-left:24px !important; padding-right:24px !important; }
+    .about-wrap, .about-dark, .about-section, .about-process, .about-cta { padding-left:24px; padding-right:24px; }
+    .about-hero h1 { font-size:56px; }
+    .about-story h2, .about-section h2, .about-dark-quote, .about-cta h2 { font-size:40px; }
+    .about-services, .about-values { grid-template-columns:1fr; }
+    .about-cta-grid { grid-template-columns:1fr; }
+    .about-actions { flex-direction:column; }
+    .about-button { width:100%; }
+    .about-caption { display:block; }
+    .about-meta { white-space:normal; margin-top:8px; }
+  }
+</style>
+</helmet>
+
+<div style="font-family:'Hanken Grotesk',sans-serif; color:#221C15; background:#F3EBDD; overflow-x:hidden;">
+
+  <!-- ticker -->
+  <div style="background:#221C15; color:#E9DECB; overflow:hidden; white-space:nowrap; padding:9px 0; font-size:12px; letter-spacing:.22em; text-transform:uppercase;">
+    <div style="display:inline-flex; width:max-content; animation:kaMarq 34s linear infinite;">
+      <span style="padding-right:46px;">LaToya Kennedy</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Ngunnawal &amp; Wiradjuri</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Story · Country · Connection</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Illawarra, NSW</span><span style="padding-right:46px; color:#C8893B;">✦</span>
+      <span style="padding-right:46px;">LaToya Kennedy</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Ngunnawal &amp; Wiradjuri</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Story · Country · Connection</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Illawarra, NSW</span><span style="padding-right:46px; color:#C8893B;">✦</span>
+    </div>
+  </div>
+
+  <!-- nav -->
+  <nav style="position:sticky; top:14px; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:18px; max-width:1440px; margin:14px auto 0; padding:12px 18px 12px 22px; background:rgba(243,235,221,.86); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border:1px solid rgba(34,28,21,.12); border-radius:999px; box-shadow:0 18px 46px -34px rgba(34,28,21,.75); flex-wrap:wrap;">
+    <a href="Kalari%20Art%20-%20Home.dc.html" style="display:flex; align-items:center; color:#221C15; text-decoration:none;">
+      <img src="uploads/Kalari%20Art%20Logo%20nav%20black.png" alt="Kalari Art" style="width:148px; height:auto; display:block; filter:drop-shadow(0 1px 8px rgba(246,238,223,.65));">
+    </a>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; align-items:center; font-size:15px; letter-spacing:.045em; color:#221C15; text-shadow:0 1px 10px rgba(246,238,223,.78); margin-left:auto;">
+      <a href="Works.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Projects</a>
+      <a href="#" style="color:#B0512C; text-decoration:none; padding:11px 18px; border-radius:999px; background:rgba(176,81,44,.12);">About</a>
+      <a href="Services.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Services</a>
+      <a href="Made%20to%20Order.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Made to Order</a>
+      <a href="Giving.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Giving</a>
+      <a href="Workshops.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Workshops</a>
+    </div>
+    <a href="Enquiry.dc.html" style="font-size:13px; letter-spacing:.04em; text-decoration:none; color:#F3EBDD; background:#221C15; border:1px solid #221C15; padding:12px 22px; border-radius:30px; transition:all .25s; white-space:nowrap; box-shadow:0 12px 28px -18px rgba(34,28,21,.8);" style-hover="background:#B0512C; border-color:#B0512C; color:#F3EBDD; transform:translateY(-1px);">Start a Project</a>
+  </nav>
+
+  <header class="about-wrap about-hero">
+    <div data-r>
+      <div class="about-eyebrow"><span></span>The artist</div>
+      <h1>LaToya Kennedy</h1>
+      <p style="font-size:13px; letter-spacing:.16em; text-transform:uppercase; color:#9a8c79; margin:0 0 28px;">Ngunnawal &amp; Wiradjuri · Dharawal Country, Wollongong NSW</p>
+      <p class="about-lede">Yuma/Yaama! LaToya creates contemporary Aboriginal art that brings culture, story and connection into workplaces, community spaces, public projects and personal commissions.</p>
+      <div class="about-actions">
+        <a class="about-button primary" href="Enquiry.dc.html">Work with LaToya</a>
+        <a class="about-button secondary" href="Works.dc.html">View projects</a>
+      </div>
+    </div>
+    <figure data-r class="about-portrait">
+      <div class="about-portrait-frame">
+        <img src="uploads/KA6.webp" alt="Artist LaToya Kennedy">
+      </div>
+      <figcaption class="about-caption">
+        <div>
+          <div class="about-kicker">Ngunnawal &amp; Wiradjuri</div>
+          <h2>Story held with care</h2>
+        </div>
+        <div class="about-meta">Kalari Art</div>
+      </figcaption>
+    </figure>
+  </header>
+
+  <section class="about-wrap about-story">
+    <div data-r class="about-story-grid">
+      <div>
+        <div class="about-eyebrow"><span></span>About me</div>
+        <h2>Culture, Country and family shape every piece</h2>
+      </div>
+      <div style="display:grid; gap:22px;">
+        <p class="about-text" style="font-size:18px;">My name is LaToya and I’m a proud Ngunnawal and Wiradjuri woman. My grandmother is Ngunnawal from Yass, and my grandfather is Wiradjuri from Cowra, both small country towns in Central West NSW.</p>
+        <p class="about-text" style="font-size:18px;">I was born on Wiradjuri Country in Cowra, grew up on Ngunnawal Country in Canberra, and I now reside on beautiful Dharawal Country in Wollongong NSW. My connections extend across Wiradjuri, Ngunnawal and Dharawal Countries.</p>
+        <div class="about-country-grid">
+          <div class="about-card"><h3>Wiradjuri</h3><p class="about-text">Born on Country in Cowra, with family connection through my grandfather.</p></div>
+          <div class="about-card"><h3>Ngunnawal</h3><p class="about-text">Raised on Ngunnawal Country, with family connection through my grandmother from Yass.</p></div>
+          <div class="about-card"><h3>Dharawal</h3><p class="about-text">Now living and creating on Dharawal Country in Wollongong.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-dark">
+    <div data-r class="about-dark-inner">
+      <div>
+        <div class="about-eyebrow" style="color:#C8893B;"><span style="background:#C8893B;"></span>Why the work matters</div>
+        <p class="about-dark-quote">Art becomes a way to share culture, build connection and make a place feel like it holds story.</p>
+      </div>
+      <div style="display:grid; gap:20px;">
+        <p class="about-text">My work is deeply rooted in culture, storytelling and connection. Through art, I honour the relationships I hold with my Country, land and community, and express the respect I carry for our traditions, knowledge and heritage.</p>
+        <p class="about-text">Each piece is a reflection of my continuing cultural journey: an exploration of identity, resilience and belonging. I draw inspiration from my surroundings, recreating elements of Country and telling stories through symbolic representation.</p>
+        <p class="about-text">I also draw inspiration from my ancestors who have walked this land before us, and who have managed and maintained this land for tens of thousands of years.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-wrap about-section">
+    <div data-r class="about-section-head">
+      <div>
+        <div class="about-eyebrow"><span></span>What I create</div>
+        <h2>Artwork for organisations, community and personal stories</h2>
+      </div>
+      <p class="about-text">LaToya works across original commissions, digital designs, workshops and custom pieces, shaping each project around meaning, audience and place.</p>
+    </div>
+    <div data-r class="about-services">
+      <div class="about-card"><div class="about-kicker">01</div><h3>Commissions</h3><p class="about-text">Custom paintings and artwork developed around story, space and purpose.</p></div>
+      <div class="about-card"><div class="about-kicker">02</div><h3>RAP &amp; branding</h3><p class="about-text">Reconciliation Action Plan artwork, organisational branding and designs for significant Indigenous dates.</p></div>
+      <div class="about-card"><div class="about-kicker">03</div><h3>Workshops</h3><p class="about-text">Cultural art workshops that invite teams and communities to learn through symbol, story and hands-on making.</p></div>
+      <div class="about-card"><div class="about-kicker">04</div><h3>Custom pieces</h3><p class="about-text">Personalised shoes, handbags, name signs, clocks, platter boards and keepsakes.</p></div>
+    </div>
+
+    <div data-r class="about-proof-grid">
+      <div class="about-image"><img src="uploads/KA10.webp" alt="Birthing Journey mural for Canberra Health Services"></div>
+      <div class="about-proof-list">
+        <div>
+          <div class="about-eyebrow"><span></span>What I've done</div>
+          <h2 style="font-size:46px;">Experience you can build a project around</h2>
+        </div>
+        <div class="about-proof"><h3>Organisational RAP artwork</h3><p class="about-text">Commission artworks created for Reconciliation Action Plan designs, helping organisations carry story through their reconciliation work.</p></div>
+        <div class="about-proof"><h3>NAIDOC &amp; significant dates</h3><p class="about-text">Artwork for organisational branding and marketing connected to NAIDOC and other significant Indigenous dates.</p></div>
+        <div class="about-proof"><h3>Public health spaces</h3><p class="about-text">Two designs created and used as vinyl murals in the Maternity Unit at The Canberra Hospital.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-process">
+    <div data-r class="about-process-inner">
+      <div>
+        <div class="about-eyebrow"><span></span>Working together</div>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:50px; line-height:1.04; margin:0 0 22px;">A thoughtful process from story to finished artwork</h2>
+        <p class="about-text" style="font-size:17px;">Whether the artwork is for a RAP, public space, workshop, campaign or personal commission, the process begins with listening.</p>
+      </div>
+      <div class="about-step-list">
+        <div class="about-step"><div class="about-step-num">01</div><div><h3>Listen</h3><p class="about-text">Understand the purpose, audience, story, timeline and where the artwork will live.</p></div></div>
+        <div class="about-step"><div class="about-step-num">02</div><div><h3>Shape</h3><p class="about-text">Develop a direction that feels meaningful, culturally considered and suited to the project.</p></div></div>
+        <div class="about-step"><div class="about-step-num">03</div><div><h3>Create</h3><p class="about-text">Paint or design the artwork with care, detail and respect for the story it carries.</p></div></div>
+        <div class="about-step"><div class="about-step-num">04</div><div><h3>Carry forward</h3><p class="about-text">Support the artwork as it becomes part of a space, brand, campaign, workshop or keepsake.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about-wrap about-section">
+    <div data-r class="about-section-head">
+      <div>
+        <div class="about-eyebrow"><span></span>Values</div>
+        <h2>What clients feel in the work</h2>
+      </div>
+      <p class="about-text">The work is visually strong, but the deeper value is the way it helps people connect with story, Country and each other.</p>
+    </div>
+    <div data-r class="about-values">
+      <div class="about-card"><h3>Culture</h3><p class="about-text">Story and symbol shared with pride, care and respect.</p></div>
+      <div class="about-card"><h3>Connection</h3><p class="about-text">Artwork that links people, place, family and community.</p></div>
+      <div class="about-card"><h3>Belonging</h3><p class="about-text">Pieces that help spaces feel welcoming and meaningful.</p></div>
+      <div class="about-card"><h3>Purpose</h3><p class="about-text">Creative outcomes made for real use, not just decoration.</p></div>
+    </div>
+  </section>
+
+  <section class="about-cta">
+    <div data-r class="about-cta-inner">
+      <div>
+        <div style="font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:#C8893B; font-weight:700; margin-bottom:20px;">Work with LaToya</div>
+        <h2>Bring story into your next project</h2>
+        <p>Commissioned paintings, RAP artwork, murals, workshops, digital designs and personalised pieces created with meaning, culture and care.</p>
+        <a href="Enquiry.dc.html" class="about-button" style="background:#F7EFE2; color:#221C15;">Start an enquiry</a>
+      </div>
+      <div class="about-cta-grid">
+        <div class="about-cta-card"><h3>For organisations</h3><p>Artwork that strengthens spaces, campaigns, RAPs and community-facing projects.</p></div>
+        <div class="about-cta-card"><h3>For community</h3><p>Workshops and shared creative experiences that invite people into story and connection.</p></div>
+        <div class="about-cta-card"><h3>For personal pieces</h3><p>Custom works made for family, milestones, gifts and spaces with deep meaning.</p></div>
+        <div class="about-cta-card"><h3>For culture-led design</h3><p>Digital and painted outcomes shaped with respect, purpose and practical use in mind.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer style="background:#1E1810; color:#cdbfa9; padding:74px 48px 48px;">
+    <div style="max-width:1440px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:40px; padding-bottom:50px; border-bottom:1px solid #352a1d;">
+        <div>
+          <img src="uploads/Kalari%20Art%20Logo%20nav.png" alt="Kalari Art" style="width:190px; height:auto; display:block; margin-bottom:18px;">
+          <p style="font-size:14px; line-height:1.65; color:#9c8d76; max-width:300px; margin:0;">Contemporary Aboriginal art by LaToya Kennedy. Ngunnawal &amp; Wiradjuri. Wollongong, NSW.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:18px; font-size:13px;">
+            <a href="https://www.facebook.com/KalariArt/" target="_blank" rel="noopener" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">Facebook</a>
+            <a href="https://www.instagram.com/kalari.art" target="_blank" rel="noopener" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">Instagram</a>
+            <a href="https://www.linkedin.com/in/latoya-kennedy-9a42bb253" target="_blank" rel="noopener" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">LinkedIn</a>
+          </div>
+        </div>
+        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Explore</div>Projects<br>About<br>Services<br>Workshops</div>
+        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">More</div>Giving back<br>Commissions<br>Sneakers<br>Heels<br>Boots<br>Nursery<br>Personalised gifts<br>Contact</div>
+        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Registrations</div>Supply Nation Certified<br>Indigenous Art Code<br>Buy NSW<br>AusTender<br>VendorPanel</div>
+      </div>
+      <div style="display:flex; justify-content:space-between; padding-top:26px; font-size:12px; color:#7e7158; flex-wrap:wrap; gap:10px;"><span>© 2026 Kalari Art · All rights reserved</span><span>Website Built by <a href="https://www.rastrick.com.au" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px;">RASTRICK. MADE</a></span><span>Always was, always will be Aboriginal land.</span></div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>

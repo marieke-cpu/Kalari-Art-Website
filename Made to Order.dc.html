@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; background:#F3EBDD; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+  img { display: block; }
+  @keyframes kaMarq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes kaIn { from { opacity: 0; transform: translateY(34px); } to { opacity: 1; transform: none; } }
+  [data-r] { opacity: 1; animation: kaIn both linear; animation-timeline: view(); animation-range: entry 2% cover 22%; }
+  @supports not (animation-timeline: view()) { [data-r] { opacity: 1 !important; animation: none !important; } }
+  @media (prefers-reduced-motion: reduce) { [data-r] { opacity: 1 !important; animation: none !important; } }
+  .mo-wrap { max-width:1440px; margin:0 auto; padding-left:48px; padding-right:48px; }
+  .mo-eyebrow { display:flex; align-items:center; gap:16px; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#B0512C; font-weight:700; margin-bottom:22px; }
+  .mo-eyebrow span { width:46px; height:1px; background:#B0512C; }
+  .mo-hero { padding-top:78px; padding-bottom:78px; display:grid; grid-template-columns:1.02fr .98fr; gap:58px; align-items:center; }
+  .mo-hero h1 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:82px; line-height:.96; letter-spacing:-.02em; margin:0 0 26px; }
+  .mo-lede { font-size:18px; line-height:1.72; color:#5e5142; max-width:560px; margin:0; }
+  .mo-actions { display:flex; gap:14px; flex-wrap:wrap; margin-top:34px; }
+  .mo-button { display:inline-flex; align-items:center; justify-content:center; min-height:48px; padding:14px 28px; border-radius:30px; text-decoration:none; font-size:14px; font-weight:700; transition:transform .25s, background .25s, color .25s; }
+  .mo-button:hover { transform:translateY(-3px); }
+  .mo-button.primary { background:#221C15; color:#F3EBDD; }
+  .mo-button.secondary { border:1px solid #B0512C; color:#B0512C; }
+  .mo-feature { background:#ECE1CE; padding:18px; border-radius:4px; box-shadow:0 36px 74px -48px rgba(34,28,21,.55); }
+  .mo-feature image-slot, .mo-product image-slot { width:100%; }
+  .mo-feature-caption { display:flex; justify-content:space-between; gap:18px; align-items:end; padding:20px 6px 4px; }
+  .mo-kicker { font-size:11px; letter-spacing:.16em; text-transform:uppercase; color:#B0512C; font-weight:700; margin-bottom:8px; }
+  .mo-feature-caption h2, .mo-product h3, .mo-section h2, .mo-cta h2 { font-family:'Cormorant Garamond',serif; font-weight:500; margin:0; }
+  .mo-feature-caption h2 { font-size:34px; }
+  .mo-meta { font-size:11px; letter-spacing:.1em; text-transform:uppercase; color:#9a8c79; white-space:nowrap; }
+  .mo-text { font-size:15.5px; line-height:1.65; color:#6b5944; margin:0; }
+  .mo-section { padding-top:92px; padding-bottom:96px; }
+  .mo-section-head { display:flex; justify-content:space-between; align-items:end; gap:34px; flex-wrap:wrap; margin-bottom:42px; }
+  .mo-section h2 { font-size:50px; line-height:1.04; letter-spacing:-.01em; }
+  .mo-section-head p { max-width:460px; }
+  .mo-products { display:grid; grid-template-columns:repeat(5,1fr); gap:22px; }
+  .mo-product { background:#ECE1CE; border-radius:4px; overflow:hidden; transition:transform .28s, box-shadow .28s; }
+  .mo-product:hover { transform:translateY(-5px); box-shadow:0 24px 45px -34px rgba(34,28,21,.55); }
+  .mo-product-copy { padding:22px; }
+  .mo-product h3 { font-size:28px; margin-bottom:8px; }
+  .mo-value-band { background:#1E1810; color:#F1E7D6; padding:104px 48px; }
+  .mo-value-inner { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.05fr .95fr; gap:64px; align-items:start; }
+  .mo-value-title { font-family:'Cormorant Garamond',serif; font-weight:400; font-size:48px; line-height:1.22; margin:0; }
+  .mo-value-grid { display:grid; gap:22px; }
+  .mo-value-item { border-top:1px solid #473726; padding-top:22px; }
+  .mo-value-item h3 { font-family:'Cormorant Garamond',serif; font-weight:500; color:#F1E7D6; font-size:30px; margin:0 0 9px; }
+  .mo-value-item p { color:#cdbfa9; }
+  .mo-process { background:#ECE1CE; border-top:1px solid #E0D3BC; border-bottom:1px solid #E0D3BC; padding:92px 48px; }
+  .mo-process-inner { max-width:1440px; margin:0 auto; display:grid; grid-template-columns:.85fr 1.15fr; gap:58px; align-items:start; }
+  .mo-process-list { display:grid; gap:0; border-top:1px solid #D7C8AE; }
+  .mo-step { display:grid; grid-template-columns:58px 1fr; gap:20px; padding:24px 0; border-bottom:1px solid #D7C8AE; }
+  .mo-step-num { font-family:'Cormorant Garamond',serif; font-size:28px; color:#B0512C; }
+  .mo-step h3 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:31px; margin:0 0 8px; }
+  .mo-gift-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .mo-gift { background:#ECE1CE; border-radius:4px; padding:30px; min-height:190px; }
+  .mo-gift h3 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:32px; margin:0 0 12px; }
+  .mo-cta { background:#221C15; color:#F7EFE2; padding:96px 48px; position:relative; overflow:hidden; border-top:1px solid #3d3022; }
+  .mo-cta::before { content:""; position:absolute; inset:0; background:linear-gradient(135deg, rgba(176,81,44,.28), transparent 42%), linear-gradient(180deg, rgba(47,111,100,.16), transparent 55%); pointer-events:none; }
+  .mo-cta-inner { position:relative; max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1fr .9fr; gap:42px; align-items:center; }
+  .mo-cta h2 { font-size:56px; line-height:1.04; margin-bottom:22px; }
+  .mo-cta p { font-size:17px; line-height:1.65; color:#cdbfa9; max-width:640px; margin:0 0 32px; }
+  .mo-mini-note { margin-top:20px; font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:#C8893B; }
+  .mo-cta-list { display:grid; gap:14px; }
+  .mo-cta-item { background:#2a2118; border:1px solid rgba(200,137,59,.28); border-radius:8px; padding:22px 24px; }
+  .mo-cta-item h3 { font-family:'Cormorant Garamond',serif; font-size:29px; font-weight:500; margin:0 0 8px; }
+  .mo-cta-item p { font-size:14.5px; line-height:1.55; margin:0; }
+  @media (max-width: 1100px) {
+    .mo-hero, .mo-value-inner, .mo-process-inner, .mo-cta-inner { grid-template-columns:1fr; }
+    .mo-products { grid-template-columns:repeat(2,1fr); }
+    .mo-gift-grid { grid-template-columns:1fr; }
+  }
+  @media (max-width: 700px) {
+    nav { padding-left:24px !important; padding-right:24px !important; }
+    .mo-wrap, .mo-section, .mo-value-band, .mo-process, .mo-cta { padding-left:24px; padding-right:24px; }
+    .mo-hero h1 { font-size:54px; }
+    .mo-section h2, .mo-value-title, .mo-cta h2 { font-size:40px; }
+    .mo-products { grid-template-columns:1fr; }
+    .mo-actions { flex-direction:column; }
+    .mo-button { width:100%; }
+    .mo-feature-caption { display:block; }
+    .mo-meta { white-space:normal; margin-top:8px; }
+  }
+</style>
+<script src="image-slot.js"></script>
+</helmet>
+
+<div style="font-family:'Hanken Grotesk',sans-serif; color:#221C15; background:#F3EBDD; overflow-x:hidden;">
+  <div style="background:#221C15; color:#E9DECB; overflow:hidden; white-space:nowrap; padding:9px 0; font-size:12px; letter-spacing:.22em; text-transform:uppercase;">
+    <div style="display:inline-flex; width:max-content; animation:kaMarq 34s linear infinite;">
+      <span style="padding-right:46px;">Made to order</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Hand-painted &amp; one-of-a-kind</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Angelus leather paints</span><span style="padding-right:46px; color:#C8893B;">✦</span>
+      <span style="padding-right:46px;">Made to order</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Hand-painted &amp; one-of-a-kind</span><span style="padding-right:46px; color:#C8893B;">✦</span><span style="padding-right:46px;">Angelus leather paints</span><span style="padding-right:46px; color:#C8893B;">✦</span>
+    </div>
+  </div>
+  <nav style="position:sticky; top:14px; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:18px; max-width:1440px; margin:14px auto 0; padding:12px 18px 12px 22px; background:rgba(243,235,221,.86); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border:1px solid rgba(34,28,21,.12); border-radius:999px; box-shadow:0 18px 46px -34px rgba(34,28,21,.75); flex-wrap:wrap;">
+    <a href="Kalari%20Art%20-%20Home.dc.html" style="display:flex; align-items:center; color:#221C15; text-decoration:none;"><img src="uploads/Kalari%20Art%20Logo%20nav%20black.png" alt="Kalari Art" style="width:148px; height:auto; display:block; filter:drop-shadow(0 1px 8px rgba(246,238,223,.65));"></a>
+    <div style="display:flex; gap:10px; flex-wrap:wrap; justify-content:center; align-items:center; font-size:15px; letter-spacing:.045em; color:#221C15; text-shadow:0 1px 10px rgba(246,238,223,.78); margin-left:auto;">
+      <a href="Works.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Projects</a>
+      <a href="About.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">About</a>
+      <a href="Services.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Services</a>
+      <a href="#" style="color:#B0512C; text-decoration:none; padding:11px 18px; border-radius:999px; background:rgba(176,81,44,.12);">Made to Order</a>
+      <a href="Giving.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Giving</a>
+      <a href="Workshops.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Workshops</a>
+    </div>
+    <a href="Enquiry.dc.html" style="font-size:13px; text-decoration:none; color:#F3EBDD; background:#221C15; border:1px solid #221C15; padding:12px 22px; border-radius:30px; transition:all .25s; white-space:nowrap; box-shadow:0 12px 28px -18px rgba(34,28,21,.8);" style-hover="background:#B0512C; border-color:#B0512C; color:#F3EBDD; transform:translateY(-1px);">Start a Project</a>
+  </nav>
+
+  <header class="mo-wrap mo-hero">
+    <div data-r>
+      <div class="mo-eyebrow"><span></span>Made to order</div>
+      <h1>Wear it, gift it, keep it <em style="font-style:italic; color:#B0512C;">forever</em></h1>
+      <p class="mo-lede">Hand-painted pieces created just for you, with story, colour and meaning built into every detail. From statement sneakers and heels to nursery pieces and personal gifts, each item is made to feel special before it is even unwrapped.</p>
+      <div class="mo-actions">
+        <a class="mo-button primary" href="mailto:kalariart@outlook.com.au?subject=Made%20to%20Order%20enquiry">Start a custom order</a>
+        <a class="mo-button secondary" href="#made-gallery">View options</a>
+      </div>
+    </div>
+    <div data-r class="mo-feature">
+      <image-slot id="mo-hero-feature" src="Custom3.png" shape="rounded" radius="10" placeholder="Drop a featured custom piece" style="display:block; width:100%; aspect-ratio:5/4; background:#dccdb0;"></image-slot>
+      <div class="mo-feature-caption">
+        <div>
+          <div class="mo-kicker">One-of-a-kind</div>
+          <h2>Custom pieces with story</h2>
+        </div>
+        <div class="mo-meta">Hand-painted to order</div>
+      </div>
+    </div>
+  </header>
+
+  <section id="made-gallery" class="mo-wrap mo-section">
+    <div data-r class="mo-section-head">
+      <div>
+        <div class="mo-eyebrow"><span></span>Choose your piece</div>
+        <h2>Made for milestones, outfits and everyday meaning</h2>
+      </div>
+      <p class="mo-text">Bring your colours, theme, story or occasion. LaToya can shape the artwork around the person, the moment and how the piece will be used.</p>
+    </div>
+    <div data-r class="mo-products">
+      <article class="mo-product">
+        <image-slot id="mo-sneakers" src="Custom3.png" shape="rounded" radius="0" placeholder="Drop a custom sneakers photo" style="display:block; width:100%; aspect-ratio:1/1; background:#dccdb0;"></image-slot>
+        <div class="mo-product-copy"><div class="mo-kicker">Wearable art</div><h3>Sneakers</h3><p class="mo-text">For birthdays, events, launches, performances or a pair no one else will ever own.</p></div>
+      </article>
+      <article class="mo-product">
+        <image-slot id="mo-heels" src="Custom2.png" shape="rounded" radius="0" placeholder="Drop a painted heels photo" style="display:block; width:100%; aspect-ratio:1/1; background:#dccdb0;"></image-slot>
+        <div class="mo-product-copy"><div class="mo-kicker">Statement pieces</div><h3>Heels</h3><p class="mo-text">Perfect for formal events, graduations, ceremonies and special occasions.</p></div>
+      </article>
+      <article class="mo-product">
+        <image-slot id="mo-boots" src="uploads/Custom.png" shape="rounded" radius="0" placeholder="Drop a boots photo" style="display:block; width:100%; aspect-ratio:1/1; background:#dccdb0;"></image-slot>
+        <div class="mo-product-copy"><div class="mo-kicker">Bold and personal</div><h3>Boots</h3><p class="mo-text">A strong custom option for anyone wanting art that moves with them.</p></div>
+      </article>
+      <article class="mo-product">
+        <image-slot id="mo-furniture" src="Custom4.png" shape="rounded" radius="0" placeholder="Drop a nursery piece photo" style="display:block; width:100%; aspect-ratio:1/1; background:#dccdb0;"></image-slot>
+        <div class="mo-product-copy"><div class="mo-kicker">Keepsake spaces</div><h3>Nursery</h3><p class="mo-text">Meaningful hand-painted pieces for babies, children and family rooms.</p></div>
+      </article>
+      <article class="mo-product">
+        <image-slot id="mo-gifts" src="Custom5.png" shape="rounded" radius="0" placeholder="Drop a personalised gift photo" style="display:block; width:100%; aspect-ratio:1/1; background:#dccdb0;"></image-slot>
+        <div class="mo-product-copy"><div class="mo-kicker">Personal gifting</div><h3>Personalised gifts</h3><p class="mo-text">Created for the person who is hard to buy for, but easy to celebrate.</p></div>
+      </article>
+    </div>
+  </section>
+
+  <section class="mo-value-band">
+    <div data-r class="mo-value-inner">
+      <div>
+        <div class="mo-eyebrow" style="color:#C8893B;"><span style="background:#C8893B;"></span>Why custom</div>
+        <p class="mo-value-title">A custom piece is not just something to own. It becomes part of a memory.</p>
+      </div>
+      <div class="mo-value-grid">
+        <div class="mo-value-item"><h3>Made around your story</h3><p class="mo-text">Colours, symbols and details can be shaped around family, Country, identity, celebration or a meaningful moment.</p></div>
+        <div class="mo-value-item"><h3>Designed to be kept</h3><p class="mo-text">Each piece is painted by hand and sealed with care, so it feels considered, finished and gift-worthy.</p></div>
+        <div class="mo-value-item"><h3>More personal than off-the-shelf</h3><p class="mo-text">Instead of buying something generic, you can give or wear something that has been created with intention.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mo-process">
+    <div data-r class="mo-process-inner">
+      <div>
+        <div class="mo-eyebrow"><span></span>How it works</div>
+        <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:50px; line-height:1.04; margin:0 0 22px;">From idea to finished piece</h2>
+        <p class="mo-text" style="font-size:17px;">A custom order is shaped with you, so the final piece feels personal, polished and ready for the moment you have in mind.</p>
+      </div>
+      <div class="mo-process-list">
+        <div class="mo-step"><div class="mo-step-num">01</div><div><h3>Tell me the occasion</h3><p class="mo-text">Share the item, deadline, person, colours, story and any inspiration you already have.</p></div></div>
+        <div class="mo-step"><div class="mo-step-num">02</div><div><h3>Shape the design</h3><p class="mo-text">LaToya works through the visual direction so the artwork suits the object and the meaning behind it.</p></div></div>
+        <div class="mo-step"><div class="mo-step-num">03</div><div><h3>Hand-painted detail</h3><p class="mo-text">The piece is painted by hand using quality materials, with time given to detail and finish.</p></div></div>
+        <div class="mo-step"><div class="mo-step-num">04</div><div><h3>Ready to gift or wear</h3><p class="mo-text">Your finished piece is prepared so it arrives feeling considered, personal and ready for its moment.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="mo-wrap mo-section">
+    <div data-r class="mo-section-head">
+      <div>
+        <div class="mo-eyebrow"><span></span>Perfect for</div>
+        <h2>Moments that deserve more than a standard gift</h2>
+      </div>
+      <p class="mo-text">Custom pieces work beautifully when you want the gift to feel emotional, useful and deeply personal.</p>
+    </div>
+    <div data-r class="mo-gift-grid">
+      <div class="mo-gift"><h3>Birthdays &amp; milestones</h3><p class="mo-text">A one-of-a-kind item for the person who already has everything, or deserves something made only for them.</p></div>
+      <div class="mo-gift"><h3>Weddings &amp; formal events</h3><p class="mo-text">Heels, boots or meaningful accessories that become part of the outfit and the story of the day.</p></div>
+      <div class="mo-gift"><h3>New babies &amp; family gifts</h3><p class="mo-text">Nursery pieces and personalised keepsakes made with family, love and connection in mind.</p></div>
+    </div>
+  </section>
+
+  <section class="mo-cta">
+    <div data-r class="mo-cta-inner">
+      <div>
+        <div style="font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:#C8893B; font-weight:700; margin-bottom:20px;">Order yours</div>
+        <h2>Have an idea already?</h2>
+        <p>Send through what you would like customised, who it is for, your preferred colours and when you need it. LaToya can let you know what is possible and help shape it into something special.</p>
+        <a href="mailto:kalariart@outlook.com.au?subject=Made%20to%20Order%20custom%20piece%20enquiry" class="mo-button" style="background:#F7EFE2; color:#221C15;">Enquire about a custom piece</a>
+        <div class="mo-mini-note">Limited custom spots available by timeline and item type</div>
+      </div>
+      <div class="mo-cta-list">
+        <div class="mo-cta-item"><h3>Wearable statement pieces</h3><p>Sneakers, heels and boots created to be seen, worn and remembered.</p></div>
+        <div class="mo-cta-item"><h3>Personalised gifts</h3><p>Pieces made around names, colours, family stories, milestones and meaningful occasions.</p></div>
+        <div class="mo-cta-item"><h3>Nursery keepsakes</h3><p>Gentle custom pieces for babies, families and rooms made with love and connection.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <footer style="background:#1E1810; color:#cdbfa9; padding:74px 48px 48px;">
+    <div style="max-width:1440px; margin:0 auto;">
+      <div style="display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:40px; padding-bottom:50px; border-bottom:1px solid #352a1d;">
+        <div>
+          <img src="uploads/Kalari%20Art%20Logo%20nav.png" alt="Kalari Art" style="width:190px; height:auto; display:block; margin-bottom:18px;">
+          <p style="font-size:14px; line-height:1.65; color:#9c8d76; max-width:300px; margin:0;">Contemporary Aboriginal art by LaToya Kennedy. Ngunnawal &amp; Wiradjuri. Wollongong, NSW.</p>
+          <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:18px; font-size:13px;">
+            <a href="https://www.facebook.com/KalariArt/" target="_blank" rel="noopener" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">Facebook</a>
+            <a href="https://www.instagram.com/kalari.art" target="_blank" rel="noopener" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">Instagram</a>
+            <a href="https://www.linkedin.com/in/latoya-kennedy-9a42bb253" target="_blank" rel="noopener" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">LinkedIn</a>
+          </div>
+        </div>
+        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Explore</div>Projects<br>About<br>Services<br>Workshops</div>
+        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">More</div>Giving back<br>Commissions<br>Sneakers<br>Heels<br>Boots<br>Nursery<br>Personalised gifts<br>Contact</div>
+        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Registrations</div>Supply Nation Certified<br>Indigenous Art Code<br>Buy NSW<br>AusTender<br>VendorPanel</div>
+      </div>
+      <div style="display:flex; justify-content:space-between; padding-top:26px; font-size:12px; color:#7e7158; flex-wrap:wrap; gap:10px;"><span>© 2026 Kalari Art · All rights reserved</span><span>Website Built by <a href="https://www.rastrick.com.au" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px;">RASTRICK. MADE</a></span><span>Always was, always will be Aboriginal land.</span></div>
+    </div>
+  </footer>
+</div>
+</x-dc>
+</body>
+</html>
