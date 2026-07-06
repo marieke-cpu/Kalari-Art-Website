@@ -1,0 +1,16 @@
+{
+  "name": "Kalari Art",
+  "short_name": "Kalari Art",
+  "description": "Contemporary Aboriginal art, commissioned artwork, cultural artwork and workshops by LaToya Kennedy.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#F3EBDD",
+  "theme_color": "#221C15",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "64x64",
+      "type": "image/svg+xml"
+    }
+  ]
+}

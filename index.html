@@ -3,23 +3,37 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="./support.js"></script>
+<title>Kalari Art | Aboriginal Art, Commissioned Artwork & Cultural Workshops</title>
+<meta name="description" content="Kalari Art creates contemporary Aboriginal art, commissioned artwork, cultural artwork, RAP artwork, workshops and Australian art services by Ngunnawal and Wiradjuri artist LaToya Kennedy.">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://kalariart.com.au/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Kalari Art">
+<meta property="og:title" content="Kalari Art | Aboriginal Art, Commissioned Artwork & Cultural Workshops">
+<meta property="og:description" content="Contemporary Aboriginal art, commissioned artwork, cultural artwork, RAP artwork and workshops by Ngunnawal and Wiradjuri artist LaToya Kennedy.">
+<meta property="og:url" content="https://kalariart.com.au/">
+<meta property="og:image" content="https://kalariart.com.au/uploads/optimized/ka1-hero.webp">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Kalari Art | Aboriginal Art, Commissioned Artwork & Cultural Workshops">
+<meta name="twitter:description" content="Contemporary Aboriginal art, commissioned artwork, cultural artwork, RAP artwork and workshops by LaToya Kennedy.">
+<meta name="twitter:image" content="https://kalariart.com.au/uploads/optimized/ka1-hero.webp">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preload" as="image" href="uploads/optimized/ka1-hero-720.webp" imagesrcset="uploads/optimized/ka1-hero-720.webp 720w, uploads/optimized/ka1-hero.webp 1100w" imagesizes="42vw" media="(min-width: 981px)" fetchpriority="high">
 </head>
 <body>
-<x-dc>
-<helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
   body { margin: 0; background:#F3EBDD; -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
   img { display: block; }
+  a:focus-visible, button:focus-visible, image-slot:focus-visible { outline:3px solid #2F6F64; outline-offset:4px; }
   @keyframes kaMarq { from { transform: translateX(0); } to { transform: translateX(-50%); } }
   @keyframes kaSpin { to { transform: rotate(360deg); } }
   @keyframes kaIn { from { opacity: 0; transform: translateY(38px); } to { opacity: 1; transform: none; } }
-  [data-r] { opacity: 1; animation: kaIn both linear; animation-timeline: view(); animation-range: entry 2% cover 24%; }
+  [data-r] { opacity: 1; animation: none; }
   .ka-page { font-family:'Hanken Grotesk',sans-serif; color:#221C15; background:#F3EBDD; overflow-x:hidden; background-image:linear-gradient(180deg,#F6EEDF 0,#F3EBDD 46%,#ECE1CE 100%); }
   .ka-nav { position:sticky; top:14px; z-index:50; display:flex; align-items:center; justify-content:space-between; gap:18px; max-width:1440px; margin:14px auto 0; padding:12px 18px 12px 22px; background:rgba(243,235,221,.86); backdrop-filter:blur(18px); -webkit-backdrop-filter:blur(18px); border:1px solid rgba(34,28,21,.12); border-radius:999px; box-shadow:0 18px 46px -34px rgba(34,28,21,.75); }
   .ka-brand { display:flex; align-items:center; color:#221C15; text-decoration:none; }
@@ -76,7 +90,7 @@
   .ka-project-index { display:flex; align-items:center; gap:16px; font-size:12px; letter-spacing:.22em; text-transform:uppercase; font-weight:700; margin-bottom:24px; }
   .ka-project-index [data-stage-num] { color:#B0512C; }
   .ka-project-index .line { width:34px; height:1px; background:#cdbfa7; }
-  .ka-project-index .label { color:#9a8c79; }
+  .ka-project-index .label { color:#655846; }
   .ka-project-title { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:56px; line-height:.98; margin:0 0 26px; letter-spacing:0; }
   .ka-project-story { font-size:18px; line-height:1.72; color:#5e5142; margin:0 0 28px; max-width:520px; }
   .ka-project-meta { font-size:12px; letter-spacing:.1em; text-transform:uppercase; color:#2F6F64; font-weight:700; }
@@ -127,7 +141,7 @@
   .ka-workshop-card h3 { font-family:'Cormorant Garamond',serif; font-size:31px; line-height:1.03; font-weight:500; margin:0 0 12px; color:#F7EFDF; }
   .ka-workshop-card p { font-size:14.5px; line-height:1.6; color:#b7a58d; margin:0; }
   .ka-workshop-card.accent { background:#B0512C; border-color:#B0512C; }
-  .ka-workshop-card.accent p { color:#f3ddca; }
+  .ka-workshop-card.accent p { color:#fff4e8; }
   .ka-video-section { position: relative; overflow: hidden; background:#1E1810; color:#F1E7D6; padding:104px 48px; border-top:1px solid #352a1d; border-bottom:1px solid #352a1d; }
   .ka-video-section::before { content:""; position:absolute; inset:0; background:linear-gradient(135deg, rgba(176,81,44,.22), transparent 36%), linear-gradient(180deg, rgba(47,111,100,.16), transparent 42%); pointer-events:none; }
   .ka-video-shell { position:relative; max-width:1440px; margin:0 auto; }
@@ -136,7 +150,7 @@
   .ka-video-header { display:flex; align-items:flex-end; justify-content:space-between; gap:30px; flex-wrap:wrap; margin-bottom:44px; }
   .ka-video-heading { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:58px; margin:0; line-height:.98; letter-spacing:0; max-width:680px; }
   .ka-video-tabs { display:flex; gap:8px; flex-wrap:wrap; justify-content:flex-end; }
-  .ka-video-tab { font-size:11px; letter-spacing:.18em; text-transform:uppercase; padding:10px 22px; border-radius:30px; border:1px solid #4a3f31; background:transparent; color:#9a8c79; cursor:pointer; font-family:inherit; font-weight:600; transition:all .25s; }
+  .ka-video-tab { font-size:11px; letter-spacing:.18em; text-transform:uppercase; padding:10px 22px; border-radius:30px; border:1px solid #4a3f31; background:transparent; color:#655846; cursor:pointer; font-family:inherit; font-weight:600; transition:all .25s; }
   .ka-video-stage { display:grid; grid-template-columns:minmax(0,1.45fr) minmax(320px,.75fr); gap:22px; align-items:stretch; background:rgba(13,9,8,.62); border:1px solid rgba(200,137,59,.22); padding:18px; box-shadow:0 54px 120px -60px rgba(0,0,0,.9); margin-bottom:22px; }
   .ka-video-player { position:relative; width:100%; aspect-ratio:16/9; background:#0d0908; overflow:hidden; min-height:320px; }
   .ka-video-placeholder { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center; background:#0d0908; transition:opacity .5s; pointer-events:none; }
@@ -231,11 +245,43 @@
   }
   @supports not (animation-timeline: view()) { [data-r] { opacity: 1 !important; animation: none !important; } }
   @media (prefers-reduced-motion: reduce) { [data-r] { opacity: 1 !important; animation: none !important; } }
+  @media (prefers-reduced-motion: reduce) { *, *::before, *::after { scroll-behavior:auto !important; animation-duration:.001ms !important; animation-iteration-count:1 !important; transition-duration:.001ms !important; } }
+  .ka-project-index .label, .ka-muted-strong { color:#655846 !important; }
+  span[style*="#9a8c79"], div[style*="#7e7158"] { color:#655846 !important; }
+  footer span[style*="color:#7e7158"], footer div[style*="color:#7e7158"] { color:#b7a58d !important; }
+  footer, footer > div, footer > div > div { background:#1E1810 !important; color:#d8cbb7 !important; }
+  footer div { background:#1E1810 !important; }
+  footer p, footer span, footer div { color:#d8cbb7 !important; }
+  footer div[style*="letter-spacing"] { color:#e9dcc8 !important; }
+  .ka-kicker { color:#974322; }
 </style>
-<script src="image-slot.js"></script>
-</helmet>
-
-<div ref="{{ rootRef }}" class="ka-page">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Kalari Art",
+  "url": "https://kalariart.com.au/",
+  "image": "https://kalariart.com.au/uploads/optimized/ka1-hero.webp",
+  "description": "Contemporary Aboriginal art, commissioned artwork, cultural artwork, RAP artwork, workshops and Australian art services by Ngunnawal and Wiradjuri artist LaToya Kennedy.",
+  "founder": {
+    "@type": "Person",
+    "name": "LaToya Kennedy"
+  },
+  "areaServed": "Australia",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Wollongong",
+    "addressRegion": "NSW",
+    "addressCountry": "AU"
+  },
+  "sameAs": [
+    "https://www.facebook.com/KalariArt/",
+    "https://www.instagram.com/kalari.art",
+    "https://www.linkedin.com/in/latoya-kennedy-9a42bb253"
+  ]
+}
+</script>
+<div class="ka-page">
 
   <!-- ticker -->
   <div style="background:#221C15; color:#E9DECB; overflow:hidden; white-space:nowrap; padding:9px 0; font-size:12px; letter-spacing:.22em; text-transform:uppercase;">
@@ -246,9 +292,9 @@
   </div>
 
   <!-- nav -->
-  <nav class="ka-nav">
-    <a href="#" class="ka-brand">
-      <img class="ka-brand-logo" src="uploads/Kalari%20Art%20Logo%20nav%20black.png" alt="Kalari Art">
+  <nav class="ka-nav" aria-label="Primary navigation">
+    <a href="index.html" class="ka-brand" aria-label="Kalari Art home">
+      <img class="ka-brand-logo" src="uploads/optimized/kalari-logo-nav-black.webp" width="380" height="277" alt="Kalari Art">
     </a>
     <div class="ka-nav-links">
       <a href="Works.dc.html">Projects</a>
@@ -282,10 +328,10 @@
       <div data-r data-rd="120" class="ka-hero-art">
         <div class="ka-hero-label">Featured — Family &amp; Country</div>
         <div class="ka-hero-art-main">
-          <img data-hero-main-img data-px="0.08" src="uploads/KA1.webp" alt="Original painting depicting family, Country and connection">
+          <img data-hero-main-img data-px="0.08" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/ka1-hero-720.webp" data-srcset="uploads/optimized/ka1-hero-720.webp 720w, uploads/optimized/ka1-hero.webp 1100w" sizes="(max-width: 620px) 78vw, (max-width: 980px) 66vw, 42vw" width="720" height="960" loading="lazy" decoding="async" alt="Original painting depicting family, Country and connection">
         </div>
         <div class="ka-hero-art-side">
-          <img data-hero-side-img src="uploads/KA2.webp" alt="Rotating Kalari Art digital artwork detail">
+          <img data-hero-side-img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/ka2-side.webp" width="620" height="827" loading="lazy" decoding="async" alt="Rotating Kalari Art digital artwork detail">
         </div>
         <div class="ka-hero-note">
           <strong>Ngunnawal &amp; Wiradjuri</strong>
@@ -326,7 +372,7 @@
     <div data-r>
       <div class="ka-project-stage">
         <div class="ka-project-media">
-          <img data-stage-img src="uploads/KA7.webp" alt="Featured project — full view">
+          <img data-stage-img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/ka7-feature.webp" width="1200" height="1699" loading="lazy" decoding="async" alt="Featured project — full view">
         </div>
         <div class="ka-project-copy">
           <div class="ka-project-index"><span data-stage-num>01</span><span class="line"></span><span class="label">Project story</span></div>
@@ -336,29 +382,29 @@
         </div>
       </div>
       <div class="ka-project-thumbs">
-        <button data-thumb="0" data-img="uploads/KA7.webp" data-title="NEMA Preparedness Program" data-num="01" data-story="Commission piece for the National Emergency Management Agency (NEMA) — digital design created for the 2024 Higher Risk Weather Season National Preparedness Program." data-meta="NEMA · 2024 Higher Risk Weather Season National Preparedness Program" type="button" class="ka-project-thumb">
-          <img src="uploads/KA7.webp" alt="NEMA preparedness program thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center 35%;">
+        <button data-thumb="0" aria-label="Show NEMA Preparedness Program project" data-img="uploads/optimized/ka7-feature.webp" data-title="NEMA Preparedness Program" data-num="01" data-story="Commission piece for the National Emergency Management Agency (NEMA) — digital design created for the 2024 Higher Risk Weather Season National Preparedness Program." data-meta="NEMA · 2024 Higher Risk Weather Season National Preparedness Program" type="button" class="ka-project-thumb">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/ka7-feature.webp" width="1200" height="1699" loading="lazy" decoding="async" alt="NEMA preparedness program thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center 35%;">
         </button>
-        <button data-thumb="1" data-img="uploads/KA9.webp" data-title="Indigenous Round Training Gear" data-num="02" data-story="St George Illawarra Dragons (NRL) — digital design second place winner for 2024 Indigenous Round Training Gear." data-meta="St George Illawarra Dragons (NRL) · Second place digital design · 2024" type="button" class="ka-project-thumb">
-          <img src="uploads/KA9.webp" alt="St George Illawarra Dragons Indigenous Round thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center;">
+        <button data-thumb="1" aria-label="Show Indigenous Round Training Gear project" data-img="uploads/KA9.webp" data-title="Indigenous Round Training Gear" data-num="02" data-story="St George Illawarra Dragons (NRL) — digital design second place winner for 2024 Indigenous Round Training Gear." data-meta="St George Illawarra Dragons (NRL) · Second place digital design · 2024" type="button" class="ka-project-thumb">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/KA9.webp" width="1080" height="1080" loading="lazy" decoding="async" alt="St George Illawarra Dragons Indigenous Round thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center;">
         </button>
-        <button data-thumb="2" data-img="uploads/KA8.webp" data-title="Galent Management Consulting" data-num="03" data-story="Commission piece for Galent Management Consulting — digital design created for corporate use." data-meta="Galent Management Consulting · Digital design for corporate use" type="button" class="ka-project-thumb">
-          <img src="uploads/KA8.webp" alt="Galent Management Consulting digital design thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center 30%;">
+        <button data-thumb="2" aria-label="Show Galent Management Consulting project" data-img="uploads/optimized/ka8-galent.webp" data-title="Galent Management Consulting" data-num="03" data-story="Commission piece for Galent Management Consulting — digital design created for corporate use." data-meta="Galent Management Consulting · Digital design for corporate use" type="button" class="ka-project-thumb">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/ka8-galent.webp" width="720" height="1019" loading="lazy" decoding="async" alt="Galent Management Consulting digital design thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center 30%;">
         </button>
-        <button data-thumb="3" data-img="uploads/KA1.webp" data-title="SHFPACT Corporate Design" data-num="04" data-story="Sexual Health and Family Planning ACT (SHFPACT) — digital design created for corporate use." data-meta="SHFPACT · Digital design for corporate use" type="button" class="ka-project-thumb">
-          <img src="uploads/KA1.webp" alt="SHFPACT digital design thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center 30%;">
+        <button data-thumb="3" aria-label="Show SHFPACT Corporate Design project" data-img="uploads/optimized/ka1-hero.webp" data-title="SHFPACT Corporate Design" data-num="04" data-story="Sexual Health and Family Planning ACT (SHFPACT) — digital design created for corporate use." data-meta="SHFPACT · Digital design for corporate use" type="button" class="ka-project-thumb">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/ka1-hero.webp" width="1100" height="1467" loading="lazy" decoding="async" alt="SHFPACT digital design thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center 30%;">
         </button>
-        <button data-thumb="4" data-img="uploads/KA10.webp" data-title="Maternity Unit Hallway Wrap" data-num="05" data-story="Centenary Hospital for Women &amp; Children, The Canberra Hospital — canvas painting created and converted into a vinyl wrap covering the hallway to the entrance of the Maternity Unit." data-meta="Centenary Hospital for Women &amp; Children · Canvas painting converted into vinyl wrap · 2022" type="button" class="ka-project-thumb">
-          <img src="uploads/KA10.webp" alt="Maternity Unit hallway wrap thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center 30%;">
+        <button data-thumb="4" aria-label="Show Maternity Unit Hallway Wrap project" data-img="uploads/optimized/ka10-maternity.webp" data-title="Maternity Unit Hallway Wrap" data-num="05" data-story="Centenary Hospital for Women &amp; Children, The Canberra Hospital — canvas painting created and converted into a vinyl wrap covering the hallway to the entrance of the Maternity Unit." data-meta="Centenary Hospital for Women &amp; Children · Canvas painting converted into vinyl wrap · 2022" type="button" class="ka-project-thumb">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/ka10-maternity.webp" width="900" height="675" loading="lazy" decoding="async" alt="Maternity Unit hallway wrap thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center 30%;">
         </button>
-        <button data-thumb="5" data-img="uploads/KA5.webp" data-title="Maternity Suite Vinyl Wraps" data-num="06" data-story="Centenary Hospital for Women &amp; Children, The Canberra Hospital — digital design created for vinyl wraps for two newly renovated Maternity Suites." data-meta="Centenary Hospital for Women &amp; Children · Maternity suite vinyl wraps" type="button" class="ka-project-thumb">
-          <img src="uploads/KA5.webp" alt="Maternity suite vinyl wraps thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center 42%;">
+        <button data-thumb="5" aria-label="Show Maternity Suite Vinyl Wraps project" data-img="uploads/KA5.webp" data-title="Maternity Suite Vinyl Wraps" data-num="06" data-story="Centenary Hospital for Women &amp; Children, The Canberra Hospital — digital design created for vinyl wraps for two newly renovated Maternity Suites." data-meta="Centenary Hospital for Women &amp; Children · Maternity suite vinyl wraps" type="button" class="ka-project-thumb">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/KA5.webp" width="1200" height="902" loading="lazy" decoding="async" alt="Maternity suite vinyl wraps thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center 42%;">
         </button>
-        <button data-thumb="6" data-img="uploads/KA4.webp" data-title="Wedge Tag Eagles" data-num="07" data-story="Wedge Tag Eagles — digital design created for team uniform." data-meta="Wedge Tag Eagles · Digital design for team uniform" type="button" class="ka-project-thumb">
-          <img src="uploads/KA4.webp" alt="Wedge Tag Eagles team uniform design thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center 26%;">
+        <button data-thumb="6" aria-label="Show Wedge Tag Eagles project" data-img="uploads/optimized/ka4-team-uniform.webp" data-title="Wedge Tag Eagles" data-num="07" data-story="Wedge Tag Eagles — digital design created for team uniform." data-meta="Wedge Tag Eagles · Digital design for team uniform" type="button" class="ka-project-thumb">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/ka4-team-uniform.webp" width="720" height="960" loading="lazy" decoding="async" alt="Wedge Tag Eagles team uniform design thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center 26%;">
         </button>
-        <button data-thumb="7" data-img="uploads/K31.jpg" data-title="Yurauna Centre" data-num="08" data-story="Canberra Institute of Technology Yurauna Centre — architectural commission bringing Aboriginal artwork into a public education space." data-meta="Canberra Institute of Technology · Yurauna Centre · 2023" type="button" class="ka-project-thumb">
-          <img src="uploads/K31.jpg" alt="Canberra Institute of Technology Yurauna Centre thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center 52%;">
+        <button data-thumb="7" aria-label="Show Yurauna Centre project" data-img="uploads/optimized/k31-yurauna.webp" data-title="Yurauna Centre" data-num="08" data-story="Canberra Institute of Technology Yurauna Centre — architectural commission bringing Aboriginal artwork into a public education space." data-meta="Canberra Institute of Technology · Yurauna Centre · 2023" type="button" class="ka-project-thumb">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/k31-yurauna.webp" width="720" height="405" loading="lazy" decoding="async" alt="Canberra Institute of Technology Yurauna Centre thumbnail" style="width:100%; height:100%; object-fit:cover; object-position:center 52%;">
         </button>
       </div>
     </div>
@@ -376,7 +422,7 @@
   <section id="about" class="ka-about">
     <div data-r class="ka-about-image">
       <div class="ka-about-frame">
-        <img src="uploads/KA6.webp" alt="Artist LaToya Kennedy">
+        <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/ka6-artist.webp" width="720" height="960" loading="lazy" decoding="async" alt="Artist LaToya Kennedy">
       </div>
     </div>
     <div data-r data-rd="100">
@@ -444,10 +490,10 @@
       <div class="ka-video-stage">
         <!-- iframe wrapper -->
         <div class="ka-video-player">
-          <iframe data-vid-frame src="" title="Kalari Art video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:none; opacity:0; transition:opacity .5s;"></iframe>
+            <iframe data-vid-frame src="" title="Kalari Art video" loading="lazy" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position:absolute; inset:0; width:100%; height:100%; border:none; opacity:0; transition:opacity .5s;"></iframe>
           <!-- idle state -->
           <div data-vid-placeholder class="ka-video-placeholder">
-            <img src="uploads/KA9.webp" alt="">
+            <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/KA9.webp" width="1080" height="1080" loading="lazy" decoding="async" alt="">
             <div class="ka-video-placeholder-play">
               <svg width="24" height="28" viewBox="0 0 24 28" fill="none"><path d="M2 2l20 12L2 26V2z" fill="#1E1810"/></svg>
             </div>
@@ -464,7 +510,7 @@
           </div>
           <div>
             <div data-vid-meta class="ka-video-meta"></div>
-            <a data-vid-yt-link href="#" target="_blank" rel="noopener" class="ka-video-link" style-hover="color:#e0a85a;">Watch full video →</a>
+            <a data-vid-yt-link href="#" target="_blank" rel="noopener noreferrer" class="ka-video-link" style-hover="color:#e0a85a;">Watch full video →</a>
           </div>
         </div>
       </div>
@@ -472,43 +518,43 @@
       <!-- playlist -->
       <div data-vid-grid class="ka-video-grid">
 
-        <button data-vid-item data-vid-src="https://player.vimeo.com/video/982268007?h=0d7e0e6762&autoplay=1&color=c8893b&byline=0&portrait=0" data-vid-link="https://vimeo.com/982268007" data-vid-link-label="Watch on Vimeo →" data-vid-cat="collab" data-vid-title="NRL Indigenous Round — The Meaning Behind the Collection" data-vid-desc="St George Illawarra Dragons NRL Indigenous Round Training Gear Design, June 2022 — LaToya walks through the symbols, stories and cultural meaning woven into the collection." data-vid-meta="Collaboration · St George Illawarra Dragons · June 2022" data-vid-thumb="uploads/KA9.webp" type="button" class="ka-video-card">
-          <div class="ka-video-thumb"><img src="uploads/KA9.webp" alt="St George Illawarra Dragons Indigenous Round video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
+        <button data-vid-item aria-label="Play NRL Indigenous Round video" data-vid-src="https://player.vimeo.com/video/982268007?h=0d7e0e6762&autoplay=1&color=c8893b&byline=0&portrait=0" data-vid-link="https://vimeo.com/982268007" data-vid-link-label="Watch on Vimeo →" data-vid-cat="collab" data-vid-title="NRL Indigenous Round — The Meaning Behind the Collection" data-vid-desc="St George Illawarra Dragons NRL Indigenous Round Training Gear Design, June 2022 — LaToya walks through the symbols, stories and cultural meaning woven into the collection." data-vid-meta="Collaboration · St George Illawarra Dragons · June 2022" data-vid-thumb="uploads/KA9.webp" type="button" class="ka-video-card">
+          <div class="ka-video-thumb"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/KA9.webp" width="1080" height="1080" loading="lazy" decoding="async" alt="St George Illawarra Dragons Indigenous Round video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
           <div class="ka-video-card-body"><div class="ka-video-card-meta">Dragons · June 2022</div><div class="ka-video-card-title">NRL Indigenous Round</div></div>
         </button>
 
-        <button data-vid-item data-vid-src="https://player.vimeo.com/video/949795931?h=fc1c5ae107&autoplay=1&color=c8893b&byline=0&portrait=0" data-vid-link="https://vimeo.com/949795931" data-vid-link-label="Watch on Vimeo →" data-vid-cat="workshop collab" data-vid-title="The Disability Trust — Reconciliation Week" data-vid-desc="LaToya Kennedy's cultural work with The Disability Trust for Reconciliation Week, May 2024 — story, Country and community brought together through art." data-vid-meta="Workshop · The Disability Trust · May 2024" data-vid-thumb="uploads/KA19.jpg" type="button" class="ka-video-card">
-          <div class="ka-video-thumb"><img src="uploads/KA19.jpg" alt="The Disability Trust Reconciliation Week video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
+        <button data-vid-item aria-label="Play The Disability Trust Reconciliation Week video" data-vid-src="https://player.vimeo.com/video/949795931?h=fc1c5ae107&autoplay=1&color=c8893b&byline=0&portrait=0" data-vid-link="https://vimeo.com/949795931" data-vid-link-label="Watch on Vimeo →" data-vid-cat="workshop collab" data-vid-title="The Disability Trust — Reconciliation Week" data-vid-desc="LaToya Kennedy's cultural work with The Disability Trust for Reconciliation Week, May 2024 — story, Country and community brought together through art." data-vid-meta="Workshop · The Disability Trust · May 2024" data-vid-thumb="uploads/optimized/ka19-video-thumb.webp" type="button" class="ka-video-card">
+          <div class="ka-video-thumb"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/ka19-video-thumb.webp" width="720" height="1019" loading="lazy" decoding="async" alt="The Disability Trust Reconciliation Week video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
           <div class="ka-video-card-body"><div class="ka-video-card-meta">Disability Trust · May 2024</div><div class="ka-video-card-title">Reconciliation Week</div></div>
         </button>
 
-        <button data-vid-item data-vid-id="qI0iNOMBtKg" data-vid-cat="workshop collab" data-vid-title="Aspen Medical — NAIDOC Week" data-vid-desc="Aspen Medical NAIDOC Week, July 2022 — a cultural art collaboration celebrating story, connection and community." data-vid-meta="Workshop · Aspen Medical · July 2022" data-vid-thumb="uploads/Aspen%20Medical.webp" type="button" class="ka-video-card">
-          <div class="ka-video-thumb"><img src="uploads/Aspen%20Medical.webp" alt="Aspen Medical NAIDOC Week video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
+        <button data-vid-item aria-label="Play Aspen Medical NAIDOC Week video" data-vid-id="qI0iNOMBtKg" data-vid-cat="workshop collab" data-vid-title="Aspen Medical — NAIDOC Week" data-vid-desc="Aspen Medical NAIDOC Week, July 2022 — a cultural art collaboration celebrating story, connection and community." data-vid-meta="Workshop · Aspen Medical · July 2022" data-vid-thumb="uploads/Aspen%20Medical.webp" type="button" class="ka-video-card">
+          <div class="ka-video-thumb"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/Aspen%20Medical.webp" width="720" height="960" loading="lazy" decoding="async" alt="Aspen Medical NAIDOC Week video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
           <div class="ka-video-card-body"><div class="ka-video-card-meta">Aspen Medical · July 2022</div><div class="ka-video-card-title">NAIDOC Week</div></div>
         </button>
 
-        <button data-vid-item data-vid-id="lcumThrL47g" data-vid-cat="workshop collab" data-vid-title="The Disability Trust — RAP Launch" data-vid-desc="The Disability Trust Reconciliation Action Plan (RAP) Launch, September 2022 — a cultural art collaboration marking reconciliation, community and shared commitment." data-vid-meta="Workshop · The Disability Trust · September 2022" data-vid-thumb="uploads/KA19.jpg" type="button" class="ka-video-card">
-          <div class="ka-video-thumb"><img src="uploads/KA19.jpg" alt="The Disability Trust RAP Launch video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
+        <button data-vid-item aria-label="Play The Disability Trust RAP Launch video" data-vid-id="lcumThrL47g" data-vid-cat="workshop collab" data-vid-title="The Disability Trust — RAP Launch" data-vid-desc="The Disability Trust Reconciliation Action Plan (RAP) Launch, September 2022 — a cultural art collaboration marking reconciliation, community and shared commitment." data-vid-meta="Workshop · The Disability Trust · September 2022" data-vid-thumb="uploads/optimized/ka19-video-thumb.webp" type="button" class="ka-video-card">
+          <div class="ka-video-thumb"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/ka19-video-thumb.webp" width="720" height="1019" loading="lazy" decoding="async" alt="The Disability Trust RAP Launch video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
           <div class="ka-video-card-body"><div class="ka-video-card-meta">Disability Trust · Sep 2022</div><div class="ka-video-card-title">RAP Launch</div></div>
         </button>
 
-        <button data-vid-item data-vid-src="https://player.vimeo.com/video/1126561184?h=7639dd6dbf&color=c8893b&byline=0&portrait=0" data-vid-link="https://vimeo.com/1126561184" data-vid-link-label="Watch on Vimeo →" data-vid-cat="workshop" data-vid-title="Stride Staff Art Workshop" data-vid-desc="Stride Family &amp; Carers staff gathered at the Stride Mental Health Hub, with approx. 15 people learning Aboriginal art and symbol meanings while adding their own artistic flare to a large shared canvas." data-vid-meta="Workshop · Stride Mental Health Hub · May 2025" data-vid-thumb="uploads/KA15.jpg" type="button" class="ka-video-card">
-          <div class="ka-video-thumb"><img src="uploads/KA15.jpg" alt="Stride Staff Art Workshop video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
+        <button data-vid-item aria-label="Play Stride Staff Art Workshop video" data-vid-src="https://player.vimeo.com/video/1126561184?h=7639dd6dbf&color=c8893b&byline=0&portrait=0" data-vid-link="https://vimeo.com/1126561184" data-vid-link-label="Watch on Vimeo →" data-vid-cat="workshop" data-vid-title="Stride Staff Art Workshop" data-vid-desc="Stride Family &amp; Carers staff gathered at the Stride Mental Health Hub, with approx. 15 people learning Aboriginal art and symbol meanings while adding their own artistic flare to a large shared canvas." data-vid-meta="Workshop · Stride Mental Health Hub · May 2025" data-vid-thumb="uploads/optimized/ka15-artwork.webp" type="button" class="ka-video-card">
+          <div class="ka-video-thumb"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/ka15-artwork.webp" width="720" height="960" loading="lazy" decoding="async" alt="Stride Staff Art Workshop video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
           <div class="ka-video-card-body"><div class="ka-video-card-meta">Stride · May 2025</div><div class="ka-video-card-title">Stride Staff Workshop</div></div>
         </button>
 
-        <button data-vid-item data-vid-src="https://player.vimeo.com/video/1126544242?h=a6eb0db816&color=c8893b&byline=0&portrait=0" data-vid-link="https://vimeo.com/1126544242" data-vid-link-label="Watch on Vimeo →" data-vid-cat="workshop" data-vid-title="Department of Health and Aged Care Workshop" data-vid-desc="Staff gathered at the Yaradhang building renaming ceremony, with approx. 80 people participating in learning Aboriginal art and symbol meanings and contributing to a large shared canvas." data-vid-meta="Workshop · Department of Health and Aged Care · August 2024" data-vid-thumb="uploads/KA10.webp" type="button" class="ka-video-card">
-          <div class="ka-video-thumb"><img src="uploads/KA10.webp" alt="Department of Health and Aged Care Staff Art Workshop video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
+        <button data-vid-item aria-label="Play Department of Health and Aged Care Workshop video" data-vid-src="https://player.vimeo.com/video/1126544242?h=a6eb0db816&color=c8893b&byline=0&portrait=0" data-vid-link="https://vimeo.com/1126544242" data-vid-link-label="Watch on Vimeo →" data-vid-cat="workshop" data-vid-title="Department of Health and Aged Care Workshop" data-vid-desc="Staff gathered at the Yaradhang building renaming ceremony, with approx. 80 people participating in learning Aboriginal art and symbol meanings and contributing to a large shared canvas." data-vid-meta="Workshop · Department of Health and Aged Care · August 2024" data-vid-thumb="uploads/KA10.webp" type="button" class="ka-video-card">
+          <div class="ka-video-thumb"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/ka10-maternity.webp" width="900" height="675" loading="lazy" decoding="async" alt="Department of Health and Aged Care Staff Art Workshop video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
           <div class="ka-video-card-body"><div class="ka-video-card-meta">Health · Aug 2024</div><div class="ka-video-card-title">Health Staff Workshop</div></div>
         </button>
 
-        <button data-vid-item data-vid-src="https://player.vimeo.com/video/982319664?h=7a0d5d75e0&color=c8893b&byline=0&portrait=0" data-vid-link="https://vimeo.com/982319664" data-vid-link-label="Watch on Vimeo →" data-vid-cat="workshop" data-vid-title="Czech Embassy Children's Day Workshop" data-vid-desc="Kids and parents from the Czech Community gathered at the Czech Embassy in Canberra for Children's Day, with approx. 30-40 people learning Aboriginal art and symbol meanings." data-vid-meta="Workshop · Czech Embassy, Canberra · June 2024" data-vid-thumb="uploads/KA1.webp" type="button" class="ka-video-card">
-          <div class="ka-video-thumb"><img src="uploads/KA1.webp" alt="Czech Embassy Children's Day Art Workshop video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
+        <button data-vid-item aria-label="Play Czech Embassy Children's Day Workshop video" data-vid-src="https://player.vimeo.com/video/982319664?h=7a0d5d75e0&color=c8893b&byline=0&portrait=0" data-vid-link="https://vimeo.com/982319664" data-vid-link-label="Watch on Vimeo →" data-vid-cat="workshop" data-vid-title="Czech Embassy Children's Day Workshop" data-vid-desc="Kids and parents from the Czech Community gathered at the Czech Embassy in Canberra for Children's Day, with approx. 30-40 people learning Aboriginal art and symbol meanings." data-vid-meta="Workshop · Czech Embassy, Canberra · June 2024" data-vid-thumb="uploads/optimized/ka1-hero.webp" type="button" class="ka-video-card">
+          <div class="ka-video-thumb"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/ka1-hero.webp" width="1100" height="1467" loading="lazy" decoding="async" alt="Czech Embassy Children's Day Art Workshop video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
           <div class="ka-video-card-body"><div class="ka-video-card-meta">Czech Embassy · Jun 2024</div><div class="ka-video-card-title">Children's Day Workshop</div></div>
         </button>
 
-        <button data-vid-item data-vid-src="https://player.vimeo.com/video/982312444?h=541bca546b&color=c8893b&byline=0&portrait=0" data-vid-link="https://vimeo.com/982312444" data-vid-link-label="Watch on Vimeo →" data-vid-cat="workshop" data-vid-title="McMillan Shakespeare Group Workshop" data-vid-desc="McMillan Shakespeare Group staff in the Chatswood office shared culture and knowledge through art, creating individual stories and painted canvases to take home." data-vid-meta="Workshop · McMillan Shakespeare Group · May 2024" data-vid-thumb="uploads/KA19.jpg" type="button" class="ka-video-card">
-          <div class="ka-video-thumb"><img src="uploads/KA19.jpg" alt="McMillan Shakespeare Group Staff Art Workshop video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
+        <button data-vid-item aria-label="Play McMillan Shakespeare Group Workshop video" data-vid-src="https://player.vimeo.com/video/982312444?h=541bca546b&color=c8893b&byline=0&portrait=0" data-vid-link="https://vimeo.com/982312444" data-vid-link-label="Watch on Vimeo →" data-vid-cat="workshop" data-vid-title="McMillan Shakespeare Group Workshop" data-vid-desc="McMillan Shakespeare Group staff in the Chatswood office shared culture and knowledge through art, creating individual stories and painted canvases to take home." data-vid-meta="Workshop · McMillan Shakespeare Group · May 2024" data-vid-thumb="uploads/optimized/ka19-video-thumb.webp" type="button" class="ka-video-card">
+          <div class="ka-video-thumb"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/ka19-video-thumb.webp" width="720" height="1019" loading="lazy" decoding="async" alt="McMillan Shakespeare Group Staff Art Workshop video"><div class="ka-video-play"><span><svg width="10" height="12" viewBox="0 0 10 12" fill="none"><path d="M1 1l8 5.5L1 12V1z" fill="#fff"/></svg></span></div></div>
           <div class="ka-video-card-body"><div class="ka-video-card-meta">MMSG · May 2024</div><div class="ka-video-card-title">Staff Art Workshop</div></div>
         </button>
 
@@ -521,7 +567,7 @@
     <div style="max-width:1440px; margin:0 auto;">
       <div data-r style="display:flex; align-items:flex-end; justify-content:space-between; gap:30px; margin-bottom:54px; flex-wrap:wrap;">
         <div>
-          <div style="font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:#B0512C; font-weight:600; margin-bottom:16px;">⟢ Made to order</div>
+          <div style="font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:#974322; font-weight:700; margin-bottom:16px;">⟢ Made to order</div>
           <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:56px; margin:0; line-height:1; letter-spacing:-.01em;">Customised just for you</h2>
         </div>
         <div style="max-width:440px;">
@@ -531,24 +577,24 @@
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:30px;">
         <figure data-r data-rd="0" style="margin:0;">
-          <image-slot id="cs-sneakers" src="Custom3.png" shape="rounded" radius="14" placeholder="Drop a custom sneakers photo" style="display:block; width:100%; aspect-ratio:1/1; background:#dccdb0;"></image-slot>
-          <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;"><span style="font-family:'Cormorant Garamond',serif; font-size:25px;">Custom sneakers</span><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#9a8c79;">Leather paint</span></figcaption>
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/custom-sneakers.webp" width="720" height="563" loading="lazy" decoding="async" alt="Custom sneakers with Kalari Art hand-painted artwork" style="display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px; background:#dccdb0;">
+          <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;"><span style="font-family:'Cormorant Garamond',serif; font-size:25px;">Custom sneakers</span><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#655846;">Leather paint</span></figcaption>
         </figure>
         <figure data-r data-rd="120" style="margin:0;">
-          <image-slot id="cs-heels" src="Custom2.png" shape="rounded" radius="14" placeholder="Drop a painted heels photo" style="display:block; width:100%; aspect-ratio:1/1; background:#dccdb0;"></image-slot>
-          <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;"><span style="font-family:'Cormorant Garamond',serif; font-size:25px;">Painted heels</span><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#9a8c79;">Leather paint</span></figcaption>
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/custom-heels.webp" width="720" height="602" loading="lazy" decoding="async" alt="Painted heels with custom Kalari Art design" style="display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px; background:#dccdb0;">
+          <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;"><span style="font-family:'Cormorant Garamond',serif; font-size:25px;">Painted heels</span><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#655846;">Leather paint</span></figcaption>
         </figure>
         <figure data-r data-rd="240" style="margin:0;">
-          <image-slot id="cs-boots" src="uploads/Custom.png" shape="rounded" radius="14" placeholder="Drop a boots / kicks photo" style="display:block; width:100%; aspect-ratio:1/1; background:#dccdb0;"></image-slot>
-          <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;"><span style="font-family:'Cormorant Garamond',serif; font-size:25px;">Boots</span><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#9a8c79;">Leather paint</span></figcaption>
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/custom-boots.webp" width="720" height="520" loading="lazy" decoding="async" alt="Custom boots with Kalari Art hand-painted artwork" style="display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px; background:#dccdb0;">
+          <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;"><span style="font-family:'Cormorant Garamond',serif; font-size:25px;">Boots</span><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#655846;">Leather paint</span></figcaption>
         </figure>
         <figure data-r data-rd="0" style="margin:0;">
-          <image-slot id="cs-nursery" src="Custom4.png" shape="rounded" radius="14" placeholder="Drop a nursery piece photo" style="display:block; width:100%; aspect-ratio:1/1; background:#dccdb0;"></image-slot>
-          <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;"><span style="font-family:'Cormorant Garamond',serif; font-size:25px;">Nursery</span><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#9a8c79;">Hand-painted</span></figcaption>
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/custom-nursery.webp" width="720" height="694" loading="lazy" decoding="async" alt="Nursery artwork with custom Kalari Art painting" style="display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px; background:#dccdb0;">
+          <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;"><span style="font-family:'Cormorant Garamond',serif; font-size:25px;">Nursery</span><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#655846;">Hand-painted</span></figcaption>
         </figure>
         <figure data-r data-rd="120" style="margin:0;">
-          <image-slot id="cs-gifts" src="Custom5.png" shape="rounded" radius="14" placeholder="Drop a personalised gift photo" style="display:block; width:100%; aspect-ratio:1/1; background:#dccdb0;"></image-slot>
-          <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;"><span style="font-family:'Cormorant Garamond',serif; font-size:25px;">Personalised gifts</span><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#9a8c79;">One-of-a-kind</span></figcaption>
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/custom-gifts.webp" width="720" height="203" loading="lazy" decoding="async" alt="Personalised gift artwork by Kalari Art" style="display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px; background:#dccdb0;">
+          <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;"><span style="font-family:'Cormorant Garamond',serif; font-size:25px;">Personalised gifts</span><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#655846;">One-of-a-kind</span></figcaption>
         </figure>
       </div>
     </div>
@@ -559,34 +605,34 @@
     <div style="max-width:1440px; margin:0 auto;">
       <div data-r style="display:flex; align-items:flex-end; justify-content:space-between; gap:30px; margin-bottom:58px; flex-wrap:wrap;">
         <div>
-          <div style="font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:#f0c7ac; font-weight:600; margin-bottom:16px;">⟢ Giving back</div>
+          <div style="font-size:12px; letter-spacing:.26em; text-transform:uppercase; color:#fff4e8; font-weight:600; margin-bottom:16px;">⟢ Giving back</div>
           <h2 style="font-family:'Cormorant Garamond',serif; font-weight:500; font-size:56px; margin:0; line-height:1; letter-spacing:-.01em;">For a good cause</h2>
         </div>
-        <p style="font-size:16px; line-height:1.65; color:#f3ddca; max-width:420px; margin:0;">Alongside commissions, LaToya donates original canvases to raise funds and awareness for the causes close to community.</p>
+        <p style="font-size:16px; line-height:1.65; color:#fff4e8; max-width:420px; margin:0;">Alongside commissions, LaToya donates original canvases to raise funds and awareness for the causes close to community.</p>
       </div>
       <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:30px;">
         <div data-r data-rd="0" style="background:#9C4524; border-radius:4px; overflow:hidden; transition:transform .35s;" style-hover="transform:translateY(-6px);">
-          <div style="overflow:hidden; aspect-ratio:1/1; background:#8a3d1f;"><img src="uploads/Aspen%20Medical.webp" alt="Donated canvas 'Meeting in the Dreamtime'" style="width:100%; height:100%; object-fit:cover; transition:transform 1s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.06);"></div>
+          <div style="overflow:hidden; aspect-ratio:1/1; background:#8a3d1f;"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/Aspen%20Medical.webp" width="720" height="960" loading="lazy" decoding="async" alt="Donated canvas 'Meeting in the Dreamtime'" style="width:100%; height:100%; object-fit:cover; transition:transform 1s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.06);"></div>
           <div style="padding:26px 26px 30px;">
-            <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#f0c7ac; margin-bottom:10px;">Donated to Aspen Medical</div>
+            <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#fff4e8; margin-bottom:10px;">Donated to Aspen Medical</div>
             <div style="font-family:'Cormorant Garamond',serif; font-size:27px; margin-bottom:12px;">Meeting in the Dreamtime</div>
-            <p style="font-size:14.5px; line-height:1.6; color:#f3ddca; margin:0;">Raised funds towards The Farm in Galong — restoring self-worth and confidence to women and reuniting them with their children. 92 × 122cm.</p>
+            <p style="font-size:14.5px; line-height:1.6; color:#fff4e8; margin:0;">Raised funds towards The Farm in Galong — restoring self-worth and confidence to women and reuniting them with their children. 92 × 122cm.</p>
           </div>
         </div>
         <div data-r data-rd="120" style="background:#9C4524; border-radius:4px; overflow:hidden; transition:transform .35s;" style-hover="transform:translateY(-6px);">
-          <div style="overflow:hidden; aspect-ratio:1/1; background:#8a3d1f;"><img src="uploads/Aspen%20Medical1.webp" alt="Donated canvas 'Belonging'" style="width:100%; height:100%; object-fit:cover; transition:transform 1s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.06);"></div>
+          <div style="overflow:hidden; aspect-ratio:1/1; background:#8a3d1f;"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/Aspen%20Medical1.webp" width="720" height="960" loading="lazy" decoding="async" alt="Donated canvas 'Belonging'" style="width:100%; height:100%; object-fit:cover; transition:transform 1s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.06);"></div>
           <div style="padding:26px 26px 30px;">
-            <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#f0c7ac; margin-bottom:10px;">Donated to Aspen Medical</div>
+            <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#fff4e8; margin-bottom:10px;">Donated to Aspen Medical</div>
             <div style="font-family:'Cormorant Garamond',serif; font-size:27px; margin-bottom:12px;">Belonging</div>
-            <p style="font-size:14.5px; line-height:1.6; color:#f3ddca; margin:0;">A story of developing relationships and wellbeing — defining who you are and where you come from. 61 × 122cm.</p>
+            <p style="font-size:14.5px; line-height:1.6; color:#fff4e8; margin:0;">A story of developing relationships and wellbeing — defining who you are and where you come from. 61 × 122cm.</p>
           </div>
         </div>
         <div data-r data-rd="240" style="background:#9C4524; border-radius:4px; overflow:hidden; transition:transform .35s;" style-hover="transform:translateY(-6px);">
-          <div style="overflow:hidden; aspect-ratio:1/1; background:#8a3d1f;"><img src="uploads/Epilepsy%20Australia.webp" alt="Donated canvas 'Scrambled Journey' in purple" style="width:100%; height:100%; object-fit:cover; transition:transform 1s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.06);"></div>
+          <div style="overflow:hidden; aspect-ratio:1/1; background:#8a3d1f;"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/Epilepsy%20Australia.webp" width="720" height="960" loading="lazy" decoding="async" alt="Donated canvas 'Scrambled Journey' in purple" style="width:100%; height:100%; object-fit:cover; transition:transform 1s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.06);"></div>
           <div style="padding:26px 26px 30px;">
-            <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#f0c7ac; margin-bottom:10px;">Donated to Epilepsy Australia</div>
+            <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#fff4e8; margin-bottom:10px;">Donated to Epilepsy Australia</div>
             <div style="font-family:'Cormorant Garamond',serif; font-size:27px; margin-bottom:12px;">Scrambled Journey</div>
-            <p style="font-size:14.5px; line-height:1.6; color:#f3ddca; margin:0;">Painted in purple — the international colour for epilepsy. A personal story of LaToya's own journey, supporting awareness and vital services. 100 × 75cm.</p>
+            <p style="font-size:14.5px; line-height:1.6; color:#fff4e8; margin:0;">Painted in purple — the international colour for epilepsy. A personal story of LaToya's own journey, supporting awareness and vital services. 100 × 75cm.</p>
           </div>
         </div>
       </div>
@@ -619,44 +665,78 @@
     <div style="max-width:1440px; margin:0 auto;">
       <div style="display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:40px; padding-bottom:50px; border-bottom:1px solid #352a1d;">
         <div>
-          <img src="uploads/Kalari%20Art%20Logo%20nav.png" alt="Kalari Art" style="width:190px; height:auto; display:block; margin-bottom:18px;">
+          <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/kalari-logo-nav.webp" width="380" height="277" loading="lazy" decoding="async" alt="Kalari Art" style="width:190px; height:auto; display:block; margin-bottom:18px;">
           <p style="font-size:14px; line-height:1.65; color:#9c8d76; max-width:300px; margin:0;">Contemporary Aboriginal art by LaToya Kennedy. Ngunnawal &amp; Wiradjuri. Wollongong, NSW.</p>
           <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:18px; font-size:13px;">
-            <a href="https://www.facebook.com/KalariArt/" target="_blank" rel="noopener" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">Facebook</a>
-            <a href="https://www.instagram.com/kalari.art" target="_blank" rel="noopener" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">Instagram</a>
-            <a href="https://www.linkedin.com/in/latoya-kennedy-9a42bb253" target="_blank" rel="noopener" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">LinkedIn</a>
+            <a href="https://www.facebook.com/KalariArt/" target="_blank" rel="noopener noreferrer" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">Facebook</a>
+            <a href="https://www.instagram.com/kalari.art" target="_blank" rel="noopener noreferrer" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">Instagram</a>
+            <a href="https://www.linkedin.com/in/latoya-kennedy-9a42bb253" target="_blank" rel="noopener noreferrer" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">LinkedIn</a>
           </div>
         </div>
         <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Explore</div>Projects<br>About<br>Services<br>Workshops</div>
         <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">More</div>Giving back<br>Commissions<br>Sneakers<br>Heels<br>Boots<br>Nursery<br>Personalised gifts<br>Contact</div>
         <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Registrations</div>Supply Nation Certified<br>Indigenous Art Code<br>Buy NSW<br>AusTender<br>VendorPanel</div>
       </div>
-      <div style="display:flex; justify-content:space-between; padding-top:26px; font-size:12px; color:#7e7158; flex-wrap:wrap; gap:10px;"><span>© 2026 Kalari Art · All rights reserved</span><span>Website Built by <a href="https://www.rastrick.com.au" target="_blank" rel="noopener" style="color:inherit; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px;">RASTRICK. MADE</a></span><span>Always was, always will be Aboriginal land.</span></div> 
+      <div style="display:flex; justify-content:space-between; padding-top:26px; font-size:12px; color:#7e7158; flex-wrap:wrap; gap:10px;"><span>© 2026 Kalari Art · All rights reserved</span><span>Website Built by <a href="https://www.rastrick.com.au" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px;">RASTRICK. MADE</a></span><span>Always was, always will be Aboriginal land.</span></div> 
     </div>
   </footer>
 </div>
-</x-dc>
-<script type="text/x-dc" data-dc-script>
-class Component extends DCLogic {
-  constructor(props) {
-    super(props);
-    this._refCb = (node) => { if (node && !this._init) { this._init = true; this._setup(node); } };
-  }
-  renderVals() { return { rootRef: this._refCb }; }
-  _setup(node) {
+<script>
+(() => {
+  const loadFonts = () => {
+    if (document.querySelector('[data-ka-fonts]')) return;
+    const link = document.createElement('link');
+    link.dataset.kaFonts = 'true';
+    link.rel = 'stylesheet';
+    link.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=optional';
+    document.head.appendChild(link);
+  };
+  ['pointerdown', 'keydown', 'touchstart'].forEach((type) => {
+    window.addEventListener(type, loadFonts, { once: true, passive: true });
+  });
+
+  const node = document.querySelector('.ka-page');
+  if (!node) return;
     const all = (s) => Array.from(node.querySelectorAll(s));
+
+    const lazyImages = all('img[data-src]');
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+          if (!entry.isIntersecting) return;
+          const img = entry.target;
+          if (img.dataset.srcset) {
+            img.srcset = img.dataset.srcset;
+            img.removeAttribute('data-srcset');
+          }
+          img.src = img.dataset.src;
+          img.removeAttribute('data-src');
+          observer.unobserve(img);
+        });
+      }, { rootMargin: '260px 0px' });
+      lazyImages.forEach((img) => imageObserver.observe(img));
+    } else {
+      lazyImages.forEach((img) => {
+        if (img.dataset.srcset) {
+          img.srcset = img.dataset.srcset;
+          img.removeAttribute('data-srcset');
+        }
+        img.src = img.dataset.src;
+        img.removeAttribute('data-src');
+      });
+    }
 
     // entrance reveals are handled purely in CSS (animation-timeline: view) so
     // content can never be left permanently hidden by a JS/observer hiccup.
 
     // hero artwork rotation
     const heroPieces = [
-      { src: 'uploads/KA1.webp', alt: 'Family and Country digital artwork' },
-      { src: 'uploads/KA2.webp', alt: 'Eagle Dreaming digital artwork' },
+      { src: 'uploads/optimized/ka1-hero.webp', alt: 'Family and Country digital artwork' },
+      { src: 'uploads/optimized/ka2-side.webp', alt: 'Eagle Dreaming digital artwork' },
       { src: 'uploads/KA4.webp', alt: 'Night Flight digital artwork' },
       { src: 'uploads/KA8.webp', alt: 'Spirit of the Hawk digital artwork' },
-      { src: 'uploads/KA15.jpg', alt: 'Meeting Place digital artwork' },
-      { src: 'uploads/KA19.jpg', alt: 'Connection digital artwork' }
+      { src: 'uploads/optimized/ka15-artwork.webp', alt: 'Meeting Place digital artwork' },
+      { src: 'uploads/optimized/ka19-video-thumb.webp', alt: 'Connection digital artwork' }
     ];
     const heroMainImg = node.querySelector('[data-hero-main-img]');
     const heroSideImg = node.querySelector('[data-hero-side-img]');
@@ -671,11 +751,8 @@ class Component extends DCLogic {
       }, 260);
     };
     if (heroMainImg && heroSideImg) {
-      setInterval(() => {
-        heroIndex = (heroIndex + 1) % heroPieces.length;
-        swapHeroImg(heroMainImg, heroPieces[heroIndex]);
-        swapHeroImg(heroSideImg, heroPieces[(heroIndex + 2) % heroPieces.length]);
-      }, 4200);
+      heroMainImg.alt = heroPieces[0].alt;
+      heroSideImg.alt = heroPieces[1].alt;
     }
 
     // featured projects — hover a thumbnail to expand that project with its story beside
@@ -711,7 +788,7 @@ class Component extends DCLogic {
     });
     if (thumbs[0]) { stageKey = thumbs[0].dataset.img; thumbs[0].style.opacity = '1'; thumbs[0].style.outlineColor = '#B0512C'; }
     if (thumbs.length > 1) {
-      this._projectTimer = setInterval(() => {
+      window.setInterval(() => {
         projectIndex = (projectIndex + 1) % thumbs.length;
         setActive(thumbs[projectIndex]);
       }, 5000);
@@ -730,6 +807,7 @@ class Component extends DCLogic {
     const setVidTab = (tab) => {
       vidTabs.forEach(t => {
         const on = t.dataset.vidTab === tab;
+        t.setAttribute('aria-pressed', on ? 'true' : 'false');
         t.style.background = on ? '#C8893B' : 'transparent';
         t.style.color = on ? '#1E1810' : '#9a8c79';
         t.style.borderColor = on ? '#C8893B' : '#4a3f31';
@@ -775,8 +853,6 @@ class Component extends DCLogic {
       vidTabs.forEach(t => t.addEventListener('click', () => setVidTab(t.dataset.vidTab)));
       vidItems.forEach(item => item.addEventListener('click', () => loadVid(item)));
       setVidTab('all');
-      const firstPlayable = vidItems.find(item => item.dataset.vidSrc || (item.dataset.vidId && !item.dataset.vidId.startsWith('REPLACE')));
-      if (firstPlayable) loadVid(firstPlayable);
     }
 
     // parallax
@@ -790,19 +866,11 @@ class Component extends DCLogic {
         el.style.transform = 'translateY(' + off.toFixed(1) + 'px)';
       });
     };
-    this._sc = () => requestAnimationFrame(tick);
-    window.addEventListener('scroll', this._sc, { passive: true });
-    window.addEventListener('resize', this._sc, { passive: true });
+    const onFrame = () => requestAnimationFrame(tick);
+    window.addEventListener('scroll', onFrame, { passive: true });
+    window.addEventListener('resize', onFrame, { passive: true });
     tick();
-  }
-  componentWillUnmount() {
-    if (this._sc) {
-      window.removeEventListener('scroll', this._sc);
-      window.removeEventListener('resize', this._sc);
-    }
-    if (this._projectTimer) clearInterval(this._projectTimer);
-  }
-}
+})();
 </script>
 </body>
 </html>

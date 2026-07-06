@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://kalariart.com.au/</loc>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://kalariart.com.au/Works.dc.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kalariart.com.au/About.dc.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kalariart.com.au/Services.dc.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kalariart.com.au/Made%20to%20Order.dc.html</loc>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://kalariart.com.au/Workshops.dc.html</loc>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://kalariart.com.au/Giving.dc.html</loc>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://kalariart.com.au/Enquiry.dc.html</loc>
+    <priority>0.8</priority>
+  </url>
+</urlset>
