@@ -147,6 +147,12 @@
   .ka-service-icon svg { width:24px; height:24px; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
   .ka-service-card h3 { font-family:'Cormorant Garamond',serif; font-size:31px; line-height:1.02; font-weight:500; margin:0 0 14px; }
   .ka-service-card p { font-size:14.5px; line-height:1.62; color:#6b5944; margin:0; }
+  .ka-made-grid { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:24px; align-items:start; }
+  .ka-made-card { margin:0; min-width:0; }
+  .ka-made-card img { width:100% !important; height:360px !important; aspect-ratio:auto !important; object-fit:cover !important; border-radius:14px; background:#dccdb0; }
+  .ka-made-card figcaption { display:grid !important; grid-template-columns:minmax(0,1fr) auto; gap:12px; align-items:start !important; margin-top:16px !important; }
+  .ka-made-card figcaption span:first-child { line-height:1.05; }
+  .ka-made-card figcaption span:last-child { text-align:right; white-space:nowrap; }
   .ka-audiences { padding:78px 48px; background:#F7EFDF; }
   .ka-audiences-inner { max-width:1180px; margin:0 auto; }
   .ka-audience-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:34px; }
@@ -229,6 +235,7 @@
     .ka-project-media { height:440px; }
     .ka-about { grid-template-columns:1fr; padding:86px 28px; }
     .ka-service-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .ka-made-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
     .ka-process-step { grid-template-columns:120px minmax(190px,.7fr) 1fr; gap:20px; }
     .ka-video-section { padding:78px 28px; }
     .ka-video-stage { grid-template-columns:1fr; }
@@ -270,6 +277,8 @@
     .ka-origin p { font-size:16px; }
     .ka-service-list { grid-template-columns:1fr; }
     .ka-services { padding:72px 20px; }
+    .ka-made-grid { grid-template-columns:1fr; gap:32px; }
+    .ka-made-card img { height:auto !important; aspect-ratio:1/1 !important; }
     .ka-audiences { padding:62px 20px; }
     .ka-audience-grid { grid-template-columns:1fr; }
     .ka-audience-card { min-height:230px; padding:28px; }
@@ -684,24 +693,24 @@
           <a href="Enquiry.dc.html?type=custom" style="font-size:14px; color:#221C15; text-decoration:none; border-bottom:1px solid #B0512C; padding-bottom:4px;" style-hover="color:#B0512C;">Enquire about a custom piece →</a>
         </div>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:30px;">
-        <figure data-r data-rd="0" style="margin:0;">
+      <div class="ka-made-grid">
+        <figure data-r data-rd="0" class="ka-made-card">
           <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/custom-sneakers.webp" width="720" height="563" loading="lazy" decoding="async" alt="Custom sneakers with Kalari Art hand-painted artwork" style="display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px; background:#dccdb0;">
           <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;"><span style="font-family:'Cormorant Garamond',serif; font-size:25px;">Custom sneakers</span><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#655846;">Leather paint</span></figcaption>
         </figure>
-        <figure data-r data-rd="120" style="margin:0;">
+        <figure data-r data-rd="120" class="ka-made-card">
           <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/custom-heels.webp" width="720" height="602" loading="lazy" decoding="async" alt="Painted heels with custom Kalari Art design" style="display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px; background:#dccdb0;">
           <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;"><span style="font-family:'Cormorant Garamond',serif; font-size:25px;">Painted heels</span><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#655846;">Leather paint</span></figcaption>
         </figure>
-        <figure data-r data-rd="240" style="margin:0;">
+        <figure data-r data-rd="240" class="ka-made-card">
           <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/custom-boots.webp" width="720" height="520" loading="lazy" decoding="async" alt="Custom boots with Kalari Art hand-painted artwork" style="display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px; background:#dccdb0;">
           <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;"><span style="font-family:'Cormorant Garamond',serif; font-size:25px;">Boots</span><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#655846;">Leather paint</span></figcaption>
         </figure>
-        <figure data-r data-rd="0" style="margin:0;">
+        <figure data-r data-rd="0" class="ka-made-card">
           <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/custom-nursery.webp" width="720" height="694" loading="lazy" decoding="async" alt="Nursery artwork with custom Kalari Art painting" style="display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px; background:#dccdb0;">
           <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;"><span style="font-family:'Cormorant Garamond',serif; font-size:25px;">Nursery</span><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#655846;">Hand-painted</span></figcaption>
         </figure>
-        <figure data-r data-rd="120" style="margin:0;">
+        <figure data-r data-rd="120" class="ka-made-card">
           <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/custom-gifts.webp" width="720" height="203" loading="lazy" decoding="async" alt="Personalised gift artwork by Kalari Art" style="display:block; width:100%; aspect-ratio:1/1; object-fit:cover; border-radius:14px; background:#dccdb0;">
           <figcaption style="display:flex; justify-content:space-between; align-items:baseline; margin-top:16px;"><span style="font-family:'Cormorant Garamond',serif; font-size:25px;">Personalised gifts</span><span style="font-size:11px; letter-spacing:.08em; text-transform:uppercase; color:#655846;">One-of-a-kind</span></figcaption>
         </figure>
