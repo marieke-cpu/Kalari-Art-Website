@@ -58,6 +58,10 @@
   .about-totem-card::before { display:none; }
   .about-totem-icon { width:76px; height:76px; margin:0 0 22px; display:grid; place-items:center; border-radius:50%; color:#F7EFE2; background:#B0512C; box-shadow:8px 0 0 #D69A4A,16px 0 0 #2F6F64; }
   .about-totem-icon svg { width:60px; height:60px; overflow:visible; }
+  .about-service-card::before { display:none; }
+  .about-service-top { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:22px; }
+  .about-service-icon { width:54px; height:54px; flex:0 0 54px; display:grid; place-items:center; color:#F7EFDF; background:#B0512C; border-radius:50%; box-shadow:9px 0 0 #D69A4A,18px 0 0 #2F6F64; margin-right:18px; }
+  .about-service-icon svg { width:24px; height:24px; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
   .about-card h3 { font-size:32px; color:#B0512C; margin-bottom:8px; }
   .about-dark { background:#1E1810; color:#F1E7D6; padding:110px 48px; }
   .about-dark-inner { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.1fr .9fr; gap:64px; align-items:start; }
@@ -215,10 +219,10 @@
       <p class="about-text">LaToya works across original commissions, digital designs, workshops and custom pieces, shaping each project around meaning, audience and place.</p>
     </div>
     <div data-r class="about-services">
-      <div class="about-card"><div class="about-kicker">01</div><h3>Commissions</h3><p class="about-text">Custom paintings and artwork developed around story, space and purpose.</p></div>
-      <div class="about-card"><div class="about-kicker">02</div><h3>RAP &amp; branding</h3><p class="about-text">Reconciliation Action Plan artwork, organisational branding and designs for significant Indigenous dates.</p></div>
-      <div class="about-card"><div class="about-kicker">03</div><h3>Workshops</h3><p class="about-text">Cultural art workshops that invite teams and communities to learn through symbol, story and hands-on making.</p></div>
-      <div class="about-card"><div class="about-kicker">04</div><h3>Custom pieces</h3><p class="about-text">Personalised shoes, handbags, name signs, clocks, platter boards and keepsakes.</p></div>
+      <div class="about-card about-service-card"><div class="about-service-top"><div class="about-kicker">01</div><div class="about-service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 19V5h16v14zM8 15l3-4 3 3 2-2 4 4"/><circle cx="8" cy="9" r="1.5"/></svg></div></div><h3>Commissions</h3><p class="about-text">Custom paintings and artwork developed around story, space and purpose.</p></div>
+      <div class="about-card about-service-card"><div class="about-service-top"><div class="about-kicker">02</div><div class="about-service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20h16M6 20V9h12v11M9 9V5h6v4M9 13h2m2 0h2m-6 3h2m2 0h2"/></svg></div></div><h3>RAP &amp; branding</h3><p class="about-text">Reconciliation Action Plan artwork, organisational branding and designs for significant Indigenous dates.</p></div>
+      <div class="about-card about-service-card"><div class="about-service-top"><div class="about-kicker">03</div><div class="about-service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 20V7h14v13M3 20h18M8 7V4h8v3M9 11h6v5H9z"/></svg></div></div><h3>Workshops</h3><p class="about-text">Cultural art workshops that invite teams and communities to learn through symbol, story and hands-on making.</p></div>
+      <div class="about-card about-service-card"><div class="about-service-top"><div class="about-kicker">04</div><div class="about-service-icon"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c.4-4 2-6 5-6s4.6 2 5 6m-2-4c1-1.3 2.7-2 5-2 3 0 4.6 2 5 6"/></svg></div></div><h3>Custom pieces</h3><p class="about-text">Personalised shoes, handbags, name signs, clocks, platter boards and keepsakes.</p></div>
     </div>
 
     <div data-r class="about-proof-grid">
