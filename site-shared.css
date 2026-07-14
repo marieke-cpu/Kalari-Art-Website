@@ -111,6 +111,32 @@
     background: #221C15 !important;
   }
 
+  footer { padding: 56px 24px 34px !important; }
+  footer > div { width: 100%; }
+  footer > div > div:first-child {
+    grid-template-columns: 1fr 1fr !important;
+    gap: 32px 24px !important;
+    padding-bottom: 36px !important;
+  }
+  footer > div > div:first-child > div { min-width: 0; overflow-wrap: anywhere; }
+  footer > div > div:first-child > div:first-child {
+    grid-column: 1 / -1;
+  }
+  footer > div > div:first-child > div:first-child img {
+    width: 160px !important;
+  }
+  footer > div > div:first-child > div:nth-child(4) {
+    grid-column: 1 / -1;
+    padding-top: 4px;
+  }
+  footer > div > div:last-child {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    padding-top: 22px !important;
+    line-height: 1.55;
+  }
+
   .about-dark::after, .about-cta::after, .proj-proof::after, .proj-cta::after,
   .svc-dark::after, .svc-cta::after, .giving-impact::after, .giving-cta::after,
   .ws-video-band::after, .ws-cta::after, .mo-value-band::after, .mo-cta::after, .enq-strip::after {
