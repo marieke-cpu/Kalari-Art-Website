@@ -25,6 +25,44 @@
   mask-image: radial-gradient(circle, #000, transparent 72%);
 }
 @media (max-width: 700px) {
+  /* Compact inner-page navigation. The page links remain accessible in a
+     single swipeable row instead of wrapping into an oversized oval. */
+  nav {
+    top: 10px !important;
+    margin: 10px 16px 0 !important;
+    padding: 12px 14px !important;
+    border-radius: 24px !important;
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+  nav > a:first-child img { width: 116px !important; }
+  nav > a:last-child {
+    margin-left: auto !important;
+    padding: 11px 16px !important;
+    font-size: 12px !important;
+  }
+  nav > div {
+    order: 3;
+    width: 100%;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    justify-content: flex-start !important;
+    gap: 4px !important;
+    margin: 0 !important;
+    padding: 4px 0 2px;
+    overflow-x: auto;
+    overscroll-behavior-inline: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  nav > div::-webkit-scrollbar { display: none; }
+  nav > div a {
+    flex: 0 0 auto;
+    white-space: nowrap;
+    padding: 10px 13px !important;
+    font-size: 13px !important;
+  }
+
   .about-dark::after, .about-cta::after, .proj-proof::after, .proj-cta::after,
   .svc-dark::after, .svc-cta::after, .giving-impact::after, .giving-cta::after,
   .ws-video-band::after, .ws-cta::after, .mo-value-band::after, .mo-cta::after, .enq-strip::after {
