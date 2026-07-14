@@ -38,9 +38,11 @@
   .giving-button.primary { background:#221C15; color:#F3EBDD; }
   .giving-button.secondary { border:1px solid #B0512C; color:#B0512C; }
   .giving-feature { background:#ECE1CE; padding:18px; border-radius:4px; box-shadow:0 32px 70px -46px rgba(34,28,21,.58); }
-  .giving-feature-img { overflow:hidden; aspect-ratio:5/4; background:#dccdb0; }
+  .giving-feature-img { overflow:hidden; height:720px; background:#dccdb0; }
   .giving-feature-img img, .giving-card-img img { width:100%; height:100%; object-fit:cover; transition:transform 1s cubic-bezier(.2,.7,.2,1); }
-  .giving-feature:hover img, .giving-card:hover img { transform:scale(1.04); }
+  .giving-feature-img img { object-fit:contain; object-position:center; }
+  .giving-feature:hover .giving-feature-img img { transform:scale(1.015); }
+  .giving-card:hover img { transform:scale(1.04); }
   .giving-card-img .giving-belonging-img { transform:scale(1.62); object-position:center; }
   .giving-card:hover .giving-belonging-img { transform:scale(1.68); }
   .giving-feature-copy { display:grid; grid-template-columns:1fr auto; gap:22px; align-items:end; padding:22px 6px 4px; }
@@ -101,6 +103,7 @@
     .giving-title { font-size:54px; }
     .giving-actions { flex-direction:column; }
     .giving-button { width:100%; }
+    .giving-feature-img { height:480px; }
   }
 </style>
 </helmet>
