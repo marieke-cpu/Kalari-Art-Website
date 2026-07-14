@@ -845,6 +845,13 @@
         entries.forEach((entry) => {
           if (!entry.isIntersecting) return;
           const img = entry.target;
+          // Dynamically managed images (including the rotating hero) may
+          // remove data-src after observer registration. Never overwrite a
+          // valid image URL with an undefined lazy source.
+          if (!img.dataset.src) {
+            observer.unobserve(img);
+            return;
+          }
           if (img.dataset.srcset) {
             img.srcset = img.dataset.srcset;
             img.removeAttribute('data-srcset');
@@ -857,6 +864,7 @@
       lazyImages.forEach((img) => imageObserver.observe(img));
     } else {
       lazyImages.forEach((img) => {
+        if (!img.dataset.src) return;
         if (img.dataset.srcset) {
           img.srcset = img.dataset.srcset;
           img.removeAttribute('data-srcset');
