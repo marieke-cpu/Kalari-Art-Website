@@ -880,19 +880,56 @@
     ];
     const heroMainImg = node.querySelector('[data-hero-main-img]');
     const heroSideImg = node.querySelector('[data-hero-side-img]');
+    const heroArt = node.querySelector('.ka-hero-art');
     let heroIndex = 0;
     const swapHeroImg = (img, piece) => {
       if (!img || !piece) return;
-      img.style.opacity = '0';
-      setTimeout(() => {
-        img.src = piece.src;
-        img.alt = piece.alt;
-        img.style.opacity = '1';
-      }, 260);
+      const preload = new Image();
+      preload.onload = () => {
+        img.style.opacity = '0';
+        window.setTimeout(() => {
+          img.removeAttribute('srcset');
+          img.src = piece.src;
+          img.alt = piece.alt;
+          img.style.opacity = '1';
+        }, 260);
+      };
+      preload.src = piece.src;
     };
     if (heroMainImg && heroSideImg) {
+      // The rotating images use `src`, so clear the initial responsive source
+      // attributes before they can override later artwork swaps.
+      [heroMainImg, heroSideImg].forEach((img) => {
+        img.removeAttribute('srcset');
+        img.removeAttribute('data-srcset');
+        img.removeAttribute('data-src');
+      });
+      heroMainImg.src = heroPieces[0].src;
+      heroSideImg.src = heroPieces[1].src;
       heroMainImg.alt = heroPieces[0].alt;
       heroSideImg.alt = heroPieces[1].alt;
+
+      let heroTimer;
+      const rotateHero = () => {
+        heroIndex = (heroIndex + 1) % heroPieces.length;
+        swapHeroImg(heroMainImg, heroPieces[heroIndex]);
+        swapHeroImg(heroSideImg, heroPieces[(heroIndex + 1) % heroPieces.length]);
+      };
+      const startHeroRotation = () => {
+        if (heroTimer || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+        heroTimer = window.setInterval(rotateHero, 4500);
+      };
+      const stopHeroRotation = () => {
+        window.clearInterval(heroTimer);
+        heroTimer = undefined;
+      };
+      startHeroRotation();
+      heroArt?.addEventListener('mouseenter', stopHeroRotation);
+      heroArt?.addEventListener('mouseleave', startHeroRotation);
+      document.addEventListener('visibilitychange', () => {
+        if (document.hidden) stopHeroRotation();
+        else startHeroRotation();
+      });
     }
 
     // featured projects — hover a thumbnail to expand that project with its story beside
