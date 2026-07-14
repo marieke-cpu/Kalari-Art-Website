@@ -55,12 +55,13 @@
   .about-country-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:18px; }
   .about-card { background:#ECE1CE; padding:26px; border-radius:4px; }
   .about-card::before { content:""; display:block; width:52px; height:52px; margin:0 0 22px; border-radius:50%; background:radial-gradient(circle,#F7EFE2 0 2px,transparent 2.5px) 0 0/11px 11px,#B0512C; box-shadow:8px 0 0 #D69A4A,16px 0 0 #2F6F64; }
+  .about-totem-card { position:relative; min-height:220px; overflow:hidden; isolation:isolate; display:flex; flex-direction:column; justify-content:flex-end; }
   .about-totem-card::before { display:none; }
-  .about-totem-icon { width:76px; height:76px; margin:0 0 22px; display:grid; place-items:center; border-radius:50%; color:#F7EFE2; background:#B0512C; box-shadow:8px 0 0 #D69A4A,16px 0 0 #2F6F64; }
-  .about-totem-icon img { display:block; max-width:none; object-fit:contain; filter:grayscale(1) invert(1) contrast(12) drop-shadow(0 0 .7px #fff) drop-shadow(0 0 .7px #fff); mix-blend-mode:screen; }
-  .about-totem-icon--goanna img { width:44px; height:62px; }
-  .about-totem-icon--eagle img { width:66px; height:42px; }
-  .about-totem-icon--whale img { width:64px; height:52px; }
+  .about-totem-card::after { content:""; position:absolute; z-index:0; inset:0; pointer-events:none; background-repeat:no-repeat; filter:grayscale(1) contrast(8); mix-blend-mode:multiply; opacity:.16; }
+  .about-totem-card > * { position:relative; z-index:1; }
+  .about-totem-card--goanna::after { background-image:url('goanna.jpg'); background-size:46% auto; background-position:88% 50%; }
+  .about-totem-card--eagle::after { background-image:url('eagle.png'); background-size:88% auto; background-position:72% 30%; }
+  .about-totem-card--whale::after { background-image:url('humpback.jpg'); background-size:82% auto; background-position:100% 36%; }
   .about-service-card::before { display:none; }
   .about-service-top { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:22px; }
   .about-service-icon { width:54px; height:54px; flex:0 0 54px; display:grid; place-items:center; color:#F7EFDF; background:#B0512C; border-radius:50%; box-shadow:9px 0 0 #D69A4A,18px 0 0 #2F6F64; margin-right:18px; }
@@ -178,22 +179,13 @@
         <p class="about-text" style="font-size:18px;">My name is LaToya and I’m a proud Ngunnawal and Wiradjuri woman. My grandmother is Ngunnawal from Yass, and my grandfather is Wiradjuri from Cowra, both small country towns in Central West NSW.</p>
         <p class="about-text" style="font-size:18px;">I was born on Wiradjuri Country in Cowra, grew up on Ngunnawal Country in Canberra, and I now reside on beautiful Dharawal Country in Wollongong NSW. My connections extend across Wiradjuri, Ngunnawal and Dharawal Countries.</p>
         <div class="about-country-grid">
-          <div class="about-card about-totem-card">
-            <div class="about-totem-icon about-totem-icon--goanna" role="img" aria-label="Goanna — Wiradjuri totem">
-              <img src="goanna.jpg" alt="" aria-hidden="true">
-            </div>
+          <div class="about-card about-totem-card about-totem-card--goanna">
             <h3>Wiradjuri</h3><p class="about-text">Born on Country in Cowra, with family connection through my grandfather.</p>
           </div>
-          <div class="about-card about-totem-card">
-            <div class="about-totem-icon about-totem-icon--eagle" role="img" aria-label="Wedge-tailed eagle — Ngunnawal totem">
-              <img src="eagle.png" alt="" aria-hidden="true">
-            </div>
+          <div class="about-card about-totem-card about-totem-card--eagle">
             <h3>Ngunnawal</h3><p class="about-text">Raised on Ngunnawal Country, with family connection through my grandmother from Yass.</p>
           </div>
-          <div class="about-card about-totem-card">
-            <div class="about-totem-icon about-totem-icon--whale" role="img" aria-label="Humpback whale — Dharawal totem">
-              <img src="humpback.jpg" alt="" aria-hidden="true">
-            </div>
+          <div class="about-card about-totem-card about-totem-card--whale">
             <h3>Dharawal</h3><p class="about-text">Now living and creating on Dharawal Country in Wollongong.</p>
           </div>
         </div>
