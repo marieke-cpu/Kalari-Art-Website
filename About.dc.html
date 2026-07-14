@@ -55,6 +55,9 @@
   .about-country-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:18px; }
   .about-card { background:#ECE1CE; padding:26px; border-radius:4px; }
   .about-card::before { content:""; display:block; width:52px; height:52px; margin:0 0 22px; border-radius:50%; background:radial-gradient(circle,#F7EFE2 0 2px,transparent 2.5px) 0 0/11px 11px,#B0512C; box-shadow:8px 0 0 #D69A4A,16px 0 0 #2F6F64; }
+  .about-totem-card::before { display:none; }
+  .about-totem-icon { width:76px; height:76px; margin:0 0 22px; display:grid; place-items:center; border-radius:50%; color:#F7EFE2; background:#B0512C; box-shadow:8px 0 0 #D69A4A,16px 0 0 #2F6F64; }
+  .about-totem-icon svg { width:52px; height:52px; overflow:visible; fill:none; stroke:currentColor; stroke-width:2.2; stroke-linecap:round; stroke-linejoin:round; }
   .about-card h3 { font-size:32px; color:#B0512C; margin-bottom:8px; }
   .about-dark { background:#1E1810; color:#F1E7D6; padding:110px 48px; }
   .about-dark-inner { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.1fr .9fr; gap:64px; align-items:start; }
@@ -166,9 +169,24 @@
         <p class="about-text" style="font-size:18px;">My name is LaToya and I’m a proud Ngunnawal and Wiradjuri woman. My grandmother is Ngunnawal from Yass, and my grandfather is Wiradjuri from Cowra, both small country towns in Central West NSW.</p>
         <p class="about-text" style="font-size:18px;">I was born on Wiradjuri Country in Cowra, grew up on Ngunnawal Country in Canberra, and I now reside on beautiful Dharawal Country in Wollongong NSW. My connections extend across Wiradjuri, Ngunnawal and Dharawal Countries.</p>
         <div class="about-country-grid">
-          <div class="about-card"><h3>Wiradjuri</h3><p class="about-text">Born on Country in Cowra, with family connection through my grandfather.</p></div>
-          <div class="about-card"><h3>Ngunnawal</h3><p class="about-text">Raised on Ngunnawal Country, with family connection through my grandmother from Yass.</p></div>
-          <div class="about-card"><h3>Dharawal</h3><p class="about-text">Now living and creating on Dharawal Country in Wollongong.</p></div>
+          <div class="about-card about-totem-card">
+            <div class="about-totem-icon" role="img" aria-label="Goanna — Wiradjuri totem">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M7 35c9-1 13-6 21-7 7-1 12 1 17 5l7-1 5 3-5 3-8-1c-5 3-11 5-18 4-8-1-13-4-19-3"/><path d="M25 29l-7-8-4 1 7 10m18 3 7 8 5-1-8-9M25 39l-7 7-5-1 8-8m17 2 5 8 5 1-7-11"/><circle cx="51" cy="34.5" r=".8" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <h3>Wiradjuri</h3><p class="about-text">Born on Country in Cowra, with family connection through my grandfather.</p>
+          </div>
+          <div class="about-card about-totem-card">
+            <div class="about-totem-icon" role="img" aria-label="Wedge-tailed eagle — Ngunnawal totem">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 19c-5 0-8 4-9 9-6-6-13-9-21-10 5 7 11 13 20 17-6 0-11 1-16 4 7 2 14 3 22 1l4 10 4-10c8 2 15 1 22-1-5-3-10-4-16-4 9-4 15-10 20-17-8 1-15 4-21 10-1-5-4-9-9-9Z"/><path d="M28 27c2 2 6 2 8 0m-4 1v9m-4 13 4-5 4 5"/></svg>
+            </div>
+            <h3>Ngunnawal</h3><p class="about-text">Raised on Ngunnawal Country, with family connection through my grandmother from Yass.</p>
+          </div>
+          <div class="about-card about-totem-card">
+            <div class="about-totem-icon" role="img" aria-label="Humpback whale — Dharawal totem">
+              <svg viewBox="0 0 64 64" aria-hidden="true"><path d="M7 34c6-9 15-14 27-13 8 0 13 3 19 8l6-7c1 6 0 11-4 15-5 6-13 9-23 9-12 0-21-4-25-12Z"/><path d="M26 45c3 5 7 8 12 9-1-5-3-8-7-10m18-13c-2 4-1 8 3 11m-34-9c8 3 17 3 25 0"/><circle cx="15" cy="30" r="1" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <h3>Dharawal</h3><p class="about-text">Now living and creating on Dharawal Country in Wollongong.</p>
+          </div>
         </div>
       </div>
     </div>
