@@ -16,7 +16,7 @@
 <helmet>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400&family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
 <style>
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -37,7 +37,7 @@
   .svc-button.outline { color:#221C15; border:1px solid #221C15; }
   .svc-button:hover { transform:translateY(-3px); }
   .svc-hero { padding-top:78px; padding-bottom:86px; display:grid; grid-template-columns:1.08fr .92fr; gap:56px; align-items:center; }
-  .svc-hero h1 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:84px; line-height:.96; letter-spacing:-.02em; margin:0 0 26px; max-width:790px; }
+  .svc-hero h1 { font-family:'Fraunces',serif; font-weight:500; font-size:84px; line-height:.96; letter-spacing:-.02em; margin:0 0 26px; max-width:790px; }
   .svc-hero-copy { font-size:19px; line-height:1.65; color:#5e5142; max-width:650px; margin:0 0 32px; }
   .svc-actions { display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
   .svc-hero-panel { background:#221C15; color:#F7EFE2; padding:28px; border-radius:8px; min-height:620px; display:grid; align-content:space-between; overflow:hidden; position:relative; }
@@ -46,17 +46,17 @@
   .svc-hero-panel > div { position:relative; z-index:2; }
   .svc-panel-top { display:flex; justify-content:space-between; gap:20px; font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:#F3EBDD; }
   .svc-panel-bottom { align-self:end; max-width:420px; }
-  .svc-panel-bottom h2 { font-family:'Cormorant Garamond',serif; font-size:42px; line-height:1.02; font-weight:500; margin:0 0 14px; }
+  .svc-panel-bottom h2 { font-family:'Fraunces',serif; font-size:42px; line-height:1.02; font-weight:500; margin:0 0 14px; }
   .svc-panel-bottom p { color:#ead7c4; line-height:1.6; margin:0; }
   .svc-strip { background:#ECE1CE; border-top:1px solid #D7C8AE; border-bottom:1px solid #D7C8AE; }
   .svc-strip-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:1px; }
   .svc-stat { padding:30px 28px; border-left:1px solid #D7C8AE; }
   .svc-stat:first-child { border-left:0; }
-  .svc-stat strong { display:block; font-family:'Cormorant Garamond',serif; font-size:34px; font-weight:500; margin-bottom:8px; }
+  .svc-stat strong { display:block; font-family:'Fraunces',serif; font-size:34px; font-weight:500; margin-bottom:8px; }
   .svc-stat span { font-size:13px; line-height:1.5; color:#6b5944; }
   .svc-section { padding-top:104px; padding-bottom:104px; }
   .svc-section-head { display:flex; justify-content:space-between; gap:44px; align-items:flex-end; margin-bottom:42px; }
-  .svc-section h2, .svc-card h3, .svc-mini-card h3, .svc-process h2, .svc-cta h2 { font-family:'Cormorant Garamond',serif; font-weight:500; margin:0; }
+  .svc-section h2, .svc-card h3, .svc-mini-card h3, .svc-process h2, .svc-cta h2 { font-family:'Fraunces',serif; font-weight:500; margin:0; }
   .svc-section h2 { font-size:56px; line-height:1.04; max-width:740px; }
   .svc-section-head p { font-size:17px; line-height:1.65; color:#5e5142; max-width:460px; margin:0; }
   .svc-card-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
@@ -71,7 +71,7 @@
   .svc-list li:before { content:""; width:7px; height:7px; border-radius:50%; background:#B0512C; flex:0 0 auto; margin-top:7px; }
   .svc-dark { background:#221C15; color:#F7EFE2; padding:98px 48px; }
   .svc-dark-grid { max-width:1440px; margin:0 auto; display:grid; grid-template-columns:.88fr 1.12fr; gap:58px; align-items:start; }
-  .svc-dark h2 { font-family:'Cormorant Garamond',serif; font-size:56px; line-height:1.04; font-weight:500; margin:0 0 22px; }
+  .svc-dark h2 { font-family:'Fraunces',serif; font-size:56px; line-height:1.04; font-weight:500; margin:0 0 22px; }
   .svc-dark p { color:#cdbfa9; font-size:16px; line-height:1.7; margin:0; }
   .svc-mini-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; }
   .svc-mini-card { border:1px solid #4b3c2c; background:#2a2218; border-radius:8px; padding:28px; }
@@ -83,10 +83,10 @@
   .svc-steps { display:grid; gap:14px; }
   .svc-step { display:grid; grid-template-columns:68px 1fr; gap:20px; padding:24px; background:#F3EBDD; border:1px solid #D7C8AE; border-radius:8px; }
   .svc-step-num { width:46px; height:46px; border-radius:50%; background:#B0512C; color:#F7EFE2; display:flex; align-items:center; justify-content:center; font-weight:700; }
-  .svc-step h3 { font-family:'Cormorant Garamond',serif; font-size:29px; font-weight:500; margin:0 0 8px; }
+  .svc-step h3 { font-family:'Fraunces',serif; font-size:29px; font-weight:500; margin:0 0 8px; }
   .svc-fit-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
   .svc-fit { background:#F8F1E6; border:1px solid #D7C8AE; border-radius:8px; padding:28px; }
-  .svc-fit h3 { font-family:'Cormorant Garamond',serif; font-size:30px; font-weight:500; margin:0 0 10px; }
+  .svc-fit h3 { font-family:'Fraunces',serif; font-size:30px; font-weight:500; margin:0 0 10px; }
   .svc-cta { background:#221C15; color:#F7EFE2; padding:98px 48px; position:relative; overflow:hidden; border-top:1px solid #3d3022; }
   .svc-cta::before { content:""; position:absolute; inset:0; background:linear-gradient(135deg, rgba(176,81,44,.28), transparent 42%), linear-gradient(180deg, rgba(47,111,100,.16), transparent 55%); pointer-events:none; }
   .svc-cta-inner { position:relative; max-width:820px; margin:0 auto; }
@@ -94,8 +94,8 @@
   .svc-cta p { color:#cdbfa9; font-size:17px; line-height:1.65; max-width:640px; margin:0 0 32px; }
   .svc-cta-panel { display:grid; gap:14px; }
   .svc-cta-row { background:#2a2118; border:1px solid rgba(200,137,59,.28); border-radius:8px; padding:22px 24px; display:grid; grid-template-columns:34px 1fr; gap:16px; align-items:start; }
-  .svc-cta-row span { font-family:'Cormorant Garamond',serif; font-size:28px; color:#C8893B; line-height:1; }
-  .svc-cta-row h3 { font-family:'Cormorant Garamond',serif; font-size:28px; font-weight:500; margin:0 0 6px; }
+  .svc-cta-row span { font-family:'Fraunces',serif; font-size:28px; color:#C8893B; line-height:1; }
+  .svc-cta-row h3 { font-family:'Fraunces',serif; font-size:28px; font-weight:500; margin:0 0 6px; }
   .svc-cta-row p { font-size:14.5px; line-height:1.55; margin:0; }
   @media (max-width: 1080px) {
     .svc-hero, .svc-dark-grid, .svc-process-inner, .svc-cta-inner { grid-template-columns:1fr; }
