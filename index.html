@@ -20,6 +20,7 @@
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="site.webmanifest">
 <link rel="preload" as="image" href="uploads/optimized/ka1-hero-720.webp" imagesrcset="uploads/optimized/ka1-hero-720.webp 720w, uploads/optimized/ka1-hero.webp 1100w" imagesizes="42vw" media="(min-width: 981px)" fetchpriority="high">
+<link data-ka-fonts rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&amp;family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap">
 </head>
 <body>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -55,7 +56,8 @@
   .ka-eyebrow { display:flex; align-items:center; gap:16px; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#B0512C; font-weight:700; margin-bottom:28px; }
   .ka-eyebrow span { width:46px; height:1px; background:#B0512C; display:inline-block; }
   .ka-hero-title { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:94px; line-height:.96; letter-spacing:0; margin:0; max-width:760px; }
-  .ka-hero-title em { font-style:italic; color:#B0512C; }
+  .ka-hero-title em { font-style:normal; color:#B0512C; position:relative; }
+  .ka-hero-title em::after { content:""; position:absolute; left:.03em; right:.03em; bottom:.04em; height:5px; background:radial-gradient(circle,#C8893B 0 2px,transparent 2.5px) 0 0/12px 5px repeat-x; opacity:.72; }
   .ka-hero-copy { font-size:18px; line-height:1.68; color:#5e5142; max-width:520px; margin:28px 0 38px; }
   .ka-hero-actions { display:flex; gap:14px; align-items:center; flex-wrap:wrap; }
   .ka-button { font-size:14px; letter-spacing:.03em; text-decoration:none; background:#221C15; color:#F3EBDD; padding:16px 32px; border-radius:30px; transition:all .25s; display:inline-flex; align-items:center; gap:10px; }
@@ -74,11 +76,20 @@
   .ka-hero-note { position:absolute; right:30px; bottom:32px; max-width:250px; padding:18px 20px; background:rgba(34,28,21,.86); color:#F1E7D6; border-top:3px solid #2F6F64; box-shadow:0 20px 60px -34px rgba(0,0,0,.65); }
   .ka-hero-note strong { display:block; font-family:'Cormorant Garamond',serif; font-size:26px; font-weight:500; margin-bottom:6px; }
   .ka-hero-note span { font-size:12.5px; line-height:1.55; color:#cdbfa9; }
-  .ka-marquee-band { border-top:1px solid #E0D3BC; border-bottom:1px solid #E0D3BC; background:#221C15; padding:22px 0; overflow:hidden; white-space:nowrap; }
-  .ka-marquee-track { display:inline-flex; width:max-content; animation:kaMarq 40s linear infinite; align-items:center; font-family:'Cormorant Garamond',serif; font-size:34px; color:#F1E7D6; }
-  .ka-marquee-track span { padding:0 36px; }
-  .ka-marquee-track .dot { color:#C8893B; padding:0; }
-  .ka-ack { padding:82px 48px 76px; background:#F7EFDF; border-bottom:1px solid rgba(205,191,167,.7); }
+  .ka-proof { background:#221C15; color:#F1E7D6; padding:52px 0 44px; overflow:hidden; border-top:1px solid #352a1d; }
+  .ka-proof h2 { margin:0 24px 28px; text-align:center; font-size:12px; letter-spacing:.24em; text-transform:uppercase; color:#D69A4A; font-weight:700; }
+  .ka-logo-track { display:flex; width:max-content; animation:kaMarq 46s linear infinite; align-items:center; }
+  .ka-logo-set { display:flex; align-items:center; gap:18px; padding-right:18px; }
+  .ka-client-logo { width:190px; height:76px; display:flex; align-items:center; justify-content:center; padding:14px 20px; border:1px solid rgba(241,231,214,.13); background:rgba(255,255,255,.045); }
+  .ka-client-logo img { max-width:100%; max-height:42px; width:auto; height:auto; filter:grayscale(1) brightness(0) invert(1); opacity:.83; }
+  .ka-client-logo span { display:none; color:#F1E7D6; font-size:14px; line-height:1.15; text-align:center; font-weight:600; }
+  .ka-client-logo img[style*="display: none"] + span { display:block; }
+  .ka-credentials { max-width:1180px; margin:34px auto 0; padding:28px 32px 0; border-top:1px solid rgba(241,231,214,.12); display:flex; align-items:center; justify-content:center; gap:12px; flex-wrap:wrap; }
+  .ka-credentials-label { font-size:11px; letter-spacing:.18em; text-transform:uppercase; color:#b7a58d; margin-right:8px; }
+  .ka-credential { border:1px solid rgba(214,154,74,.42); color:#F1E7D6; padding:9px 14px; border-radius:999px; font-size:12px; letter-spacing:.03em; }
+  .ka-ack { position:relative; overflow:hidden; padding:82px 48px 76px; background:#F7EFDF; border-bottom:1px solid rgba(205,191,167,.7); }
+  .ka-ack::before, .ka-origin::before, footer::before { content:""; position:absolute; pointer-events:none; width:430px; height:430px; border-radius:50%; background:radial-gradient(circle, currentColor 0 2px, transparent 2.5px) 0 0/18px 18px; opacity:.075; transform:rotate(12deg); }
+  .ka-ack::before { color:#B0512C; right:-110px; top:-170px; mask-image:radial-gradient(circle,#000,transparent 70%); }
   .ka-ack-inner { max-width:1120px; margin:0 auto; display:grid; grid-template-columns:.42fr 1fr; gap:54px; align-items:start; }
   .ka-ack-title { font-family:'Cormorant Garamond',serif; font-size:42px; line-height:1.02; font-weight:500; margin:0; color:#221C15; }
   .ka-ack-text { font-size:18px; line-height:1.75; color:#5e5142; margin:0; }
@@ -117,7 +128,8 @@
   .ka-about h2 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:48px; line-height:1.06; margin:0 0 28px; letter-spacing:0; }
   .ka-about p { font-size:17px; line-height:1.72; color:#5e5142; margin:0 0 22px; max-width:590px; }
   .ka-quote { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:29px; line-height:1.35; color:#221C15; border-left:2px solid #B0512C; padding-left:26px; margin:0 0 28px; }
-  .ka-origin { background:#221C15; color:#F1E7D6; padding:90px 48px; }
+  .ka-origin { position:relative; overflow:hidden; background:#221C15; color:#F1E7D6; padding:90px 48px; }
+  .ka-origin::before { color:#D69A4A; left:-120px; bottom:-230px; opacity:.09; }
   .ka-origin-inner { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:.78fr 1.22fr; gap:56px; align-items:start; }
   .ka-origin h2 { font-family:'Cormorant Garamond',serif; font-weight:500; font-size:48px; line-height:1.02; margin:0; letter-spacing:0; }
   .ka-origin .ka-kicker { color:#C8893B; }
@@ -127,11 +139,32 @@
   .ka-services { background:#ECE1CE; border-top:1px solid #E0D3BC; padding:102px 48px; }
   .ka-services-inner { max-width:1440px; margin:0 auto; }
   .ka-service-list { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:16px; }
-  .ka-service-card { background:#F7EFDF; border:1px solid rgba(205,191,167,.72); padding:26px; min-height:230px; display:flex; flex-direction:column; justify-content:space-between; transition:transform .3s, border-color .3s, box-shadow .3s; }
+  .ka-service-card { position:relative; overflow:hidden; background:#F7EFDF; border:1px solid rgba(205,191,167,.72); padding:26px; min-height:260px; display:flex; flex-direction:column; justify-content:space-between; transition:transform .3s, border-color .3s, box-shadow .3s; }
   .ka-service-card:hover { transform:translateY(-5px); border-color:#2F6F64; box-shadow:0 26px 60px -44px rgba(34,28,21,.46); }
-  .ka-service-num { font-family:'Cormorant Garamond',serif; font-size:22px; color:#B0512C; margin-bottom:34px; }
+  .ka-service-top { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:34px; }
+  .ka-service-num { font-family:'Fraunces','Cormorant Garamond',serif; font-size:22px; color:#B0512C; }
+  .ka-service-icon { width:54px; height:54px; display:grid; place-items:center; color:#F7EFDF; background:#B0512C; border-radius:50%; box-shadow:9px 0 0 #D69A4A,18px 0 0 #2F6F64; margin-right:18px; }
+  .ka-service-icon svg { width:24px; height:24px; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
   .ka-service-card h3 { font-family:'Cormorant Garamond',serif; font-size:31px; line-height:1.02; font-weight:500; margin:0 0 14px; }
   .ka-service-card p { font-size:14.5px; line-height:1.62; color:#6b5944; margin:0; }
+  .ka-audiences { padding:78px 48px; background:#F7EFDF; }
+  .ka-audiences-inner { max-width:1180px; margin:0 auto; }
+  .ka-audience-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:34px; }
+  .ka-audience-card { position:relative; overflow:hidden; min-height:250px; padding:38px; text-decoration:none; color:#F7EFDF; background:#2F6F64; display:flex; flex-direction:column; justify-content:flex-end; transition:transform .3s; }
+  .ka-audience-card:last-child { background:#B0512C; }
+  .ka-audience-card::before { content:""; position:absolute; width:260px; height:260px; right:-70px; top:-110px; border-radius:50%; background:radial-gradient(circle,#F7EFDF 0 2px,transparent 2.5px) 0 0/16px 16px; opacity:.16; }
+  .ka-audience-card:hover { transform:translateY(-4px); }
+  .ka-audience-card h3 { position:relative; font-family:'Fraunces','Cormorant Garamond',serif; font-size:36px; font-weight:500; margin:0 0 10px; }
+  .ka-audience-card p { position:relative; max-width:450px; margin:0 0 20px; line-height:1.6; color:#fff4e8; }
+  .ka-audience-card span { position:relative; font-size:13px; border-bottom:1px solid currentColor; width:max-content; padding-bottom:4px; }
+  .ka-process { padding:100px 48px; background:#F3EBDD; }
+  .ka-process-inner { max-width:1180px; margin:0 auto; }
+  .ka-process-grid { display:grid; grid-template-columns:repeat(4,1fr); margin-top:48px; border-top:1px solid #cdbfa7; }
+  .ka-process-step { position:relative; padding:32px 28px 0 0; }
+  .ka-process-step::before { content:""; position:absolute; width:11px; height:11px; border-radius:50%; background:#B0512C; top:-6px; left:0; box-shadow:0 0 0 6px #F3EBDD; }
+  .ka-process-step small { color:#2F6F64; font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; }
+  .ka-process-step h3 { font-family:'Fraunces','Cormorant Garamond',serif; font-size:26px; font-weight:500; margin:10px 0; }
+  .ka-process-step p { color:#6b5944; font-size:14px; line-height:1.6; margin:0; }
   .ka-workshop-cta { background:#221C15; color:#F7EFDF; padding:104px 48px; position:relative; overflow:hidden; border-top:1px solid #352a1d; }
   .ka-workshop-cta::before { content:""; position:absolute; inset:0; background:linear-gradient(135deg, rgba(176,81,44,.24), transparent 38%), linear-gradient(180deg, rgba(47,111,100,.18), transparent 52%); pointer-events:none; }
   .ka-workshop-inner { position:relative; max-width:1440px; margin:0 auto; display:grid; grid-template-columns:1fr .95fr; gap:54px; align-items:center; }
@@ -142,12 +175,9 @@
   .ka-workshop-button { font-size:15px; letter-spacing:.03em; text-decoration:none; background:#F7EFDF; color:#221C15; padding:17px 34px; border-radius:30px; display:inline-flex; transition:all .3s; }
   .ka-workshop-button:hover { background:#D69A4A; transform:translateY(-3px); }
   .ka-workshop-link { font-size:14px; color:#D69A4A; text-decoration:none; border-bottom:1px solid #D69A4A; padding-bottom:5px; }
-  .ka-workshop-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }
-  .ka-workshop-card { background:#2a2118; border:1px solid rgba(200,137,59,.26); padding:26px; min-height:178px; display:flex; flex-direction:column; justify-content:space-between; }
-  .ka-workshop-card h3 { font-family:'Cormorant Garamond',serif; font-size:31px; line-height:1.03; font-weight:500; margin:0 0 12px; color:#F7EFDF; }
-  .ka-workshop-card p { font-size:14.5px; line-height:1.6; color:#b7a58d; margin:0; }
-  .ka-workshop-card.accent { background:#B0512C; border-color:#B0512C; }
-  .ka-workshop-card.accent p { color:#fff4e8; }
+  .ka-workshop-cta .ka-workshop-inner { grid-template-columns:1fr; max-width:980px; text-align:center; }
+  .ka-workshop-cta .ka-workshop-copy h2, .ka-workshop-cta .ka-workshop-copy p { margin-left:auto; margin-right:auto; }
+  .ka-workshop-cta .ka-workshop-actions, .ka-workshop-cta .ka-video-kicker { justify-content:center; }
   .ka-video-section { position: relative; overflow: hidden; background:#1E1810; color:#F1E7D6; padding:104px 48px; border-top:1px solid #352a1d; border-bottom:1px solid #352a1d; }
   .ka-video-section::before { content:""; position:absolute; inset:0; background:linear-gradient(135deg, rgba(176,81,44,.22), transparent 36%), linear-gradient(180deg, rgba(47,111,100,.16), transparent 42%); pointer-events:none; }
   .ka-video-shell { position:relative; max-width:1440px; margin:0 auto; }
@@ -200,6 +230,7 @@
     .ka-project-media { height:440px; }
     .ka-about { grid-template-columns:1fr; padding:86px 28px; }
     .ka-service-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
+    .ka-process-grid { grid-template-columns:repeat(2,1fr); row-gap:38px; }
     .ka-video-section { padding:78px 28px; }
     .ka-video-stage { grid-template-columns:1fr; }
     .ka-video-player { min-height:0; }
@@ -217,7 +248,9 @@
     .ka-hero-art-side { width:46%; border-width:8px; }
     .ka-hero-label { left:14px; }
     .ka-hero-note { right:14px; bottom:20px; max-width:220px; padding:14px 16px; }
-    .ka-marquee-track { font-size:28px; }
+    .ka-proof { padding-top:42px; }
+    .ka-client-logo { width:150px; height:68px; padding:12px 16px; }
+    .ka-credentials { padding:24px 20px 0; }
     .ka-ack { padding:64px 20px; }
     .ka-ack-inner { grid-template-columns:1fr; gap:24px; }
     .ka-ack-title { font-size:36px; }
@@ -238,11 +271,17 @@
     .ka-origin p { font-size:16px; }
     .ka-service-list { grid-template-columns:1fr; }
     .ka-services { padding:72px 20px; }
+    .ka-audiences { padding:62px 20px; }
+    .ka-audience-grid { grid-template-columns:1fr; }
+    .ka-audience-card { min-height:230px; padding:28px; }
+    .ka-process { padding:72px 20px; }
+    .ka-process-grid { grid-template-columns:1fr; border-top:0; margin-top:32px; }
+    .ka-process-step { border-left:1px solid #cdbfa7; padding:0 0 36px 28px; }
+    .ka-process-step::before { top:3px; left:-6px; }
     .ka-workshop-cta { padding:72px 20px; }
     .ka-workshop-inner { grid-template-columns:1fr; gap:30px; }
     .ka-workshop-copy h2 { font-size:42px; }
     .ka-workshop-copy p { font-size:16px; }
-    .ka-workshop-grid { grid-template-columns:1fr; }
     .ka-video-section { padding:64px 20px; }
     .ka-video-heading { font-size:42px; }
     .ka-video-tabs { justify-content:flex-start; }
@@ -264,6 +303,16 @@
   footer p, footer span, footer div { color:#d8cbb7 !important; }
   footer div[style*="letter-spacing"] { color:#e9dcc8 !important; }
   .ka-kicker { color:#974322; }
+  .ka-page h1, .ka-page h2, .ka-page h3, .ka-page blockquote, .ka-hero-note strong, .ka-manifesto p, .ka-video-title, .ka-video-card-title { font-family:'Fraunces','Cormorant Garamond',serif; }
+  footer { position:relative; overflow:hidden; }
+  footer::before { color:#D69A4A; right:-110px; bottom:-180px; opacity:.08; }
+  footer > div { position:relative; }
+  footer a { color:#d8cbb7; text-decoration:none; }
+  footer a:hover { color:#D69A4A; }
+  @media (max-width: 620px) {
+    footer { padding:58px 20px 36px !important; }
+    footer > div > div:first-child { grid-template-columns:1fr !important; gap:30px !important; }
+  }
 </style>
 <script type="application/ld+json">
 {
@@ -333,12 +382,8 @@
         <h1 data-r data-rd="80" class="ka-hero-title">Stories of <em>Country</em>,<br>culture &amp; connection</h1>
         <p data-r data-rd="160" class="ka-hero-copy">Original canvas and digital artworks, commissioned pieces and cultural artwork — carrying story into community, government and corporate Australia.</p>
         <div data-r data-rd="240" class="ka-hero-actions">
-          <a href="Works.dc.html" class="ka-button">View Projects</a>
-          <a href="#videos" class="ka-button-soft">
-            <span class="ka-play-dot"><svg width="9" height="11" viewBox="0 0 9 11" fill="none"><path d="M1 1l7 4.5L1 10V1z" fill="#fff"/></svg></span>
-            Watch the work
-          </a>
-          <a href="#services" class="ka-text-link">Explore Services →</a>
+          <a href="Enquiry.dc.html" class="ka-button">Start a Project</a>
+          <a href="Works.dc.html" class="ka-text-link">Explore the work →</a>
         </div>
       </div>
       <div data-r data-rd="120" class="ka-hero-art">
@@ -357,11 +402,46 @@
     </div>
   </header>
 
-  <!-- org marquee band -->
-  <section class="ka-marquee-band">
-    <div class="ka-marquee-track">
-      <span>St George Illawarra Dragons</span><span class="dot">◦</span><span>IMB Bank</span><span class="dot">◦</span><span>Productivity Commission</span><span class="dot">◦</span><span>Canberra Health Services</span><span class="dot">◦</span><span>Canberra Institute of Technology</span><span class="dot">◦</span><span>Stride Mental Health</span><span class="dot">◦</span><span>The Disability Trust</span><span class="dot">◦</span><span>Aspen Medical</span><span class="dot">◦</span><span>NEMA</span><span class="dot">◦</span>
-      <span>St George Illawarra Dragons</span><span class="dot">◦</span><span>IMB Bank</span><span class="dot">◦</span><span>Productivity Commission</span><span class="dot">◦</span><span>Canberra Health Services</span><span class="dot">◦</span><span>Canberra Institute of Technology</span><span class="dot">◦</span><span>Stride Mental Health</span><span class="dot">◦</span><span>The Disability Trust</span><span class="dot">◦</span><span>Aspen Medical</span><span class="dot">◦</span><span>NEMA</span><span class="dot">◦</span>
+  <!-- client proof + procurement credentials -->
+  <section class="ka-proof" aria-labelledby="proof-title">
+    <h2 id="proof-title">Trusted by organisations across Australia</h2>
+    <div class="ka-logo-track">
+      <div class="ka-logo-set">
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/dragons.com.au" alt="St George Illawarra Dragons" onerror="this.style.display='none'"><span>St George Illawarra Dragons</span></div>
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/imb.com.au" alt="IMB Bank" onerror="this.style.display='none'"><span>IMB Bank</span></div>
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/pc.gov.au" alt="Productivity Commission" onerror="this.style.display='none'"><span>Productivity Commission</span></div>
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/health.act.gov.au" alt="Canberra Health Services" onerror="this.style.display='none'"><span>Canberra Health Services</span></div>
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/cit.edu.au" alt="Canberra Institute of Technology" onerror="this.style.display='none'"><span>Canberra Institute of Technology</span></div>
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/stride.com.au" alt="Stride Mental Health" onerror="this.style.display='none'"><span>Stride Mental Health</span></div>
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/aspenmedical.com" alt="Aspen Medical" onerror="this.style.display='none'"><span>Aspen Medical</span></div>
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/nema.gov.au" alt="National Emergency Management Agency" onerror="this.style.display='none'"><span>NEMA</span></div>
+      </div>
+      <div class="ka-logo-set" aria-hidden="true">
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/dragons.com.au" alt="" onerror="this.style.display='none'"><span>St George Illawarra Dragons</span></div>
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/imb.com.au" alt="" onerror="this.style.display='none'"><span>IMB Bank</span></div>
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/pc.gov.au" alt="" onerror="this.style.display='none'"><span>Productivity Commission</span></div>
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/health.act.gov.au" alt="" onerror="this.style.display='none'"><span>Canberra Health Services</span></div>
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/cit.edu.au" alt="" onerror="this.style.display='none'"><span>Canberra Institute of Technology</span></div>
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/stride.com.au" alt="" onerror="this.style.display='none'"><span>Stride Mental Health</span></div>
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/aspenmedical.com" alt="" onerror="this.style.display='none'"><span>Aspen Medical</span></div>
+        <div class="ka-client-logo"><img src="https://logo.clearbit.com/nema.gov.au" alt="" onerror="this.style.display='none'"><span>NEMA</span></div>
+      </div>
+    </div>
+    <div class="ka-credentials" aria-label="Procurement registrations and certifications">
+      <span class="ka-credentials-label">Ready for procurement</span>
+      <span class="ka-credential">Supply Nation Certified</span><span class="ka-credential">Indigenous Art Code</span><span class="ka-credential">Buy NSW</span><span class="ka-credential">AusTender</span><span class="ka-credential">VendorPanel</span>
+    </div>
+  </section>
+
+  <!-- audience paths -->
+  <section class="ka-audiences" aria-labelledby="audience-title">
+    <div class="ka-audiences-inner">
+      <div class="ka-kicker">⟢ Find your path</div>
+      <h2 id="audience-title" class="ka-section-title">What can we create together?</h2>
+      <div class="ka-audience-grid">
+        <a class="ka-audience-card" href="#services"><h3>For Organisations</h3><p>RAP artwork, commissions, murals, cultural workshops and design for government, corporate and community teams.</p><span>Explore organisation services →</span></a>
+        <a class="ka-audience-card" href="#made"><h3>Custom &amp; Personal Pieces</h3><p>One-of-a-kind sneakers, nursery artwork, personalised gifts and original works made with story and care.</p><span>Explore custom pieces →</span></a>
+      </div>
     </div>
   </section>
 
@@ -477,10 +557,24 @@
         <a href="Enquiry.dc.html" class="ka-inline-link">Start an enquiry →</a>
       </div>
       <div data-r class="ka-service-list">
-        <div class="ka-service-card"><div><div class="ka-service-num">01</div><h3>Canvas &amp; digital artwork</h3></div><p>Original works for homes, offices, publications and digital spaces — your story, created with care.</p></div>
-        <div class="ka-service-card"><div><div class="ka-service-num">02</div><h3>Corporate &amp; RAP artwork</h3></div><p>Reconciliation Action Plan artwork, branding and digital design for organisations.</p></div>
-        <div class="ka-service-card"><div><div class="ka-service-num">03</div><h3>Murals &amp; large works</h3></div><p>Statement pieces for hospitals, clubs, schools and community spaces.</p></div>
-        <div class="ka-service-card"><div><div class="ka-service-num">04</div><h3>Cultural workshops</h3></div><p>Hands-on sessions for teams, schools and NAIDOC &amp; Reconciliation Week.</p></div>
+        <div class="ka-service-card"><div><div class="ka-service-top"><div class="ka-service-num">01</div><div class="ka-service-icon"><svg viewBox="0 0 24 24"><path d="M4 19V5h16v14zM8 15l3-4 3 3 2-2 4 4"/><circle cx="8" cy="9" r="1.5"/></svg></div></div><h3>Canvas &amp; digital artwork</h3></div><p>Original works for homes, offices, publications and digital spaces — your story, created with care.</p></div>
+        <div class="ka-service-card"><div><div class="ka-service-top"><div class="ka-service-num">02</div><div class="ka-service-icon"><svg viewBox="0 0 24 24"><path d="M4 20h16M6 20V9h12v11M9 9V5h6v4M9 13h2m2 0h2m-6 3h2m2 0h2"/></svg></div></div><h3>Corporate &amp; RAP artwork</h3></div><p>Reconciliation Action Plan artwork, branding and digital design for organisations.</p></div>
+        <div class="ka-service-card"><div><div class="ka-service-top"><div class="ka-service-num">03</div><div class="ka-service-icon"><svg viewBox="0 0 24 24"><path d="M5 20V7h14v13M3 20h18M8 7V4h8v3M9 11h6v5H9z"/></svg></div></div><h3>Murals &amp; large works</h3></div><p>Statement pieces for hospitals, clubs, schools and community spaces.</p></div>
+        <div class="ka-service-card"><div><div class="ka-service-top"><div class="ka-service-num">04</div><div class="ka-service-icon"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16" cy="8" r="3"/><path d="M3 20c.4-4 2-6 5-6s4.6 2 5 6m-2-4c1-1.3 2.7-2 5-2 3 0 4.6 2 5 6"/></svg></div></div><h3>Cultural workshops</h3></div><p>Hands-on sessions for teams, schools and NAIDOC &amp; Reconciliation Week.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- process -->
+  <section class="ka-process" aria-labelledby="process-title">
+    <div class="ka-process-inner">
+      <div class="ka-kicker">⟢ How it works</div>
+      <h2 id="process-title" class="ka-section-title">From first yarn to finished work</h2>
+      <div class="ka-process-grid">
+        <div class="ka-process-step"><small>Step 01 · Week 1</small><h3>Enquiry</h3><p>Share your project, timing and intended use so LaToya can understand what you need.</p></div>
+        <div class="ka-process-step"><small>Step 02 · Weeks 1–2</small><h3>Consultation &amp; concept</h3><p>A conversation shapes the story, cultural context, scope and creative direction.</p></div>
+        <div class="ka-process-step"><small>Step 03 · Timing agreed</small><h3>Creation</h3><p>The artwork is developed with progress updates and feedback at agreed milestones.</p></div>
+        <div class="ka-process-step"><small>Final step</small><h3>Delivery</h3><p>Your finished artwork and agreed files are prepared for their new home or application.</p></div>
       </div>
     </div>
   </section>
@@ -636,7 +730,7 @@
           </div>
         </div>
         <div data-r data-rd="120" style="background:#9C4524; border-radius:4px; overflow:hidden; transition:transform .35s;" style-hover="transform:translateY(-6px);">
-          <div style="overflow:hidden; aspect-ratio:1/1; background:#8a3d1f;"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/Aspen%20Medical1.webp" width="720" height="960" loading="lazy" decoding="async" alt="Donated canvas 'Belonging'" style="width:100%; height:100%; object-fit:cover; transition:transform 1s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.06);"></div>
+          <div style="overflow:hidden; aspect-ratio:1/1; background:#8a3d1f;"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/Aspen%20Medical1.webp" width="720" height="960" loading="lazy" decoding="async" alt="Donated canvas 'Belonging'" style="width:100%; height:100%; object-fit:cover; object-position:center; transform:scale(1.62); transition:transform 1s cubic-bezier(.2,.7,.2,1);"></div>
           <div style="padding:26px 26px 30px;">
             <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#fff4e8; margin-bottom:10px;">Donated to Aspen Medical</div>
             <div style="font-family:'Cormorant Garamond',serif; font-size:27px; margin-bottom:12px;">Belonging</div>
@@ -667,19 +761,13 @@
           <a href="Workshops.dc.html" class="ka-workshop-link">Explore workshops</a>
         </div>
       </div>
-      <div class="ka-workshop-grid">
-        <div class="ka-workshop-card accent"><div><h3>Commissioned artwork</h3><p>Canvas and digital designs created for organisations, public spaces, RAPs, campaigns and meaningful gifts.</p></div></div>
-        <div class="ka-workshop-card"><div><h3>Cultural workshops</h3><p>Hands-on learning through Aboriginal art, symbols and shared canvas experiences.</p></div></div>
-        <div class="ka-workshop-card"><div><h3>RAP &amp; corporate</h3><p>Artwork for reconciliation plans, significant Indigenous dates, uniforms, branding and workplace storytelling.</p></div></div>
-        <div class="ka-workshop-card"><div><h3>Custom pieces</h3><p>Sneakers, heels, boots, nursery pieces and personalised gifts made with story and care.</p></div></div>
-      </div>
     </div>
   </section>
 
   <!-- footer -->
   <footer style="background:#1E1810; color:#cdbfa9; padding:74px 48px 48px;">
     <div style="max-width:1440px; margin:0 auto;">
-      <div style="display:grid; grid-template-columns:1.5fr 1fr 1fr 1fr; gap:40px; padding-bottom:50px; border-bottom:1px solid #352a1d;">
+      <div style="display:grid; grid-template-columns:1.6fr 1fr 1fr; gap:40px; padding-bottom:50px; border-bottom:1px solid #352a1d;">
         <div>
           <img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/optimized/kalari-logo-nav.webp" width="380" height="277" loading="lazy" decoding="async" alt="Kalari Art" style="width:190px; height:auto; display:block; margin-bottom:18px;">
           <p style="font-size:14px; line-height:1.65; color:#9c8d76; max-width:300px; margin:0;">Contemporary Aboriginal art by LaToya Kennedy. Ngunnawal &amp; Wiradjuri. Wollongong, NSW.</p>
@@ -689,9 +777,8 @@
             <a href="https://www.linkedin.com/in/latoya-kennedy-9a42bb253" target="_blank" rel="noopener noreferrer" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">LinkedIn</a>
           </div>
         </div>
-        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Explore</div>Projects<br>About<br>Services<br>Workshops</div>
-        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">More</div>Giving back<br>Commissions<br>Sneakers<br>Heels<br>Boots<br>Nursery<br>Personalised gifts<br>Contact</div>
-        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Registrations</div>Supply Nation Certified<br>Indigenous Art Code<br>Buy NSW<br>AusTender<br>VendorPanel</div>
+        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Explore</div><a href="Works.dc.html">Projects</a><br><a href="#about">About</a><br><a href="#services">Services</a><br><a href="#made">Made to Order</a><br><a href="#donations">Giving Back</a></div>
+        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Work together</div><a href="Workshops.dc.html">Workshops</a><br><a href="Enquiry.dc.html">Start an enquiry</a><br><a href="mailto:kalariart@outlook.com.au">Email LaToya</a></div>
       </div>
       <div style="display:flex; justify-content:space-between; padding-top:26px; font-size:12px; color:#7e7158; flex-wrap:wrap; gap:10px;"><span>© 2026 Kalari Art · All rights reserved</span><span>Website Built by <a href="https://www.rastrick.com.au" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px;">RASTRICK. MADE</a></span><span>Always was, always will be Aboriginal land.</span></div> 
     </div>
@@ -704,7 +791,7 @@
     const link = document.createElement('link');
     link.dataset.kaFonts = 'true';
     link.rel = 'stylesheet';
-    link.href = 'https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&family=Hanken+Grotesk:wght@400;500;600;700&display=optional';
+    link.href = 'https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700&display=optional';
     document.head.appendChild(link);
   };
   ['pointerdown', 'keydown', 'touchstart'].forEach((type) => {
