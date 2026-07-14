@@ -62,6 +62,8 @@
   .about-service-top { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:22px; }
   .about-service-icon { width:54px; height:54px; flex:0 0 54px; display:grid; place-items:center; color:#F7EFDF; background:#B0512C; border-radius:50%; box-shadow:9px 0 0 #D69A4A,18px 0 0 #2F6F64; margin-right:18px; }
   .about-service-icon svg { width:24px; height:24px; stroke:currentColor; fill:none; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; }
+  .about-value-card::before { display:none; }
+  .about-value-icon { margin-bottom:24px; }
   .about-card h3 { font-size:32px; color:#B0512C; margin-bottom:8px; }
   .about-dark { background:#1E1810; color:#F1E7D6; padding:110px 48px; }
   .about-dark-inner { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.1fr .9fr; gap:64px; align-items:start; }
@@ -264,10 +266,10 @@
       <p class="about-text">The work is visually strong, but the deeper value is the way it helps people connect with story, Country and each other.</p>
     </div>
     <div data-r class="about-values">
-      <div class="about-card"><h3>Culture</h3><p class="about-text">Story and symbol shared with pride, care and respect.</p></div>
-      <div class="about-card"><h3>Connection</h3><p class="about-text">Artwork that links people, place, family and community.</p></div>
-      <div class="about-card"><h3>Belonging</h3><p class="about-text">Pieces that help spaces feel welcoming and meaningful.</p></div>
-      <div class="about-card"><h3>Purpose</h3><p class="about-text">Creative outcomes made for real use, not just decoration.</p></div>
+      <div class="about-card about-value-card"><div class="about-service-icon about-value-icon" role="img" aria-label="Culture"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7"/><path d="M12 2v3m0 14v3M2 12h3m14 0h3M5 5l2 2m10 10 2 2m0-14-2 2M7 17l-2 2"/></svg></div><h3>Culture</h3><p class="about-text">Story and symbol shared with pride, care and respect.</p></div>
+      <div class="about-card about-value-card"><div class="about-service-icon about-value-icon" role="img" aria-label="Connection"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="6" cy="7" r="2.5"/><circle cx="18" cy="7" r="2.5"/><circle cx="12" cy="17" r="2.5"/><path d="m8 8.5 2.5 5.8m5.5-5.8-2.5 5.8M8.5 7h7"/></svg></div><h3>Connection</h3><p class="about-text">Artwork that links people, place, family and community.</p></div>
+      <div class="about-card about-value-card"><div class="about-service-icon about-value-icon" role="img" aria-label="Belonging"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 11 9-8 9 8M5 9.5V21h14V9.5M9 21v-7h6v7"/><circle cx="12" cy="9" r="1.5"/></svg></div><h3>Belonging</h3><p class="about-text">Pieces that help spaces feel welcoming and meaningful.</p></div>
+      <div class="about-card about-value-card"><div class="about-service-icon about-value-icon" role="img" aria-label="Purpose"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="13" r="8"/><circle cx="11" cy="13" r="3"/><path d="m13 11 8-8m-5 0h5v5"/></svg></div><h3>Purpose</h3><p class="about-text">Creative outcomes made for real use, not just decoration.</p></div>
     </div>
   </section>
 
