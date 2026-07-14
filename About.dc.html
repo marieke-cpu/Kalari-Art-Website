@@ -57,7 +57,10 @@
   .about-card::before { content:""; display:block; width:52px; height:52px; margin:0 0 22px; border-radius:50%; background:radial-gradient(circle,#F7EFE2 0 2px,transparent 2.5px) 0 0/11px 11px,#B0512C; box-shadow:8px 0 0 #D69A4A,16px 0 0 #2F6F64; }
   .about-totem-card::before { display:none; }
   .about-totem-icon { width:76px; height:76px; margin:0 0 22px; display:grid; place-items:center; border-radius:50%; color:#F7EFE2; background:#B0512C; box-shadow:8px 0 0 #D69A4A,16px 0 0 #2F6F64; }
-  .about-totem-icon svg { width:60px; height:60px; overflow:visible; }
+  .about-totem-icon img { display:block; max-width:none; object-fit:contain; filter:grayscale(1) invert(1) contrast(12) drop-shadow(0 0 .7px #fff) drop-shadow(0 0 .7px #fff); mix-blend-mode:screen; }
+  .about-totem-icon--goanna img { width:44px; height:62px; }
+  .about-totem-icon--eagle img { width:66px; height:42px; }
+  .about-totem-icon--whale img { width:64px; height:52px; }
   .about-service-card::before { display:none; }
   .about-service-top { display:flex; align-items:center; justify-content:space-between; gap:18px; margin-bottom:22px; }
   .about-service-icon { width:54px; height:54px; flex:0 0 54px; display:grid; place-items:center; color:#F7EFDF; background:#B0512C; border-radius:50%; box-shadow:9px 0 0 #D69A4A,18px 0 0 #2F6F64; margin-right:18px; }
@@ -176,20 +179,20 @@
         <p class="about-text" style="font-size:18px;">I was born on Wiradjuri Country in Cowra, grew up on Ngunnawal Country in Canberra, and I now reside on beautiful Dharawal Country in Wollongong NSW. My connections extend across Wiradjuri, Ngunnawal and Dharawal Countries.</p>
         <div class="about-country-grid">
           <div class="about-card about-totem-card">
-            <div class="about-totem-icon" role="img" aria-label="Goanna — Wiradjuri totem">
-              <svg viewBox="0 0 100 100" aria-hidden="true"><defs><filter id="goanna-outline" color-interpolation-filters="sRGB"><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -.333 -.333 -.333 0 1"/><feComponentTransfer><feFuncA type="discrete" tableValues="0 0 0 1 1"/></feComponentTransfer></filter></defs><image href="goanna.jpg" x="26" y="2" width="48" height="96" preserveAspectRatio="xMidYMid meet" filter="url(#goanna-outline)"/></svg>
+            <div class="about-totem-icon about-totem-icon--goanna" role="img" aria-label="Goanna — Wiradjuri totem">
+              <img src="goanna.jpg" alt="" aria-hidden="true">
             </div>
             <h3>Wiradjuri</h3><p class="about-text">Born on Country in Cowra, with family connection through my grandfather.</p>
           </div>
           <div class="about-card about-totem-card">
-            <div class="about-totem-icon" role="img" aria-label="Wedge-tailed eagle — Ngunnawal totem">
-              <svg viewBox="0 0 100 100" aria-hidden="true"><defs><filter id="eagle-outline" color-interpolation-filters="sRGB"><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -.333 -.333 -.333 0 1"/><feComponentTransfer><feFuncA type="discrete" tableValues="0 0 0 1 1"/></feComponentTransfer></filter></defs><image href="eagle.png" x="2" y="25" width="96" height="50" preserveAspectRatio="xMidYMid meet" filter="url(#eagle-outline)"/></svg>
+            <div class="about-totem-icon about-totem-icon--eagle" role="img" aria-label="Wedge-tailed eagle — Ngunnawal totem">
+              <img src="eagle.png" alt="" aria-hidden="true">
             </div>
             <h3>Ngunnawal</h3><p class="about-text">Raised on Ngunnawal Country, with family connection through my grandmother from Yass.</p>
           </div>
           <div class="about-card about-totem-card">
-            <div class="about-totem-icon" role="img" aria-label="Humpback whale — Dharawal totem">
-              <svg viewBox="0 0 100 100" aria-hidden="true"><defs><filter id="whale-outline" color-interpolation-filters="sRGB"><feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -.333 -.333 -.333 0 1"/><feComponentTransfer><feFuncA type="discrete" tableValues="0 0 0 1 1"/></feComponentTransfer></filter></defs><image href="humpback.jpg" x="3" y="14" width="94" height="72" preserveAspectRatio="xMidYMid meet" filter="url(#whale-outline)"/></svg>
+            <div class="about-totem-icon about-totem-icon--whale" role="img" aria-label="Humpback whale — Dharawal totem">
+              <img src="humpback.jpg" alt="" aria-hidden="true">
             </div>
             <h3>Dharawal</h3><p class="about-text">Now living and creating on Dharawal Country in Wollongong.</p>
           </div>
