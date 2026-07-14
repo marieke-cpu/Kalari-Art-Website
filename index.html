@@ -153,6 +153,8 @@
   .ka-made-card figcaption { display:grid !important; grid-template-columns:minmax(0,1fr) auto; gap:12px; align-items:start !important; margin-top:16px !important; }
   .ka-made-card figcaption span:first-child { line-height:1.05; }
   .ka-made-card figcaption span:last-child { text-align:right; white-space:nowrap; }
+  .ka-giving-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:30px; }
+  .ka-giving-card { min-width:0; }
   .ka-audiences { padding:78px 48px; background:#F7EFDF; }
   .ka-audiences-inner { max-width:1180px; margin:0 auto; }
   .ka-audience-grid { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:34px; }
@@ -236,6 +238,7 @@
     .ka-about { grid-template-columns:1fr; padding:86px 28px; }
     .ka-service-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
     .ka-made-grid { grid-template-columns:repeat(3,minmax(0,1fr)); }
+    .ka-giving-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
     .ka-process-step { grid-template-columns:120px minmax(190px,.7fr) 1fr; gap:20px; }
     .ka-video-section { padding:78px 28px; }
     .ka-video-stage { grid-template-columns:1fr; }
@@ -279,6 +282,12 @@
     .ka-services { padding:72px 20px; }
     .ka-made-grid { grid-template-columns:1fr; gap:32px; }
     .ka-made-card img { height:auto !important; aspect-ratio:1/1 !important; }
+    #donations { padding:68px 20px !important; }
+    #donations > div > div:first-child { align-items:flex-start !important; margin-bottom:36px !important; }
+    #donations h2 { font-size:42px !important; }
+    .ka-giving-grid { grid-template-columns:1fr; gap:24px; }
+    .ka-giving-card { width:100%; }
+    .ka-giving-card > div:first-child { aspect-ratio:4/3 !important; }
     .ka-audiences { padding:62px 20px; }
     .ka-audience-grid { grid-template-columns:1fr; }
     .ka-audience-card { min-height:230px; padding:28px; }
@@ -728,8 +737,8 @@
         </div>
         <p style="font-size:16px; line-height:1.65; color:#fff4e8; max-width:420px; margin:0;">Alongside commissions, LaToya donates original canvases to raise funds and awareness for the causes close to community.</p>
       </div>
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:30px;">
-        <div data-r data-rd="0" style="background:#9C4524; border-radius:4px; overflow:hidden; transition:transform .35s;" style-hover="transform:translateY(-6px);">
+      <div class="ka-giving-grid">
+        <div data-r data-rd="0" class="ka-giving-card" style="background:#9C4524; border-radius:4px; overflow:hidden; transition:transform .35s;" style-hover="transform:translateY(-6px);">
           <div style="overflow:hidden; aspect-ratio:1/1; background:#8a3d1f;"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/Aspen%20Medical.webp" width="720" height="960" loading="lazy" decoding="async" alt="Donated canvas 'Meeting in the Dreamtime'" style="width:100%; height:100%; object-fit:cover; transition:transform 1s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.06);"></div>
           <div style="padding:26px 26px 30px;">
             <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#fff4e8; margin-bottom:10px;">Donated to Aspen Medical</div>
@@ -737,7 +746,7 @@
             <p style="font-size:14.5px; line-height:1.6; color:#fff4e8; margin:0;">Raised funds towards The Farm in Galong — restoring self-worth and confidence to women and reuniting them with their children. 92 × 122cm.</p>
           </div>
         </div>
-        <div data-r data-rd="120" style="background:#9C4524; border-radius:4px; overflow:hidden; transition:transform .35s;" style-hover="transform:translateY(-6px);">
+        <div data-r data-rd="120" class="ka-giving-card" style="background:#9C4524; border-radius:4px; overflow:hidden; transition:transform .35s;" style-hover="transform:translateY(-6px);">
           <div style="overflow:hidden; aspect-ratio:1/1; background:#8a3d1f;"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/Aspen%20Medical1.webp" width="720" height="960" loading="lazy" decoding="async" alt="Donated canvas 'Belonging'" style="width:100%; height:100%; object-fit:cover; object-position:center; transform:scale(1.62); transition:transform 1s cubic-bezier(.2,.7,.2,1);"></div>
           <div style="padding:26px 26px 30px;">
             <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#fff4e8; margin-bottom:10px;">Donated to Aspen Medical</div>
@@ -745,7 +754,7 @@
             <p style="font-size:14.5px; line-height:1.6; color:#fff4e8; margin:0;">A story of developing relationships and wellbeing — defining who you are and where you come from. 61 × 122cm.</p>
           </div>
         </div>
-        <div data-r data-rd="240" style="background:#9C4524; border-radius:4px; overflow:hidden; transition:transform .35s;" style-hover="transform:translateY(-6px);">
+        <div data-r data-rd="240" class="ka-giving-card" style="background:#9C4524; border-radius:4px; overflow:hidden; transition:transform .35s;" style-hover="transform:translateY(-6px);">
           <div style="overflow:hidden; aspect-ratio:1/1; background:#8a3d1f;"><img src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="uploads/Epilepsy%20Australia.webp" width="720" height="960" loading="lazy" decoding="async" alt="Donated canvas 'Journey' in purple" style="width:100%; height:100%; object-fit:cover; transition:transform 1s cubic-bezier(.2,.7,.2,1);" style-hover="transform:scale(1.06);"></div>
           <div style="padding:26px 26px 30px;">
             <div style="font-size:11px; letter-spacing:.15em; text-transform:uppercase; color:#fff4e8; margin-bottom:10px;">Donated to Epilepsy Australia</div>
