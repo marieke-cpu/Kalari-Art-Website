@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://kalariart.com.au/Enquiry.dc.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="site-shared.css">
 <script src="./support.js" defer></script>
 </head>
 <body>
@@ -57,7 +58,7 @@
   .enq-section-head { display:flex; justify-content:space-between; gap:44px; align-items:flex-end; margin-bottom:42px; }
   .enq-section h2 { font-size:56px; line-height:1.04; max-width:760px; }
   .enq-section-head p { font-size:17px; line-height:1.65; color:#5e5142; max-width:470px; margin:0; }
-  .enq-card-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; }
+  .enq-card-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:18px; }
   .enq-card { background:#F8F1E6; border:1px solid #D7C8AE; border-radius:8px; padding:28px; }
   .enq-card h3 { font-size:30px; margin-bottom:12px; }
   .enq-card p, .enq-text { font-size:15.5px; line-height:1.65; color:#6b5944; margin:0; }
@@ -112,11 +113,11 @@
       <a href="Works.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Projects</a>
       <a href="About.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">About</a>
       <a href="Services.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Services</a>
-      <a href="Made%20to%20Order.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Made to Order</a>
+      <a href="made-to-order.dc" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Made to Order</a>
       <a href="Giving.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Giving</a>
       <a href="Workshops.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Workshops</a>
     </div>
-    <a href="#" style="font-size:13px; text-decoration:none; color:#F3EBDD; background:#221C15; border:1px solid #221C15; padding:12px 22px; border-radius:30px; white-space:nowrap; box-shadow:0 12px 28px -18px rgba(34,28,21,.8);">Start a Project</a>
+    <a href="#project-form" style="font-size:13px; text-decoration:none; color:#F3EBDD; background:#221C15; border:1px solid #221C15; padding:12px 22px; border-radius:30px; white-space:nowrap; box-shadow:0 12px 28px -18px rgba(34,28,21,.8);">Start a Project</a>
   </nav>
 
   <header class="enq-wrap enq-hero">
@@ -158,6 +159,7 @@
     <div data-r class="enq-card-grid">
       <div class="enq-card"><h3>Commissions</h3><p>Original canvas artwork for offices, homes, spaces, gifts and community settings.</p></div>
       <div class="enq-card"><h3>RAP &amp; digital</h3><p>Reconciliation Action Plan artwork, corporate design, branding, uniforms and campaigns.</p></div>
+      <div class="enq-card"><h3>Murals &amp; public art</h3><p>Large-scale artwork for public spaces, community settings, workplaces and built environments.</p></div>
       <div class="enq-card"><h3>Workshops</h3><p>Cultural art workshops for staff days, schools, NAIDOC Week and community events.</p></div>
       <div class="enq-card"><h3>Custom pieces</h3><p>Sneakers, heels, boots, nursery pieces and personalised gifts created to order.</p></div>
     </div>
@@ -291,7 +293,16 @@
 </x-dc>
 <script type="text/x-dc" data-dc-script>
 class Component extends DCLogic {
-  state = { submitted: false, selected: {} };
+  getInitialSelection() {
+    const key = new URLSearchParams(window.location.search).get('type');
+    const labels = {
+      commission: 'Commission', rap: 'RAP / corporate artwork', mural: 'Mural / public art',
+      workshop: 'Workshop', custom: 'Custom item', other: 'Other'
+    };
+    return labels[key] ? { [labels[key]]: true } : {};
+  }
+
+  state = { submitted: false, selected: this.getInitialSelection() };
 
   renderVals() {
     const labels = ['Commission', 'RAP / corporate artwork', 'Mural / public art', 'Workshop', 'Custom item', 'Other'];

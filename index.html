@@ -159,12 +159,11 @@
   .ka-audience-card span { position:relative; font-size:13px; border-bottom:1px solid currentColor; width:max-content; padding-bottom:4px; }
   .ka-process { padding:100px 48px; background:#F3EBDD; }
   .ka-process-inner { max-width:1180px; margin:0 auto; }
-  .ka-process-grid { display:grid; grid-template-columns:repeat(4,1fr); margin-top:48px; border-top:1px solid #cdbfa7; }
-  .ka-process-step { position:relative; padding:32px 28px 0 0; }
-  .ka-process-step::before { content:""; position:absolute; width:11px; height:11px; border-radius:50%; background:#B0512C; top:-6px; left:0; box-shadow:0 0 0 6px #F3EBDD; }
-  .ka-process-step small { color:#2F6F64; font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; }
-  .ka-process-step h3 { font-family:'Fraunces','Cormorant Garamond',serif; font-size:26px; font-weight:500; margin:10px 0; }
-  .ka-process-step p { color:#6b5944; font-size:14px; line-height:1.6; margin:0; }
+  .ka-process-grid { margin-top:48px; border-top:1px solid #cdbfa7; }
+  .ka-process-step { display:grid; grid-template-columns:150px minmax(220px,.7fr) 1fr; gap:28px; align-items:start; padding:28px 0; border-bottom:1px solid #cdbfa7; }
+  .ka-process-step small { color:#B0512C; font-size:11px; letter-spacing:.14em; text-transform:uppercase; font-weight:700; padding-top:9px; }
+  .ka-process-step h3 { font-family:'Fraunces','Cormorant Garamond',serif; font-size:28px; font-weight:500; margin:0; }
+  .ka-process-step p { color:#6b5944; font-size:15px; line-height:1.65; margin:0; }
   .ka-workshop-cta { background:#221C15; color:#F7EFDF; padding:104px 48px; position:relative; overflow:hidden; border-top:1px solid #352a1d; }
   .ka-workshop-cta::before { content:""; position:absolute; inset:0; background:linear-gradient(135deg, rgba(176,81,44,.24), transparent 38%), linear-gradient(180deg, rgba(47,111,100,.18), transparent 52%); pointer-events:none; }
   .ka-workshop-inner { position:relative; max-width:1440px; margin:0 auto; display:grid; grid-template-columns:1fr .95fr; gap:54px; align-items:center; }
@@ -230,7 +229,7 @@
     .ka-project-media { height:440px; }
     .ka-about { grid-template-columns:1fr; padding:86px 28px; }
     .ka-service-list { grid-template-columns:repeat(2,minmax(0,1fr)); }
-    .ka-process-grid { grid-template-columns:repeat(2,1fr); row-gap:38px; }
+    .ka-process-step { grid-template-columns:120px minmax(190px,.7fr) 1fr; gap:20px; }
     .ka-video-section { padding:78px 28px; }
     .ka-video-stage { grid-template-columns:1fr; }
     .ka-video-player { min-height:0; }
@@ -275,9 +274,9 @@
     .ka-audience-grid { grid-template-columns:1fr; }
     .ka-audience-card { min-height:230px; padding:28px; }
     .ka-process { padding:72px 20px; }
-    .ka-process-grid { grid-template-columns:1fr; border-top:0; margin-top:32px; }
-    .ka-process-step { border-left:1px solid #cdbfa7; padding:0 0 36px 28px; }
-    .ka-process-step::before { top:3px; left:-6px; }
+    .ka-process-grid { margin-top:32px; }
+    .ka-process-step { grid-template-columns:1fr; gap:9px; padding:24px 0; }
+    .ka-process-step small { padding-top:0; }
     .ka-workshop-cta { padding:72px 20px; }
     .ka-workshop-inner { grid-template-columns:1fr; gap:30px; }
     .ka-workshop-copy h2 { font-size:42px; }
@@ -362,11 +361,11 @@
     </button>
     <div class="ka-nav-links" id="ka-nav-menu">
       <a href="Works.dc.html">Projects</a>
-      <a href="#about">About</a>
-      <a href="#services">Services</a>
-      <a href="#made">Made to Order</a>
-      <a href="#donations">Giving</a>
-      <a href="#workshops">Workshops</a>
+      <a href="About.dc.html">About</a>
+      <a href="Services.dc.html">Services</a>
+      <a href="made-to-order.dc">Made to Order</a>
+      <a href="Giving.dc.html">Giving</a>
+      <a href="Workshops.dc.html">Workshops</a>
       <a href="Enquiry.dc.html" class="ka-nav-mobile-cta">Start a Project</a>
     </div>
     <a href="Enquiry.dc.html" class="ka-nav-cta">Start a Project</a>
@@ -527,7 +526,7 @@
       <p>My name is LaToya and I’m a proud Ngunnawal and Wiradjuri woman - my grandmother is Ngunnawal from Yass, and my grandfather is Wiradjuri from Cowra, both small country towns Central West NSW. I was born on Wiradjuri Country in Cowra, grew up on Ngunnawal Country in Canberra and I now reside on beautiful Dharawal Country in Wollongong NSW; my connections extend across Wiradjuri, Ngunnawal and Dharawal Countries.</p>
       <p>I began painting in 2017, following my diagnosis with Epilepsy. What started as a therapeutic practice soon became a powerful source of healing, focus, and motivation. Art has helped me stay grounded and calm, while also inspiring me to grow creatively and build my own business.</p>
       <blockquote class="ka-quote">"Art has helped me stay grounded and calm, while also inspiring me to grow creatively."</blockquote>
-      <a href="#" class="ka-inline-link">Read LaToya's full story →</a>
+      <a href="About.dc.html" class="ka-inline-link">Read LaToya's full story →</a>
     </div>
   </section>
 
@@ -682,7 +681,7 @@
         </div>
         <div style="max-width:440px;">
           <p style="font-size:16px; line-height:1.65; color:#5e5142; margin:0 0 14px;">From sneakers and heels to boots, nursery pieces and personalised gifts — LaToya hand-paints one-of-a-kind pieces to order, finished with Angelus leather paints &amp; sealer.</p>
-          <a href="mailto:kalariart@outlook.com.au" style="font-size:14px; color:#221C15; text-decoration:none; border-bottom:1px solid #B0512C; padding-bottom:4px;" style-hover="color:#B0512C;">Enquire about a custom piece →</a>
+          <a href="Enquiry.dc.html?type=custom" style="font-size:14px; color:#221C15; text-decoration:none; border-bottom:1px solid #B0512C; padding-bottom:4px;" style-hover="color:#B0512C;">Enquire about a custom piece →</a>
         </div>
       </div>
       <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:30px;">
@@ -777,7 +776,7 @@
             <a href="https://www.linkedin.com/in/latoya-kennedy-9a42bb253" target="_blank" rel="noopener noreferrer" style="color:#cdbfa9; text-decoration:none; border-bottom:1px solid #7e7158; padding-bottom:3px;">LinkedIn</a>
           </div>
         </div>
-        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Explore</div><a href="Works.dc.html">Projects</a><br><a href="#about">About</a><br><a href="#services">Services</a><br><a href="#made">Made to Order</a><br><a href="#donations">Giving Back</a></div>
+        <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Explore</div><a href="Works.dc.html">Projects</a><br><a href="About.dc.html">About</a><br><a href="Services.dc.html">Services</a><br><a href="made-to-order.dc">Made to Order</a><br><a href="Giving.dc.html">Giving Back</a></div>
         <div style="font-size:14px; line-height:2.1;"><div style="color:#7e7158; font-size:11px; letter-spacing:.16em; text-transform:uppercase; margin-bottom:12px;">Work together</div><a href="Workshops.dc.html">Workshops</a><br><a href="Enquiry.dc.html">Start an enquiry</a><br><a href="mailto:kalariart@outlook.com.au">Email LaToya</a></div>
       </div>
       <div style="display:flex; justify-content:space-between; padding-top:26px; font-size:12px; color:#7e7158; flex-wrap:wrap; gap:10px;"><span>© 2026 Kalari Art · All rights reserved</span><span>Website Built by <a href="https://www.rastrick.com.au" target="_blank" rel="noopener noreferrer" style="color:inherit; text-decoration:none; border-bottom:1px solid currentColor; padding-bottom:2px;">RASTRICK. MADE</a></span><span>Always was, always will be Aboriginal land.</span></div> 

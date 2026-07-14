@@ -1,0 +1,33 @@
+/* Shared dot texture for story, proof and conversion bands. */
+.about-dark, .about-cta, .proj-proof, .proj-cta, .svc-dark, .svc-cta,
+.giving-impact, .giving-cta, .ws-video-band, .ws-cta, .mo-value-band, .mo-cta, .enq-strip {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+}
+.about-dark::after, .about-cta::after, .proj-proof::after, .proj-cta::after,
+.svc-dark::after, .svc-cta::after, .giving-impact::after, .giving-cta::after,
+.ws-video-band::after, .ws-cta::after, .mo-value-band::after, .mo-cta::after, .enq-strip::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 440px;
+  height: 440px;
+  right: -120px;
+  top: -180px;
+  border-radius: 50%;
+  color: #D69A4A;
+  background: radial-gradient(circle, currentColor 0 2px, transparent 2.5px) 0 0 / 18px 18px;
+  opacity: .085;
+  transform: rotate(12deg);
+  -webkit-mask-image: radial-gradient(circle, #000, transparent 72%);
+  mask-image: radial-gradient(circle, #000, transparent 72%);
+}
+@media (max-width: 700px) {
+  .about-dark::after, .about-cta::after, .proj-proof::after, .proj-cta::after,
+  .svc-dark::after, .svc-cta::after, .giving-impact::after, .giving-cta::after,
+  .ws-video-band::after, .ws-cta::after, .mo-value-band::after, .mo-cta::after, .enq-strip::after {
+    width: 300px; height: 300px; right: -130px; top: -110px; opacity: .06;
+  }
+}

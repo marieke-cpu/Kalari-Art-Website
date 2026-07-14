@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://kalariart.com.au/About.dc.html">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="manifest" href="site.webmanifest">
+<link rel="stylesheet" href="site-shared.css">
 <script src="./support.js" defer></script>
 </head>
 <body>
@@ -52,6 +53,7 @@
   .about-story h2, .about-section h2 { font-size:52px; line-height:1.04; letter-spacing:-.01em; }
   .about-country-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:18px; }
   .about-card { background:#ECE1CE; padding:26px; border-radius:4px; }
+  .about-card::before { content:""; display:block; width:52px; height:52px; margin:0 0 22px; border-radius:50%; background:radial-gradient(circle,#F7EFE2 0 2px,transparent 2.5px) 0 0/11px 11px,#B0512C; box-shadow:8px 0 0 #D69A4A,16px 0 0 #2F6F64; }
   .about-card h3 { font-size:32px; color:#B0512C; margin-bottom:8px; }
   .about-dark { background:#1E1810; color:#F1E7D6; padding:110px 48px; }
   .about-dark-inner { max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.1fr .9fr; gap:64px; align-items:start; }
@@ -75,7 +77,7 @@
   .about-values { display:grid; grid-template-columns:repeat(4,1fr); gap:22px; }
   .about-cta { background:#221C15; color:#F7EFE2; padding:98px 48px; position:relative; overflow:hidden; border-top:1px solid #3d3022; }
   .about-cta::before { content:""; position:absolute; inset:0; background:linear-gradient(135deg, rgba(176,81,44,.28), transparent 42%), linear-gradient(180deg, rgba(47,111,100,.16), transparent 55%); pointer-events:none; }
-  .about-cta-inner { position:relative; max-width:1180px; margin:0 auto; display:grid; grid-template-columns:1.05fr .95fr; gap:42px; align-items:center; }
+  .about-cta-inner { position:relative; max-width:820px; margin:0 auto; }
   .about-cta h2 { font-size:56px; line-height:1.04; margin-bottom:22px; }
   .about-cta p { font-size:17px; line-height:1.65; color:#cdbfa9; max-width:600px; margin:0 0 32px; }
   .about-cta-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }
@@ -121,7 +123,7 @@
       <a href="Works.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Projects</a>
       <a href="#" style="color:#B0512C; text-decoration:none; padding:11px 18px; border-radius:999px; background:rgba(176,81,44,.12);">About</a>
       <a href="Services.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Services</a>
-      <a href="Made%20to%20Order.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Made to Order</a>
+      <a href="made-to-order.dc" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Made to Order</a>
       <a href="Giving.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Giving</a>
       <a href="Workshops.dc.html" style="color:inherit; text-decoration:none; padding:11px 18px; border-radius:999px; transition:background .25s, color .25s;" style-hover="background:rgba(176,81,44,.1); color:#B0512C;">Workshops</a>
     </div>
@@ -201,7 +203,7 @@
     </div>
 
     <div data-r class="about-proof-grid">
-      <div class="about-image"><img src="uploads/KA10.webp" alt="Birthing Journey mural for Canberra Health Services"></div>
+      <div class="about-image"><img src="uploads/KA5.webp" alt="Maternity suite artwork for Canberra Health Services"></div>
       <div class="about-proof-list">
         <div>
           <div class="about-eyebrow"><span></span>What I've done</div>
@@ -253,12 +255,6 @@
         <h2>Bring story into your next project</h2>
         <p>Commissioned paintings, RAP artwork, murals, workshops, digital designs and personalised pieces created with meaning, culture and care.</p>
         <a href="Enquiry.dc.html" class="about-button" style="background:#F7EFE2; color:#221C15;">Start an enquiry</a>
-      </div>
-      <div class="about-cta-grid">
-        <div class="about-cta-card"><h3>For organisations</h3><p>Artwork that strengthens spaces, campaigns, RAPs and community-facing projects.</p></div>
-        <div class="about-cta-card"><h3>For community</h3><p>Workshops and shared creative experiences that invite people into story and connection.</p></div>
-        <div class="about-cta-card"><h3>For personal pieces</h3><p>Custom works made for family, milestones, gifts and spaces with deep meaning.</p></div>
-        <div class="about-cta-card"><h3>For culture-led design</h3><p>Digital and painted outcomes shaped with respect, purpose and practical use in mind.</p></div>
       </div>
     </div>
   </section>
